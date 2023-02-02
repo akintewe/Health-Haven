@@ -15,5 +15,5 @@ abstract class _AppRoutePaths {
 
   static const String dashboard = '/dashboard';
   static const String homePage = '/home-page';
-
+  static const String introPage = '/intro-page';
 }

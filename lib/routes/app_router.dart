@@ -1,4 +1,5 @@
 import 'package:cancer_chat/app/modules/homepage.dart/views/dashboard.dart';
+import 'package:cancer_chat/app/modules/introduction_page/views/introduction_page.dart';
 import 'package:cancer_chat/app/modules/sign_in/views/sign_in.dart';
 import 'package:cancer_chat/app/modules/sign_up/views/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ abstract class AppRouter {
 }
 
 final GoRouter _router =
-    GoRouter(initialLocation: _AppRoutePaths.homePage, routes: [
+    GoRouter(initialLocation: _AppRoutePaths.introPage, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
@@ -38,11 +39,12 @@ final GoRouter _router =
       },
       routes: [
         GoRoute(
-          path: _AppRoutePaths.homePage,
+          path: _AppRoutePaths.introPage,
+          name: Routes.introPage,
           pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
             context: context,
             state: state,
-            child: const HomePage(),
+            child: const IntroPage(),
           ),
         )
       ]),

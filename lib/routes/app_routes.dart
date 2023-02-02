@@ -13,5 +13,5 @@ abstract class Routes {
 
   static const String dashboard = 'Dashboard';
   static const String homePage = 'homePage';
-
+  static const String introPage = 'Intro Page';
 }
