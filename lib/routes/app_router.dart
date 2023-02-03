@@ -1,4 +1,5 @@
 import 'package:cancer_chat/app/modules/emptypage.dart';
+import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/dashboard.dart';
 import 'package:cancer_chat/app/modules/introduction_page/controller/page_controller.dart';
 import 'package:cancer_chat/app/modules/introduction_page/views/introduction_page.dart';
@@ -33,7 +34,7 @@ abstract class AppRouter {
 }
 
 final GoRouter _router =
-    GoRouter(initialLocation: _AppRoutePaths.introduction, routes: [
+    GoRouter(initialLocation: _AppRoutePaths.forgotPassword, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
@@ -76,5 +77,11 @@ final GoRouter _router =
       state: state,
       child: const SignIn(),
     ),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.forgotPassword,
+    name: Routes.forgotPassword,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: const ForgotPassword()),
   )
 ]);
