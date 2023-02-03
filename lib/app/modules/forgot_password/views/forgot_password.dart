@@ -52,6 +52,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           GestureDetector(
             onTap: () {
               isSelected = !isSelected;
+              isSelected2 = false;
               setState(() {});
             },
             child: Container(
@@ -123,6 +124,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           GestureDetector(
             onTap: () {
               isSelected2 = !isSelected2;
+              isSelected = false;
               setState(() {});
             },
             child: Container(

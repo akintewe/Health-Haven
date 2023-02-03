@@ -18,4 +18,5 @@ abstract class _AppRoutePaths {
   static const String introPage = '/intro-page';
   static const String emptyPage = '/empty-page';
   static const String introduction = '/introduction';
+  static const String pinInput = '/pin-input';
 }

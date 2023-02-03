@@ -16,5 +16,5 @@ abstract class Routes {
   static const String introPage = 'Intro Page';
   static const String emptyPage = 'Empty Page';
   static const String introduction = 'Introduction';
-  
+  static const String pinInput = 'Pin Input';
 }
