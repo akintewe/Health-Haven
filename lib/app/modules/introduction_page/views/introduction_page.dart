@@ -1,4 +1,5 @@
 import 'package:cancer_chat/core/theme/colors.dart';
+import 'package:cancer_chat/core/utils/functions/size_fit.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatefulWidget {
@@ -77,7 +78,7 @@ class _IntroPageState extends State<IntroPage> {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.4),
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.09,
+                          height: MediaQuery.of(context).size.height * 0.092,
                           width: MediaQuery.of(context).size.width * 0.18,
                           decoration: BoxDecoration(
                               color: AppColors.primary,
@@ -208,10 +209,11 @@ class _IntroPage2State extends State<IntroPage2> {
                       children: [
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
-                        Text('Enjoy your',
+                        Text('Chat with',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
+                              color: AppColors.primary,
                             )),
                       ],
                     ),
@@ -219,18 +221,19 @@ class _IntroPage2State extends State<IntroPage2> {
                       children: [
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
-                        Text('Meal',
+                        Text('Doctors',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
+                              color: AppColors.primary,
                             )),
                         SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.4),
+                            width: MediaQuery.of(context).size.width * 0.3),
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.08,
+                          height: MediaQuery.of(context).size.height * 0.093,
                           width: MediaQuery.of(context).size.width * 0.18,
                           decoration: BoxDecoration(
-                              color: Color.fromRGBO(191, 59, 28, 1),
+                              color: AppColors.primary,
                               borderRadius: BorderRadius.circular(100)),
                           child: Center(
                             child: IconButton(
@@ -256,7 +259,7 @@ class _IntroPage2State extends State<IntroPage2> {
                                 width:
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
-                              'We prepare our food with finely',
+                              'Book an appointment with any doctor.',
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
@@ -272,7 +275,7 @@ class _IntroPage2State extends State<IntroPage2> {
                                 width:
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
-                              'picked and seasonal ingridents,',
+                              'Chat with any doctor easily,',
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
@@ -288,7 +291,7 @@ class _IntroPage2State extends State<IntroPage2> {
                                 width:
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
-                              'Good food, Good mood',
+                              'and get consultation.',
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
@@ -360,10 +363,11 @@ class _IntroPage3State extends State<IntroPage3> {
                       children: [
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
-                        Text('Get delivery',
+                        Text('Track your',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
+                              color: AppColors.primary,
                             )),
                       ],
                     ),
@@ -371,10 +375,11 @@ class _IntroPage3State extends State<IntroPage3> {
                       children: [
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
-                        Text('at your',
+                        Text('appointments',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
+                              color: AppColors.primary,
                             )),
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.2),
@@ -384,38 +389,55 @@ class _IntroPage3State extends State<IntroPage3> {
                       children: [
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
-                        Text('Door step.....',
+                        Text('the easy way..',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
+                              color: AppColors.primary,
                             )),
                       ],
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                     Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height * 0.08,
-                              width: MediaQuery.of(context).size.width * 0.6,
-                              decoration: BoxDecoration(
-                                color: Color.fromRGBO(191, 59, 28, 1),
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Center(
-                                  child: GestureDetector(
-                                onTap: () {},
-                                child: Text(
-                                  'Get Started',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 20),
-                                ),
-                              )),
-                            )
+                            SizedBox(
+                              height: 65,
+                              width: 200,
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  )),
+                                  onPressed: () {},
+                                  child: Center(
+                                    child: Text(
+                                      'Get Started',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                  )),
+                            ),
+                            // Container(
+                            //   height: MediaQuery.of(context).size.height * 0.08,
+                            //   width: MediaQuery.of(context).size.width * 0.6,
+                            //   decoration: BoxDecoration(
+                            //     color: AppColors.primary,
+                            //     borderRadius: BorderRadius.circular(30),
+                            //   ),
+                            //   child: Center(
+                            //       child: GestureDetector(
+                            //     onTap: () {},
+                            //     child: Text(
+                            //       'Get Started',
+                            //       style: TextStyle(
+                            //           color: Colors.white,
+                            //           fontWeight: FontWeight.w500,
+                            //           fontSize: 20),
+                            //     ),
+                            //   )),
+                            // )
                           ],
                         )
                       ],
