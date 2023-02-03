@@ -42,6 +42,7 @@ dependencies:
   introduction_slider: ^2.0.1
   smooth_page_indicator: ^1.0.0+2
   pinput: ^2.2.21
+  d_pin: ^0.0.4
  
 
 dev_dependencies:

@@ -12,6 +12,10 @@ class PinInput extends StatefulWidget {
 class _PinInputState extends State<PinInput> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Column(
+        
+      );
+    );
   }
 }
