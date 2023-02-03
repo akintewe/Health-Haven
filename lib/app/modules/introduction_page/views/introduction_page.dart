@@ -52,6 +52,21 @@ class _IntroPageState extends State<IntroPage> {
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Column(children: [
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 6,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              color: AppColors.grey100,
+                              borderRadius: BorderRadius.circular(20)),
+                        ),
+                      ],
+                    ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                     Row(
                       children: [
@@ -174,7 +189,7 @@ class _IntroPage2State extends State<IntroPage2> {
                 width: MediaQuery.of(context).size.width * 1,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/doctor2.jpeg'),
+                        image: AssetImage('assets/images/doctor2.jpg'),
                         fit: BoxFit.cover)),
               )),
           Positioned(
@@ -204,6 +219,18 @@ class _IntroPage2State extends State<IntroPage2> {
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Column(children: [
+                    SizedBox(
+                      height: 7,
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Container(
+                        height: 6,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            color: AppColors.grey100,
+                            borderRadius: BorderRadius.circular(20)),
+                      )
+                    ]),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                     Row(
                       children: [
@@ -358,6 +385,21 @@ class _IntroPage3State extends State<IntroPage3> {
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Column(children: [
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      SizedBox(
+                        height: 7,
+                      ),
+                      Container(
+                        height: 6,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            color: AppColors.grey100,
+                            borderRadius: BorderRadius.circular(20)),
+                      )
+                    ]),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                     Row(
                       children: [
