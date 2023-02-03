@@ -11,25 +11,25 @@ class PinInput extends StatefulWidget {
 }
 
 class _PinInputState extends State<PinInput> {
+  int value = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
           DPin(
-  buttonColor: Colors.blue,
-  buttonText: "Confirm",
-  number: 6,
-  fieldBorderColor: Colors.blue,
-  withButton: true,
-  onValueChanged: (v) {
-    setState(() {
-      value = v;
-    });
-  },
-)
+            buttonColor: Colors.blue,
+            buttonText: "Confirm",
+            number: 6,
+            fieldBorderColor: Colors.blue,
+            withButton: true,
+            onValueChanged: (v) {
+              setState(() {
+                value = v;
+              });
+            },
+          )
         ],
-
       ),
     );
   }
