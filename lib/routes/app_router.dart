@@ -89,6 +89,6 @@ final GoRouter _router =
     path: _AppRoutePaths.pinInput,
     name: Routes.pinInput,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: const PinputExample()),
+        context: context, state: state, child: const PinInput()),
   )
 ]);
