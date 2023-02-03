@@ -34,5 +34,3 @@ class _PinInputState extends State<PinInput> {
     );
   }
 }
-
-tttrrrrrrrrrrrrrrr
