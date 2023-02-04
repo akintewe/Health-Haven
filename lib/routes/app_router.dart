@@ -1,4 +1,8 @@
+import 'package:cancer_chat/app/modules/emptypage.dart';
+import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.dart';
+import 'package:cancer_chat/app/modules/forgot_password/views/input_pin.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/dashboard.dart';
+import 'package:cancer_chat/app/modules/introduction_page/controller/page_controller.dart';
 import 'package:cancer_chat/app/modules/introduction_page/views/introduction_page.dart';
 import 'package:cancer_chat/app/modules/sign_in/views/sign_in.dart';
 import 'package:cancer_chat/app/modules/sign_up/views/sign_up.dart';
@@ -31,7 +35,7 @@ abstract class AppRouter {
 }
 
 final GoRouter _router =
-    GoRouter(initialLocation: _AppRoutePaths.introPage, routes: [
+    GoRouter(initialLocation: _AppRoutePaths.pinInput, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
@@ -39,15 +43,24 @@ final GoRouter _router =
       },
       routes: [
         GoRoute(
-          path: _AppRoutePaths.introPage,
-          name: Routes.introPage,
+          path: _AppRoutePaths.emptyPage,
+          name: Routes.emptyPage,
           pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
             context: context,
             state: state,
-            child: const IntroPage(),
+            child: const EmptyPage(),
           ),
         )
       ]),
+  GoRoute(
+    path: _AppRoutePaths.introduction,
+    name: Routes.introduction,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+      context: context,
+      state: state,
+      child: Introduction(),
+    ),
+  ),
   GoRoute(
     path: _AppRoutePaths.signUp,
     name: Routes.signUp,
@@ -65,5 +78,17 @@ final GoRouter _router =
       state: state,
       child: const SignIn(),
     ),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.forgotPassword,
+    name: Routes.forgotPassword,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: const ForgotPassword()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.pinInput,
+    name: Routes.pinInput,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: const PinInput()),
   )
 ]);
