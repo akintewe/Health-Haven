@@ -17,6 +17,9 @@ class _PinInputState extends State<PinInput> {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(
+            height: 100,
+          ),
           DPin(
             buttonColor: Colors.blue,
             buttonText: "Confirm",
