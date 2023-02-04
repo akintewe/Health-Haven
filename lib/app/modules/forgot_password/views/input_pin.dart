@@ -21,9 +21,10 @@ class _PinInputState extends State<PinInput> {
             height: 100,
           ),
           DPin(
+            
             buttonColor: Colors.blue,
             buttonText: "Confirm",
-            number: 6,
+            number: 4,
             fieldBorderColor: Colors.blue,
             withButton: true,
             onValueChanged: (v) {
