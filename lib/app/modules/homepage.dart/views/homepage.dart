@@ -80,7 +80,43 @@ class _HomePageState extends State<HomePage> {
                 debugPrint('onFieldSubmitted value $value');
               },
             ),
-            SizedBox(),
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  'Specialist Doctor',
+                  style: GoogleFonts.b612Mono(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'See all',
+                  style: TextStyle(
+                      color: AppColors.primary400, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Container(
+                    height: 50,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
