@@ -45,6 +45,7 @@ dependencies:
   d_pin: ^0.0.4
   searchbar_animation: ^0.0.4
   google_nav_bar: ^5.0.6
+  get: ^4.6.5
  
 
 dev_dependencies:

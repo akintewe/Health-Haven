@@ -6,6 +6,7 @@ import 'package:cancer_chat/app/modules/introduction_page/controller/page_contro
 import 'package:cancer_chat/app/modules/introduction_page/views/introduction_page.dart';
 import 'package:cancer_chat/app/modules/sign_in/views/sign_in.dart';
 import 'package:cancer_chat/app/modules/sign_up/views/sign_up.dart';
+import 'package:cancer_chat/app/modules/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -52,6 +53,12 @@ final GoRouter _router =
           ),
         )
       ]),
+  GoRoute(
+    path: _AppRoutePaths.splashscreen,
+    name: Routes.splashScreen,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: const SplashScreen()),
+  ),
   GoRoute(
     path: _AppRoutePaths.introduction,
     name: Routes.introduction,
