@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
           color: AppColors.primary600,
           tabBackgroundColor: AppColors.primary100,
           padding: EdgeInsets.all(18),
+          tabBorderRadius: 15,
           tabs: [
             GButton(
               icon: Icons.home,
