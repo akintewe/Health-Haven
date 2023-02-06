@@ -163,6 +163,43 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: AppColors.primary300),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Image.asset(
+                          'assets/icons/tooth1.png',
+                          width: 30,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'Dental',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        Text(
+                          'Specialist',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Text(
+                          '168 Doctors',
+                          style: GoogleFonts.b612Mono(
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     width: 20,
