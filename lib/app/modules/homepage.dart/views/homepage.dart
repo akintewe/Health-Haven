@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +18,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: GNav(
+          gap: 6,
+          activeColor: AppColors.primary600,
+          color: AppColors.primary600,
+          tabBackgroundColor: AppColors.primary100,
+          padding: EdgeInsets.all(18),
+          tabs: [
+            GButton(
+              icon: Icons.home,
+              text: 'Home',
+            ),
+            GButton(
+              icon: Icons.calendar_month,
+              text: 'Schedule',
+            ),
+            GButton(
+              icon: Icons.list,
+              text: 'List',
+            ),
+            GButton(
+              icon: Icons.person,
+              text: 'Profile',
+            ),
+          ]),
       appBar: AppBar(
         leading: Image.asset('assets/images/app-logo.png'),
         toolbarHeight: 90,
@@ -442,6 +467,49 @@ class _HomePageState extends State<HomePage> {
                             left: 30,
                             child: Text(
                               'Chemo Specialist',
+                              style: GoogleFonts.b612Mono(
+                                  fontWeight: FontWeight.w500, fontSize: 13),
+                            )),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    height: 280,
+                    width: 200,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromARGB(255, 247, 246, 246),
+                            width: 3),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                'assets/images/woman.jpg',
+                                height: 200,
+                                width: 200,
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Positioned(
+                            bottom: 30,
+                            left: 30,
+                            child: Text(
+                              'Dr. Mia Roseline',
+                              style: GoogleFonts.balooDa2(
+                                  fontWeight: FontWeight.bold, fontSize: 17),
+                            )),
+                        Positioned(
+                            bottom: 6,
+                            left: 30,
+                            child: Text(
+                              'Human Chiropractor',
                               style: GoogleFonts.b612Mono(
                                   fontWeight: FontWeight.w500, fontSize: 13),
                             ))
