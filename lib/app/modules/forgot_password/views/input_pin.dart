@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/forgot_password/pin.dart';
 import 'package:d_pin/d_pin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -21,7 +22,6 @@ class _PinInputState extends State<PinInput> {
             height: 100,
           ),
           DPin(
-            
             buttonColor: Colors.blue,
             buttonText: "Confirm",
             number: 4,
