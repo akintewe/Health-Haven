@@ -29,10 +29,16 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 height: 60,
-                width: 60,
+                width: 61,
                 decoration: BoxDecoration(
                     color: AppColors.primary100,
                     borderRadius: BorderRadius.circular(20)),
+                child: Center(
+                    child: Icon(
+                  Icons.notifications,
+                  size: 30,
+                  color: AppColors.primary800,
+                )),
               ),
               SizedBox(
                 width: 20,
@@ -43,7 +49,15 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                     color: AppColors.primary100,
                     borderRadius: BorderRadius.circular(20)),
-                  
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/heart.png',
+                    width: 28,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 10,
               ),
             ],
           ),
