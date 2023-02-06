@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Image.asset('assets/images/app-logo.png'),
         toolbarHeight: 90,
         elevation: 0,
         backgroundColor: Colors.transparent,
