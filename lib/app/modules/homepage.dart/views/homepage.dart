@@ -316,6 +316,23 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            Container(
+              height: 260,
+              width: 230,
+              decoration: BoxDecoration(
+                  color: Colors.red, borderRadius: BorderRadius.circular(20)),
+              child: Stack(
+                children: [
+                  Positioned(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child:
+                          Image(image: AssetImage('assets/images/person1.jpg')),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
