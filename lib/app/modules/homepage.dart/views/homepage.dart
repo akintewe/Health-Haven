@@ -291,7 +291,30 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  'Top Doctors',
+                  style: GoogleFonts.b612Mono(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'See all',
+                  style: TextStyle(
+                      color: AppColors.primary400, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ],
         ),
       ),
