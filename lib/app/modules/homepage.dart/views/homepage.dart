@@ -118,9 +118,40 @@ class _HomePageState extends State<HomePage> {
                     width: 160,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Color(0xFFF48FB1)),
+                        color: Color.fromARGB(255, 225, 74, 124)),
                     child: Column(
-                      children: [Image.asset('assets/icons/heart-shape2.png')],
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Image.asset('assets/icons/heart-shape2.png'),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'Cardio',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        Text(
+                          'Specialist',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Text(
+                          '200 Doctors',
+                          style: GoogleFonts.b612Mono(
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
                     ),
                   ),
                   SizedBox(
