@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Image.asset(
                           'assets/icons/tooth1.png',
-                          width: 30,
+                          width: 64,
                         ),
                         SizedBox(
                           height: 20,
@@ -209,7 +209,85 @@ class _HomePageState extends State<HomePage> {
                     width: 160,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.yellow[300]),
+                        color: Color.fromARGB(255, 193, 210, 91)),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Image.asset('assets/icons/view.png'),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'Eye',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        Text(
+                          'Specialist',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Text(
+                          '300 Doctors',
+                          style: GoogleFonts.b612Mono(
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    height: 260,
+                    width: 160,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Image.asset('assets/icons/bone.png'),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'Human',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        Text(
+                          'Chiropractor',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Text(
+                          '60 Doctors',
+                          style: GoogleFonts.b612Mono(
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),
