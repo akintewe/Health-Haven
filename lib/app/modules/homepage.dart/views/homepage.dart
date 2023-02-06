@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:searchbar_animation/searchbar_animation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +62,21 @@ class _HomePageState extends State<HomePage> {
                 width: 10,
               ),
             ],
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          SearchBarAnimation(
+            textEditingController: TextEditingController(),
+            isOriginalAnimation: false,
+            buttonBorderColour: Colors.black45,
+            buttonWidget: Icon(Icons.search),
+            secondaryButtonWidget: Icon(Icons.cancel),
+            trailingWidget: Icon(Icons.sort),
+            onFieldSubmitted: (String value) {
+              debugPrint('onFieldSubmitted value $value');
+            },
           ),
         ],
       ),
