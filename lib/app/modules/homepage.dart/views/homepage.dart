@@ -65,20 +65,24 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          SearchBarAnimation(
-            textEditingController: TextEditingController(),
-            isOriginalAnimation: false,
-            buttonBorderColour: Colors.black45,
-            buttonWidget: Icon(Icons.search),
-            secondaryButtonWidget: Icon(Icons.cancel),
-            trailingWidget: Icon(Icons.sort),
-            onFieldSubmitted: (String value) {
-              debugPrint('onFieldSubmitted value $value');
-            },
-          ),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SearchBarAnimation(
+              textEditingController: TextEditingController(),
+              isOriginalAnimation: false,
+              buttonBorderColour: Colors.black45,
+              buttonWidget: Icon(Icons.search),
+              secondaryButtonWidget: Icon(Icons.cancel),
+              trailingWidget: Icon(Icons.sort),
+              onFieldSubmitted: (String value) {
+                debugPrint('onFieldSubmitted value $value');
+              },
+            ),
+            SizedBox(),
+          ],
+        ),
       ),
     );
   }
