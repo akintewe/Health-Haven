@@ -316,20 +316,91 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            Container(
-              height: 260,
-              width: 230,
-              decoration: BoxDecoration(
-                  color: Colors.red, borderRadius: BorderRadius.circular(20)),
-              child: Stack(
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
                 children: [
-                  Positioned(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child:
-                          Image(image: AssetImage('assets/images/person1.jpg')),
+                  Container(
+                    height: 280,
+                    width: 200,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromARGB(255, 247, 246, 246),
+                            width: 3),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                'assets/images/person1.jpg',
+                                height: 200,
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Positioned(
+                            bottom: 30,
+                            left: 30,
+                            child: Text(
+                              'Dr. Yusuf Rashmid',
+                              style: GoogleFonts.balooDa2(
+                                  fontWeight: FontWeight.bold, fontSize: 17),
+                            )),
+                        Positioned(
+                            bottom: 6,
+                            left: 30,
+                            child: Text(
+                              'Cardio Specialist',
+                              style: GoogleFonts.b612Mono(
+                                  fontWeight: FontWeight.w500, fontSize: 13),
+                            ))
+                      ],
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    height: 280,
+                    width: 200,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromARGB(255, 247, 246, 246),
+                            width: 3),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                'assets/images/person1.jpg',
+                                height: 200,
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Positioned(
+                            bottom: 30,
+                            left: 30,
+                            child: Text(
+                              'Dr. Yusuf Rashmid',
+                              style: GoogleFonts.balooDa2(
+                                  fontWeight: FontWeight.bold, fontSize: 17),
+                            )),
+                        Positioned(
+                            bottom: 6,
+                            left: 30,
+                            child: Text(
+                              'Cardio Specialist',
+                              style: GoogleFonts.b612Mono(
+                                  fontWeight: FontWeight.w500, fontSize: 13),
+                            ))
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
