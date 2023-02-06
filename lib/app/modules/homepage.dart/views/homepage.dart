@@ -103,16 +103,45 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 30,
+            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
+                  SizedBox(
+                    width: 20,
+                  ),
                   Container(
-                    height: 50,
-                    width: 60,
+                    height: 260,
+                    width: 160,
                     decoration: BoxDecoration(
-                      
+                        borderRadius: BorderRadius.circular(20),
+                        color: Color(0xFFF48FB1)),
+                    child: Column(
+                      children: [Image.asset('assets/icons/heart-shape2.png')],
                     ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    height: 260,
+                    width: 160,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: AppColors.primary300),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    height: 260,
+                    width: 160,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.yellow[300]),
                   ),
                 ],
               ),
