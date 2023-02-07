@@ -103,5 +103,5 @@ final GoRouter _router =
     name: Routes.homePage,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: const HomePage()),
-  )
+   )
 ]);
