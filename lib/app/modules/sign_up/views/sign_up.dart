@@ -20,7 +20,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[150],
+      backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 60),
@@ -30,7 +30,7 @@ class _SignUpState extends State<SignUp> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('images/haha.png',height: 200,width: 200,),
+            Image.asset('assets/images/app-logo.png',height: 200,width: 200,),
            SizedBox(height: 20,),
             Text(
               'Sign up for free',
@@ -120,14 +120,7 @@ class _SignUpState extends State<SignUp> {
 
                         isDense: true,
                         hintText: 'Password',
-                        suffixIcon: InkWell(
-                          onTap: (){
-                            setState(() {
-                              passToggle=!passToggle;
-                            });
-                          },
-                          child: Icon(passToggle ? Icons.visibility_off:Icons.visibility_off),
-                        ),
+                        suffixIcon: Icon(Icons.visibility_off),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(100),
                         ),
@@ -135,7 +128,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     validator:(value) {
                       if (value!.isEmpty) {
-                        return "!invalid password";
+                        return "!password doesnt match email";
                       }
                     }  ),
                   ),
@@ -143,7 +136,9 @@ class _SignUpState extends State<SignUp> {
                     children: [
                       Checkbox(
                           value: isChecked,
-                          activeColor: Colors.indigo,
+                          activeColor: Colors.blue[700],
+                             side: BorderSide(color: Colors.blue),
+                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                           onChanged: (newBool) {
                             setState(() {
                               isChecked = newBool;
@@ -152,7 +147,7 @@ class _SignUpState extends State<SignUp> {
                       Text(
                         'Remember me',
                         style: TextStyle(
-                            fontSize: 10, fontWeight: FontWeight.bold),
+                            fontSize: 12, fontWeight: FontWeight.bold),
                       ),
                     ],
                   )
@@ -161,7 +156,7 @@ class _SignUpState extends State<SignUp> {
             ),
             Material(
               elevation: 5,
-              color: Colors.deepPurple,
+              color: Colors.blue[700],
               borderRadius: BorderRadius.circular(25),
               child: MaterialButton(
                 onPressed: () {
@@ -177,6 +172,8 @@ class _SignUpState extends State<SignUp> {
                   'Sign UP',
                   style: TextStyle(
                     color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -186,15 +183,15 @@ class _SignUpState extends State<SignUp> {
             ),
             Text('or continue with'),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(right: 2,left: 2),
               child: Row(
                 children: [
                   Expanded(
                     child: Container(
-                      width: 180,
+                      width: 160,
                       height: 60,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -205,13 +202,13 @@ class _SignUpState extends State<SignUp> {
                         children: [
                           Container(
                             child: Image.asset(
-                              'images/face.png',
+                              'assets/icons/face.png',
                               width: 30,
                               height: 30,
                             ),
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 6,
                           ),
                           Text(
                             'FaceBook',
@@ -229,7 +226,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   Expanded(
                     child: Container(
-                      width: 150,
+                      width: 160,
                       height: 60,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -240,7 +237,7 @@ class _SignUpState extends State<SignUp> {
                         children: [
                           Container(
                             child: Image.asset(
-                              'images/Google.png',
+                              'assets/icons/Google.png',
                               width: 30,
                               height: 30,
                             ),
@@ -271,13 +268,13 @@ class _SignUpState extends State<SignUp> {
                 children: [
                   Text('Already have an account?',style: TextStyle(fontWeight:FontWeight.w300,fontSize: 14),),
                   TextButton(
-
+ 
                      onPressed: () {},
                     child: Text(
                       'Sign in',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 15,
+                        fontSize: 14,
                       ),
                     ),
                   ),
