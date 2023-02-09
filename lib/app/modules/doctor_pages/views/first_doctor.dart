@@ -558,12 +558,17 @@ class _Doctor1State extends State<Doctor1> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                 ),
-                Text(
-                  'See reviews',
-                  style: GoogleFonts.roboto(
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
+                GestureDetector(
+                  onTap: () {
+                    context.go('/reviews');
+                  },
+                  child: Text(
+                    'See reviews',
+                    style: GoogleFonts.roboto(
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
                 ),
               ],
             ),
