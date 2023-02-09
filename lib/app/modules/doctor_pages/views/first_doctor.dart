@@ -106,13 +106,42 @@ class _Doctor1State extends State<Doctor1> {
                     Column(
                       children: [
                         SizedBox(
-                          height: 10,
+                          height: 20,
                         ),
                         Text(
                           'Dr. Jenny Wilson',
                           style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold, fontSize: 25),
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.star_rounded,
+                              color: AppColors.primary,
+                            ),
+                            Text(
+                              '4.9 (3821 reviews)',
+                              style: GoogleFonts.roboto(
+                                  color: AppColors.grey,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Cardio Specialist - New-Way Hospital',
+                          style: GoogleFonts.roboto(
+                              color: AppColors.grey,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16),
+                        )
                       ],
                     ),
                   ],
