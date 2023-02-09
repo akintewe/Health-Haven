@@ -20,4 +20,5 @@ abstract class _AppRoutePaths {
   static const String introduction = '/introduction';
   static const String pinInput = '/pin-input';
   static const String splashscreen = '/splash-screen';
+  static const String doctor1 = '/doctor-1';
 }
