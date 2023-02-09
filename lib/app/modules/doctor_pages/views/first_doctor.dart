@@ -68,9 +68,21 @@ class _Doctor1State extends State<Doctor1> {
                             width: 100,
                             child: Column(
                               children: [
+                                SizedBox(
+                                  height: 5,
+                                ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [],
+                                  children: [
+                                    Container(
+                                      height: 10,
+                                      width: 80,
+                                      decoration: BoxDecoration(
+                                          color: AppColors.grey100,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
