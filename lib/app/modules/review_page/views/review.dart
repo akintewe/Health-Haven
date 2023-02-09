@@ -67,7 +67,23 @@ class _ReviewsState extends State<Reviews> {
         SizedBox(
           height: 10,
         ),
-        ReviewCards(),
+        ReviewCards(
+          picture: 'assets/images/oldwoman1.jpg',
+          name: 'Jane Cooper',
+          date: 'December 20, 2021',
+          comment: 'The doctor is great!',
+          rate: '5',
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        ReviewCards(
+          picture: 'assets/images/woman1.jpg',
+          name: 'Arlene McCoy',
+          date: 'December 12, 2020',
+          comment: 'Really great service..',
+          rate: '4',
+        ),
       ]),
     );
   }
