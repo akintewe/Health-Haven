@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/review_page/widgets/review_cards.dart';
 import 'package:cancer_chat/app/modules/review_page/widgets/star_scroll_review_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,11 @@ class _ReviewsState extends State<Reviews> {
         SizedBox(
           height: 10,
         ),
-        StarScroll()
+        StarScroll(),
+        SizedBox(
+          height: 10,
+        ),
+        ReviewCards(),
       ]),
     );
   }
