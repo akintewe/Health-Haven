@@ -16,7 +16,7 @@ class _Doctor1State extends State<Doctor1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 90,
+        toolbarHeight: 100,
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
@@ -26,10 +26,56 @@ class _Doctor1State extends State<Doctor1> {
               color: AppColors.primary,
               size: 27,
             )),
-            title: Text('Dr. Jenny Wilson', style: GoogleFonts.actor(
-              color: Colors.black,
-            ),),
+        title: Text(
+          'Dr. Jenny Wilson',
+          style: GoogleFonts.roboto(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 27,
+          ),
+        ),
+        actions: [
+          Row(
+            children: [
+              Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                  color: AppColors.primary90,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.heart_broken,
+                    size: 30,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                  color: AppColors.primary90,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.share,
+                    size: 30,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+            ],
+          ),
+        ],
       ),
+      body: Column(),
     );
   }
 }
