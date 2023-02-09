@@ -75,7 +75,37 @@ class _Doctor1State extends State<Doctor1> {
           ),
         ],
       ),
-      body: Column(),
+      body: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 130,
+                width: MediaQuery.of(context).size.width * 0.92,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.grey100, width: 1),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                      child: Image.asset(
+                        'assets/images/woman.jpg',
+                        width: 86,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
