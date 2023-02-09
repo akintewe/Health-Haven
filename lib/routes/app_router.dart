@@ -40,7 +40,7 @@ final GoRouter _router =
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
-        return DashboardScreen(child: child);
+        return HomePage();
       },
       routes: [
         GoRoute(
