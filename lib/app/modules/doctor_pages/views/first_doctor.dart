@@ -46,11 +46,10 @@ class _Doctor1State extends State<Doctor1> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(
-                  child: Icon(
-                    Icons.heart_broken,
-                    size: 30,
-                  ),
-                ),
+                    child: Image.asset(
+                  'assets/icons/love.png',
+                  width: 30,
+                )),
               ),
               SizedBox(
                 width: 20,
@@ -65,6 +64,7 @@ class _Doctor1State extends State<Doctor1> {
                 child: Center(
                   child: Icon(
                     Icons.share,
+                    color: AppColors.primary800,
                     size: 30,
                   ),
                 ),
