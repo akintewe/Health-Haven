@@ -322,7 +322,47 @@ class _Doctor1State extends State<Doctor1> {
                 ),
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Working Time',
+                  style: GoogleFonts.roboto(
+                      color: AppColors.grey50,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Mon - Fri, 09.00 AM - 20.00 PM',
+                  style: GoogleFonts.roboto(
+                      color: AppColors.grey50,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 18),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
