@@ -149,6 +149,140 @@ class _Doctor1State extends State<Doctor1> {
               ),
             ],
           ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 150,
+                width: MediaQuery.of(context).size.width * 0.92,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.primary),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 40,
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: 10,
+                        ),
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundColor: AppColors.primary90,
+                          child: Center(
+                            child: Icon(
+                              Icons.people,
+                              size: 27,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          '5000+',
+                          style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.primary,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Patients',
+                          style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 25,
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: 10,
+                        ),
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundColor: AppColors.primary90,
+                          child: Center(
+                            child: Icon(
+                              Icons.person,
+                              size: 27,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          '15+',
+                          style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.primary,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Work Years',
+                          style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 25,
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: 10,
+                        ),
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundColor: AppColors.primary90,
+                          child: Center(
+                            child: Icon(
+                              Icons.chat,
+                              size: 27,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          '3800+',
+                          style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.primary,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Reviews',
+                          style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
