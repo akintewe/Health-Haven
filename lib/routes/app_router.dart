@@ -37,7 +37,7 @@ abstract class AppRouter {
 }
 
 final GoRouter _router =
-    GoRouter(initialLocation: _AppRoutePaths.doctor1, routes: [
+    GoRouter(initialLocation: _AppRoutePaths.splashscreen, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {

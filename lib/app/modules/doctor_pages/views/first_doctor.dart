@@ -3,6 +3,7 @@ import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Doctor1 extends StatefulWidget {
@@ -22,7 +23,9 @@ class _Doctor1State extends State<Doctor1> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/home-page');
+            },
             icon: Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary,
@@ -592,7 +595,7 @@ class _Doctor1State extends State<Doctor1> {
               height: 20,
             ),
             SizedBox(
-              height: 70,
+              height: 60,
               width: MediaQuery.of(context).size.width * 0.8,
               child: ElevatedButton(
                 onPressed: () {},

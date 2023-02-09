@@ -2,6 +2,7 @@ import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
@@ -349,43 +350,46 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Container(
-                    height: 280,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Color.fromARGB(255, 247, 246, 246),
-                            width: 3),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                'assets/images/person1.jpg',
-                                height: 200,
-                                fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () => context.go('/doctor-1'),
+                    child: Container(
+                      height: 280,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Color.fromARGB(255, 247, 246, 246),
+                              width: 3),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  'assets/images/person1.jpg',
+                                  height: 200,
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                          Positioned(
+                              bottom: 30,
+                              left: 30,
+                              child: Text(
+                                'Dr. Yusuf Rashmid',
+                                style: GoogleFonts.balooDa2(
+                                    fontWeight: FontWeight.bold, fontSize: 17),
                               )),
-                        ),
-                        Positioned(
-                            bottom: 30,
-                            left: 30,
-                            child: Text(
-                              'Dr. Yusuf Rashmid',
-                              style: GoogleFonts.balooDa2(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            )),
-                        Positioned(
-                            bottom: 6,
-                            left: 30,
-                            child: Text(
-                              'Cardio Specialist',
-                              style: GoogleFonts.b612Mono(
-                                  fontWeight: FontWeight.w500, fontSize: 13),
-                            ))
-                      ],
+                          Positioned(
+                              bottom: 6,
+                              left: 30,
+                              child: Text(
+                                'Cardio Specialist',
+                                style: GoogleFonts.b612Mono(
+                                    fontWeight: FontWeight.w500, fontSize: 13),
+                              ))
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
