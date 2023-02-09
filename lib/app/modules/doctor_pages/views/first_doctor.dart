@@ -415,6 +415,29 @@ class _Doctor1State extends State<Doctor1> {
               height: 20,
             ),
             DayScroll(),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 70,
+              width: MediaQuery.of(context).size.width * 0.8,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'Book Appointment',
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
