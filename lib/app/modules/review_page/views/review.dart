@@ -3,6 +3,7 @@ import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Reviews extends StatefulWidget {
@@ -21,7 +22,9 @@ class _ReviewsState extends State<Reviews> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/doctor-1');
+            },
             icon: Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary,
@@ -55,7 +58,12 @@ class _ReviewsState extends State<Reviews> {
           ),
         ],
       ),
-      body: Column(children: [StarScroll()]),
+      body: Column(children: [
+        SizedBox(
+          height: 10,
+        ),
+        StarScroll()
+      ]),
     );
   }
 }

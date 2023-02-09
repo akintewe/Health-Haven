@@ -82,7 +82,7 @@ class _ScrollWidgetState extends State<ScrollWidget> {
         setState(() {});
       },
       child: Container(
-        height: 40,
+        height: 45,
         width: 80,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
