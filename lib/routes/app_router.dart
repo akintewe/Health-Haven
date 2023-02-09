@@ -5,6 +5,7 @@ import 'package:cancer_chat/app/modules/forgot_password/views/input_pin.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:cancer_chat/app/modules/introduction_page/controller/page_controller.dart';
 import 'package:cancer_chat/app/modules/introduction_page/views/introduction_page.dart';
+import 'package:cancer_chat/app/modules/review_page/views/review.dart';
 import 'package:cancer_chat/app/modules/sign_in/views/sign_in.dart';
 import 'package:cancer_chat/app/modules/sign_up/views/sign_up.dart';
 import 'package:cancer_chat/app/modules/splashscreen.dart';
@@ -110,5 +111,11 @@ final GoRouter _router =
     name: Routes.doctor1,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: const Doctor1()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.reviews,
+    name: Routes.reviews,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: const Reviews()),
   )
 ]);
