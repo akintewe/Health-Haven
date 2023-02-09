@@ -64,7 +64,7 @@ class _Doctor1State extends State<Doctor1> {
                               topRight: Radius.circular(40))),
                       context: context,
                       builder: (context) => Container(
-                            height: 240,
+                            height: 280,
                             width: 100,
                             child: Column(
                               children: [
@@ -82,6 +82,144 @@ class _Doctor1State extends State<Doctor1> {
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                     ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Share',
+                                      style: GoogleFonts.roboto(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 16),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Image.asset(
+                                      'assets/icons/whatsapp.png',
+                                      width: 60,
+                                    ),
+                                    Image.asset(
+                                      'assets/icons/twitter.png',
+                                      width: 60,
+                                    ),
+                                    Image.asset(
+                                      'assets/icons/facebook.png',
+                                      width: 60,
+                                    ),
+                                    Image.asset(
+                                      'assets/icons/instagram.png',
+                                      width: 60,
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text(
+                                      'Whatsapp',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Twitter',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Facebook',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Instagram',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 40,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Image.asset(
+                                      'assets/icons/gmail.png',
+                                      width: 60,
+                                    ),
+                                    Image.asset(
+                                      'assets/icons/tiktok.png',
+                                      width: 60,
+                                    ),
+                                    Image.asset(
+                                      'assets/icons/messages.png',
+                                      width: 60,
+                                    ),
+                                    Image.asset(
+                                      'assets/icons/linkedin.png',
+                                      width: 60,
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text(
+                                      'Gmail',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Text(
+                                      'TikTok',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Messages',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Text(
+                                      'LinkedIn',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                      ),
+                                    )
                                   ],
                                 ),
                               ],
