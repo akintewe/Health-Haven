@@ -84,7 +84,8 @@ class _Doctor1State extends State<Doctor1> {
                 height: 130,
                 width: MediaQuery.of(context).size.width * 0.92,
                 decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.grey100, width: 1),
+                  border: Border.all(
+                      color: Color.fromARGB(250, 227, 227, 227), width: 1),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
@@ -98,7 +99,22 @@ class _Doctor1State extends State<Doctor1> {
                         'assets/images/woman.jpg',
                         width: 86,
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Dr. Jenny Wilson',
+                          style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold, fontSize: 25),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
