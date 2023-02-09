@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/review_page/widgets/star_scroll_review_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -29,7 +30,7 @@ class _ReviewsState extends State<Reviews> {
         title: Text(
           'Reviews',
           style: GoogleFonts.roboto(
-              fontWeight: FontWeight.bold, fontSize: 30, color: Colors.black),
+              fontWeight: FontWeight.bold, fontSize: 34, color: Colors.black),
         ),
         actions: [
           Row(
@@ -54,6 +55,7 @@ class _ReviewsState extends State<Reviews> {
           ),
         ],
       ),
+      body: Column(children: [StarScroll()]),
     );
   }
 }
