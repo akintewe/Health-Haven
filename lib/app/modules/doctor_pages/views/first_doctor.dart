@@ -283,6 +283,13 @@ class _Doctor1State extends State<Doctor1> {
               ),
             ],
           ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'About Doctor',
+              style: GoogleFonts.roboto(color: AppColors.grey50, ),
+            ),
+          )
         ],
       ),
     );
