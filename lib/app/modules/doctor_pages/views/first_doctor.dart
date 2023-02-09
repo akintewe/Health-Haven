@@ -13,6 +13,7 @@ class Doctor1 extends StatefulWidget {
 }
 
 class _Doctor1State extends State<Doctor1> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,18 +55,40 @@ class _Doctor1State extends State<Doctor1> {
               SizedBox(
                 width: 20,
               ),
-              Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                  color: AppColors.primary90,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Icon(
-                    Icons.share,
-                    color: AppColors.primary800,
-                    size: 30,
+              GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(40),
+                              topRight: Radius.circular(40))),
+                      context: context,
+                      builder: (context) => Container(
+                            height: 240,
+                            width: 100,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [],
+                                ),
+                              ],
+                            ),
+                          ));
+                },
+                child: Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: AppColors.primary90,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.share,
+                      color: AppColors.primary800,
+                      size: 30,
+                    ),
                   ),
                 ),
               ),
