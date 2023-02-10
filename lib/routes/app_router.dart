@@ -1,3 +1,5 @@
+import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
+import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
 import 'package:cancer_chat/app/modules/emptypage.dart';
 import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.dart';
 import 'package:cancer_chat/app/modules/forgot_password/views/input_pin.dart';
@@ -9,6 +11,8 @@ import 'package:cancer_chat/app/modules/sign_up/views/sign_up.dart';
 import 'package:cancer_chat/app/modules/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../app/modules/Profile/ProfilePage.dart';
 
 import '../app/modules/dashboard_screen/view/dashboard.dart';
 import '../core/utils/helpers/fade_animation.dart';
@@ -37,7 +41,7 @@ abstract class AppRouter {
 
 final GoRouter _router =
 // change the value of this initial location to the name of your allocated screen
-    GoRouter(initialLocation: _AppRoutePaths.signUp, routes: [
+    GoRouter(initialLocation: _AppRoutePaths.ProfilePage, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
@@ -104,5 +108,14 @@ final GoRouter _router =
     name: Routes.homePage,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: const HomePage()),
-  )
+  ),
+  GoRoute(
+    path: _AppRoutePaths.ProfilePage,
+    name: Routes.ProfilePage,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+      context: context,
+      state: state,
+      child:  ProfilePage(),
+    ),
+  ),
 ]);
