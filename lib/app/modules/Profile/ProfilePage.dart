@@ -192,25 +192,29 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
         
 
-                 Container(
-                     height: 40,
-                     width: 350,
-                     color: Colors.amber,
+                 SizedBox(
+                  height: 40,
+                   width: 340,
+                   
                    child: FormField<String>(
                            builder: (FormFieldState<String> state) {
                      
                       return      InputDecorator(
                                decoration: InputDecoration(
-                            
-                                 
+                              
+                            contentPadding:EdgeInsets.all(3) ,
+                                
                     labelStyle: textStyle,
-                    errorStyle: TextStyle(color: Color.fromARGB(255, 58, 35, 35), fontSize: 40.0),
+                    errorStyle: TextStyle(color: Colors.white, fontSize: 14.0),
                     hintText:'gender',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(40),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(90),
+                       borderSide:BorderSide(width: 50,),
+                       
                     )),
                                isEmpty: _currentSelectedValue == '',
                                child: DropdownButtonHideUnderline(
                                  child: DropdownButton<String>(
+                                  focusColor: Colors.white,
                     value: _currentSelectedValue,
                     isDense: true,
                     onChanged: (newValue) {
@@ -221,6 +225,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     },
                     items: _currencies.map((String value) {
                       return DropdownMenuItem<String>(
+                        
                         value: value,
                         child: Text(value),
                       );
