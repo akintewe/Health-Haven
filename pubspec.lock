@@ -45,10 +45,12 @@ packages:
     dependency: transitive
     description:
       name: collection
+
       sha256: "4a07be6cb69c84d677a6c3096fcf960cc3285a8330b4603e0d463d15d9bd934c"
       url: "https://pub.dev"
     source: hosted
     version: "1.17.1"
+
   convert:
     dependency: transitive
     description:
@@ -140,7 +142,9 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
+
       sha256: "54ecc1cd90c6948539c8cae3c11d7cb5010ad9b14533e8f49d060839d742be12"
+
       url: "https://pub.dev"
     source: hosted
     version: "6.0.4"
@@ -148,7 +152,9 @@ packages:
     dependency: "direct main"
     description:
       name: google_fonts
+
       sha256: "927573f2e8a8d65c17931e21918ad0ab0666b1b636537de7c4932bdb487b190f"
+
       url: "https://pub.dev"
     source: hosted
     version: "4.0.3"
@@ -188,10 +194,12 @@ packages:
     dependency: transitive
     description:
       name: js
+
       sha256: f2c445dce49627136094980615a031419f7f3eb393237e4ecd97ac15dea343f3
       url: "https://pub.dev"
     source: hosted
     version: "0.6.7"
+
   lints:
     dependency: transitive
     description:
@@ -220,10 +228,12 @@ packages:
     dependency: transitive
     description:
       name: matcher
+
       sha256: c94db23593b89766cda57aab9ac311e3616cf87c6fa4e9749df032f66f30dcb8
       url: "https://pub.dev"
     source: hosted
     version: "0.12.14"
+
   material_color_utilities:
     dependency: transitive
     description:
@@ -244,7 +254,9 @@ packages:
     dependency: transitive
     description:
       name: path
+
       sha256: "8829d8a55c13fc0e37127c29fedf290c102f4e40ae94ada574091fe0ff96c917"
+
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
@@ -336,6 +348,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+  remixicon:
+    dependency: "direct main"
+    description:
+      name: remixicon
+      sha256: "9bef40aeea97e61ba78eadbaecdc629af7e8d30a77e536d37317aa78d491eaee"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   searchbar_animation:
     dependency: "direct main"
     description:
@@ -409,10 +429,12 @@ packages:
     dependency: transitive
     description:
       name: test_api
+
       sha256: "6182294da5abf431177fccc1ee02401f6df30f766bc6130a0852c6b6d7ee6b2d"
       url: "https://pub.dev"
     source: hosted
     version: "0.4.18"
+
   typed_data:
     dependency: transitive
     description:
