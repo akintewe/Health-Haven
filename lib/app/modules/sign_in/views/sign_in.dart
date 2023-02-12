@@ -29,7 +29,7 @@ class _SignInState extends State<SignIn> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/app_logo.png',
+                  'assets/images/app-logo.png',
                   height: 200,
                   width: 200,
                 ),
