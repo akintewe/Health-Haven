@@ -46,6 +46,7 @@ dependencies:
   searchbar_animation: ^0.0.4
   google_nav_bar: ^5.0.6
   get: ^4.6.5
+  remixicon: ^1.0.0
  
 
 dev_dependencies:

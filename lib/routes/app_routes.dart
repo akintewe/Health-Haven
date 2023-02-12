@@ -19,5 +19,8 @@ abstract class Routes {
   static const String pinInput = 'Pin Input';
   static const String splashScreen = 'SplashScreen';
   static const String doctor1 = 'Doctor 1';
+  static const String notificationView = 'notificationView';
+  static const String favouritesView = 'favouritesView';
   static const String reviews = 'Reviews';
+
 }

@@ -1,10 +1,11 @@
 import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
 import 'package:cancer_chat/app/modules/emptypage.dart';
+import 'package:cancer_chat/app/modules/favouriates/views/favourites_view.dart';
 import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.dart';
 import 'package:cancer_chat/app/modules/forgot_password/views/input_pin.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:cancer_chat/app/modules/introduction_page/controller/page_controller.dart';
-import 'package:cancer_chat/app/modules/introduction_page/views/introduction_page.dart';
+import 'package:cancer_chat/app/modules/notifications_view/views/notification.dart';
 import 'package:cancer_chat/app/modules/review_page/views/review.dart';
 import 'package:cancer_chat/app/modules/sign_in/views/sign_in.dart';
 import 'package:cancer_chat/app/modules/sign_up/views/sign_up.dart';
@@ -15,6 +16,7 @@ import 'package:go_router/go_router.dart';
 import '../app/modules/dashboard_screen/view/dashboard.dart';
 import '../core/utils/helpers/fade_animation.dart';
 import 'app_routes.dart';
+
 part 'app_route_paths.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -113,9 +115,27 @@ final GoRouter _router =
         context: context, state: state, child: const Doctor1()),
   ),
   GoRoute(
+    path: _AppRoutePaths.notificationView,
+    name: Routes.notificationView,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: const NotificationView()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.favouritesView,
+    name: Routes.favouritesView,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: const FavouritesView()),
+  ),
+  GoRoute(
     path: _AppRoutePaths.reviews,
     name: Routes.reviews,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: const Reviews()),
-  )
+  ),
+  // GoRoute(
+  //   path: _AppRoutePaths.notifications,
+  //   name: Routes.notifications,
+  //   pageBuilder: (context, state) => buildPageWithDefaultTransition(
+  //       context: context, state: state, child: const Doctor2()),
+  // ),
 ]);
