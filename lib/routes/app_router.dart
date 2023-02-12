@@ -78,7 +78,7 @@ final GoRouter _router =
     pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
       context: context,
       state: state,
-      child: const SignUp(),
+      child: const SignUp(), // as you caalready created the go route path for your screen, all you have to do is 
     ),
   ),
   GoRoute(
@@ -87,7 +87,7 @@ final GoRouter _router =
     pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
       context: context,
       state: state,
-      child: const SignIn(),
+      child:  SignIn(),
     ),
   ),
   GoRoute(
