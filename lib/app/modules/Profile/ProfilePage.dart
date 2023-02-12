@@ -214,7 +214,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                isEmpty: _currentSelectedValue == '',
                                child: DropdownButtonHideUnderline(
                                  child: DropdownButton<String>(
-                                  focusColor: Colors.white,
+                                  focusColor: Color.fromARGB(255, 252, 246, 246),
                     value: _currentSelectedValue,
                     isDense: true,
                     onChanged: (newValue) {
