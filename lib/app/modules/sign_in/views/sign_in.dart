@@ -2,6 +2,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -178,6 +179,7 @@ class _SignInState extends State<SignIn> {
                         print("sucess");
                         emailController.clear();
                         passController.clear();
+                        context.go('/home-page');
                       }
                     },
                     minWidth: 320,
@@ -319,9 +321,11 @@ class _SignInState extends State<SignIn> {
                             fontWeight: FontWeight.w300, fontSize: 14),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go('/sign-up');
+                        },
                         child: Text(
-                          'Sign in',
+                          'Sign Up',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,

@@ -40,7 +40,7 @@ abstract class AppRouter {
 }
 
 final GoRouter _router =
-    GoRouter(initialLocation: _AppRoutePaths.signIn, routes: [
+    GoRouter(initialLocation: _AppRoutePaths.splashscreen, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
@@ -78,7 +78,8 @@ final GoRouter _router =
     pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
       context: context,
       state: state,
-      child: const SignUp(), // as you caalready created the go route path for your screen, all you have to do is 
+      child:
+          const SignUp(), // as you caalready created the go route path for your screen, all you have to do is
     ),
   ),
   GoRoute(
@@ -87,7 +88,7 @@ final GoRouter _router =
     pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
       context: context,
       state: state,
-      child:  SignIn(),
+      child: SignIn(),
     ),
   ),
   GoRoute(

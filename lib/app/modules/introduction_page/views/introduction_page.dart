@@ -1,6 +1,7 @@
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:cancer_chat/core/utils/functions/size_fit.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -453,7 +454,9 @@ class _IntroPage3State extends State<IntroPage3> {
                                       shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   )),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context.go('/sign-in');
+                                  },
                                   child: Center(
                                     child: Text(
                                       'Get Started',
