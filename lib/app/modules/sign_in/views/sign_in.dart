@@ -31,8 +31,8 @@ class _SignInState extends State<SignIn> {
               children: [
                 Image.asset(
                   'assets/images/app-logo.png',
-                  height: 200,
-                  width: 200,
+                  height: 150,
+                  width: 150,
                 ),
                 SizedBox(
                   height: 20,
