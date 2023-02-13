@@ -29,7 +29,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
           onDestinationSelected: (index)=>setState(() 
           =>  this.index=index
           ),
-            backgroundColor: Color.fromARGB(255, 165, 115, 115),
+            backgroundColor: Colors.white,
             height: 100,
             destinations: [
               NavigationDestination(
