@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+
+import '../../../core/theme/colors.dart';
 
 class ProfileSettings extends StatefulWidget {
   const ProfileSettings({super.key});
@@ -13,106 +16,37 @@ class _ProfileSettingsState extends State<ProfileSettings> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      bottomNavigationBar: Container(
-      height: 100,
-
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(60),
-            topRight: Radius.circular(60)
-          )
+      bottomNavigationBar: 
+    
+      GNav(
+        
+        
+        
+          gap: 6,
           
-        ),
-        child: NavigationBar(
-          selectedIndex: index,
-          onDestinationSelected: (index)=>setState(() 
-          =>  this.index=index
-          ),
-            backgroundColor: Colors.white,
-            height: 100,
-            destinations: [
-              NavigationDestination(
-                icon: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Color.fromARGB(255, 218, 235, 250),
-                    ),
-                    height: 40,
-                    width: 40,
-                    child: Icon(
-                      Icons.home,
-                      color: Colors.blue[800],
-                    )),
-                //selectedIcon: Icon( Icons.home,),
-                label: '',
-              ),
-            
-              NavigationDestination(
-                icon: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Color.fromARGB(255, 218, 235, 250),
-                    ),
-                    height: 40,
-                    width: 40,
-                    child: Icon(
-                      Icons.calendar_month,
-                      color: Colors.blue[800],
-                    )),
-                //selectedIcon: Icon( Icons.home,color: Colors.blue[800],),
-                label: '',
-              ),
-              NavigationDestination(
-                icon: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Color.fromARGB(255, 218, 235, 250),
-                    ),
-                    height: 40,
-                    width: 40,
-                    child: Icon(
-                      Icons.list,
-                      color: Colors.blue[800],
-                    )),
-                //selectedIcon: Icon( Icons.home,color: Colors.blue[800],),
-                label: '',
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right:15),
-                child: NavigationDestination(
-                  icon: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Color.fromARGB(255, 218, 235, 250),
-                      ),
-                      height: 40,
-                      width: 100,
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Icon(
-                              Icons.person_3_sharp,
-                              color: Colors.blue[800],
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          Text('Profile',
-                          style: TextStyle(
-                            color: Colors.blue[800],
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          )
-                        ],
-                      )),
-                  //selectedIcon: Icon( Icons.home,color: Colors.blue[800],),
-                  label: '',
-                ),
-              ),
-            ]),
-      ),
+          activeColor: AppColors.primary600,
+          color: AppColors.primary600,
+          tabBackgroundColor: AppColors.primary100,
+          padding: EdgeInsets.all(18),
+          tabBorderRadius: 15,
+          tabs: [
+            GButton(
+              icon: Icons.home,
+              text: 'Home',
+            ),
+            GButton(
+              icon: Icons.calendar_month,
+              text: 'Schedule',
+            ),
+            GButton(
+              icon: Icons.list,
+              text: 'List',
+            ),
+            GButton(
+              icon: Icons.person,
+              text: 'Profile',
+            ),
+          ]),
       backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: SafeArea(
