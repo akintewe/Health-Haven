@@ -23,5 +23,8 @@ abstract class _AppRoutePaths {
   static const String doctor1 = '/doctor-1';
   static const String notificationView = '/notificationView';
   static const String favouritesView = '/favouritesView';
+  static const String searchPage = '/searchPage';
+  static const String specialistDoctor = '/specialistDoctor';
+  static const String topDoctor = '/topDoctors';
   static const String reviews = '/reviews';
 }
