@@ -6,6 +6,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -136,6 +137,12 @@ class _HomePageState extends State<HomePage> {
               onFieldSubmitted: (String value) {
                 debugPrint('onFieldSubmitted value $value');
               },
+              onPressButton: (hello) {
+                context.push("/searchPage");
+              },
+              onChanged: () {
+                
+              },
             ),
             const SizedBox(
               height: 30,
@@ -153,10 +160,15 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   width: 20,
                 ),
-                const Text(
-                  'See all',
-                  style: TextStyle(
-                      color: AppColors.primary400, fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {
+                    context.push('/specialistDoctor');
+                  },
+                  child: const Text(
+                    'See all',
+                    style: TextStyle(
+                        color: AppColors.primary400, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
@@ -365,10 +377,15 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   width: 20,
                 ),
-                const Text(
-                  'See all',
-                  style: TextStyle(
-                      color: AppColors.primary400, fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {
+                    context.push("/topDoctors");
+                  },
+                  child: const Text(
+                    'See all',
+                    style: TextStyle(
+                        color: AppColors.primary400, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
