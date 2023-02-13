@@ -290,7 +290,9 @@ class _Doctor1State extends State<Doctor1> {
                           Text(
                             'Dr. Jenny Wilson',
                             style: GoogleFonts.roboto(
-                                fontWeight: FontWeight.bold, fontSize: 25),
+                                fontWeight: FontWeight.bold,
+                                fontSize:
+                                    MediaQuery.of(context).size.height * 0.04),
                           ),
                           SizedBox(
                             height: 10,
@@ -319,7 +321,8 @@ class _Doctor1State extends State<Doctor1> {
                             style: GoogleFonts.roboto(
                                 color: AppColors.grey,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 16),
+                                fontSize:
+                                    MediaQuery.of(context).size.height * 0.02),
                           )
                         ],
                       ),
@@ -344,7 +347,7 @@ class _Doctor1State extends State<Doctor1> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 40,
+                        width: 20,
                       ),
                       Column(
                         children: [
@@ -492,12 +495,14 @@ class _Doctor1State extends State<Doctor1> {
                   SizedBox(
                     width: 20,
                   ),
-                  Text(
-                    'Dr. Jenny Wilson is the top most Cardiologist specialist\nin New-Way Hospital at London. She achieved several\nawards for her wonderful contribution in the medical\nfield. She is available for private consultation.',
-                    style: GoogleFonts.roboto(
-                        color: AppColors.grey50,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15),
+                  Flexible(
+                    child: Text(
+                      'Dr. Jenny Wilson is the top most Cardiologist specialist\nin New-Way Hospital at London. She achieved several\nawards for her wonderful contribution in the medical\nfield. She is available for private consultation.',
+                      style: GoogleFonts.roboto(
+                          color: AppColors.grey50,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
+                    ),
                   ),
                 ],
               ),
@@ -556,7 +561,7 @@ class _Doctor1State extends State<Doctor1> {
                         fontWeight: FontWeight.bold,
                         fontSize: 20)),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.5,
+                  width: MediaQuery.of(context).size.width * 0.4,
                 ),
                 GestureDetector(
                   onTap: () {
