@@ -6,7 +6,6 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -77,10 +76,10 @@ class _HomePageState extends State<HomePage> {
           Row(
             children: [
               InkWell(
-               onTap: () {
-                context.go("/notificationView");
-                // context.go("/notifications"),
-               },
+                onTap: () {
+                  context.go("/notificationView");
+                  // context.go("/notifications"),
+                },
                 child: Container(
                   height: 40,
                   width: 40,
@@ -140,9 +139,7 @@ class _HomePageState extends State<HomePage> {
               onPressButton: (hello) {
                 context.push("/searchPage");
               },
-              onChanged: () {
-                
-              },
+              onChanged: () {},
             ),
             const SizedBox(
               height: 30,
@@ -167,7 +164,8 @@ class _HomePageState extends State<HomePage> {
                   child: const Text(
                     'See all',
                     style: TextStyle(
-                        color: AppColors.primary400, fontWeight: FontWeight.bold),
+                        color: AppColors.primary400,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
@@ -384,7 +382,8 @@ class _HomePageState extends State<HomePage> {
                   child: const Text(
                     'See all',
                     style: TextStyle(
-                        color: AppColors.primary400, fontWeight: FontWeight.bold),
+                        color: AppColors.primary400,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
