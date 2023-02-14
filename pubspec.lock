@@ -40,11 +40,9 @@ packages:
     dependency: transitive
     description:
       name: collection
-      sha256: cfc915e6923fe5ce6e153b0723c753045de46de1b4d63771530504004a45fae0
-      url: "https://pub.dev"
+      url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.17.0"
-
+    version: "1.16.0"
   convert:
     dependency: transitive
     description:
@@ -127,18 +125,14 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "54ecc1cd90c6948539c8cae3c11d7cb5010ad9b14533e8f49d060839d742be12"
-      url: "https://pub.dev"
-
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.6"
   google_fonts:
     dependency: "direct main"
     description:
       name: google_fonts
-      sha256: "927573f2e8a8d65c17931e21918ad0ab0666b1b636537de7c4932bdb487b190f"
-      url: "https://pub.dev"
-
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.3"
   google_nav_bar:
@@ -173,11 +167,9 @@ packages:
     dependency: transitive
     description:
       name: js
-      sha256: "5528c2f391ededb7775ec1daa69e65a2d61276f7552de2b5f7b8d34ee9fd4ab7"
-      url: "https://pub.dev"
+      url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.5"
-
+    version: "0.6.4"
   lints:
     dependency: transitive
     description:
@@ -203,11 +195,9 @@ packages:
     dependency: transitive
     description:
       name: matcher
-      sha256: "16db949ceee371e9b99d22f88fa3a73c4e59fd0afed0bd25fc336eb76c198b72"
-      url: "https://pub.dev"
+      url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.13"
-
+    version: "0.12.12"
   material_color_utilities:
     dependency: transitive
     description:
@@ -226,9 +216,7 @@ packages:
     dependency: transitive
     description:
       name: path
-      sha256: db9d4f58c908a4ba5953fcee2ae317c94889433e5024c27ce74a37f94267945b
-      url: "https://pub.dev"
-
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.2"
   path_provider:
@@ -380,10 +368,9 @@ packages:
     dependency: transitive
     description:
       name: test_api
-      sha256: ad540f65f92caa91bf21dfc8ffb8c589d6e4dc0c2267818b4cc2792857706206
-      url: "https://pub.dev"
+      url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.16"
+    version: "0.4.12"
   typed_data:
     dependency: transitive
     description:

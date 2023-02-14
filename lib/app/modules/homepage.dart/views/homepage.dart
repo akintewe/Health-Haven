@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          'DoctorQ',
+          'Health-H',
           style: GoogleFonts.actor(
               color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
         ),
@@ -276,7 +276,7 @@ class _HomePageState extends State<HomePage> {
                     width: 160,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 193, 210, 91)),
+                        color: Color.fromARGB(255, 193, 157, 223)),
                     child: Column(
                       children: [
                         const SizedBox(
