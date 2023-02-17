@@ -608,7 +608,9 @@ class _Doctor1State extends State<Doctor1> {
               height: 60,
               width: MediaQuery.of(context).size.width * 0.8,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.go('/appointment1');
+                },
                 child: Text(
                   'Book Appointment',
                   style: GoogleFonts.roboto(

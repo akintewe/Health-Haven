@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
 import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
 import 'package:cancer_chat/app/modules/emptypage.dart';
 import 'package:cancer_chat/app/modules/favouriates/views/favourites_view.dart';
@@ -154,6 +155,12 @@ final GoRouter _router =
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: const TopDoctors()),
   ),
+  GoRoute(
+    path: _AppRoutePaths.bookAppointment1,
+    name: Routes.bookAppointment1,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: BookAppointment1()),
+  )
   // GoRoute(
   //   path: _AppRoutePaths.notifications,
   //   name: Routes.notifications,

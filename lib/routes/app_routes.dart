@@ -25,5 +25,5 @@ abstract class Routes {
   static const String specialistDoctor = 'specialistDoctor';
   static const String topDoctor = 'topDoctor';
   static const String reviews = 'Reviews';
-
+  static const String bookAppointment1 = 'appointment1';
 }

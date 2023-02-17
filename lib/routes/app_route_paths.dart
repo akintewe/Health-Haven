@@ -27,4 +27,5 @@ abstract class _AppRoutePaths {
   static const String specialistDoctor = '/specialistDoctor';
   static const String topDoctor = '/topDoctors';
   static const String reviews = '/reviews';
+  static const String bookAppointment1 = '/appointment1';
 }
