@@ -10,7 +10,13 @@ class ReviewCards extends StatefulWidget {
   final String comment;
   final String rate;
   final String picture;
-  const ReviewCards({super.key, required this.name, required this.date, required this.comment, required this.rate, required this.picture});
+  const ReviewCards(
+      {super.key,
+      required this.name,
+      required this.date,
+      required this.comment,
+      required this.rate,
+      required this.picture});
 
   @override
   State<ReviewCards> createState() => _ReviewCardsState();
@@ -33,10 +39,7 @@ class _ReviewCardsState extends State<ReviewCards> {
               width: 10,
             ),
             CircleAvatar(
-                radius: 40,
-                backgroundImage: AssetImage(
-                  widget.picture
-                )),
+                radius: 35, backgroundImage: AssetImage(widget.picture)),
             SizedBox(
               width: 18,
             ),
@@ -66,7 +69,7 @@ class _ReviewCardsState extends State<ReviewCards> {
                 Text(
                   widget.comment,
                   style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.w600, fontSize: 17),
+                      fontWeight: FontWeight.w600, fontSize: 16),
                 )
               ],
             ),
@@ -99,7 +102,7 @@ class _ReviewCardsState extends State<ReviewCards> {
                           width: 4,
                         ),
                         Text(
-                         widget.rate,
+                          widget.rate,
                           style: GoogleFonts.roboto(
                               color: Colors.white, fontSize: 19),
                         )
