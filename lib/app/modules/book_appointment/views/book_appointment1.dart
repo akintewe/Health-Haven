@@ -76,6 +76,7 @@ class _BookAppointment1State extends State<BookAppointment1> {
               children: [
                 TimeWidget(time: '09:00AM'),
                 TimeWidget(time: '10:00AM'),
+                TimeWidget(time: '11:00AM'),
               ],
             ),
           ],
