@@ -1,4 +1,5 @@
 import 'package:cancer_chat/app/modules/book_appointment/widgets/morning_evening.dart';
+import 'package:cancer_chat/app/modules/book_appointment/widgets/time_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -66,7 +67,14 @@ class _BookAppointment1State extends State<BookAppointment1> {
             SizedBox(
               height: 25,
             ),
-            bookingTitle(title: 'Choose the Hour')
+            bookingTitle(title: 'Choose the Hour'),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [TimeWidget(time: '09:00AM')],
+            ),
           ],
         ),
       ),
