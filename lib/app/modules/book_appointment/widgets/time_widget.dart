@@ -24,7 +24,7 @@ class _TimeWidgetState extends State<TimeWidget> {
       },
       child: Container(
         height: 50,
-        width: MediaQuery.of(context).size.width * 0.45,
+        width: MediaQuery.of(context).size.width * 0.3,
         decoration: BoxDecoration(
             color: isSelected ? AppColors.primary : AppColors.white,
             borderRadius: BorderRadius.circular(80),
