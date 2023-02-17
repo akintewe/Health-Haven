@@ -18,28 +18,35 @@ class _MorningEveningState extends State<MorningEvening> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: MediaQuery.of(context).size.width * 0.4,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(80),
-          border: Border.all(color: AppColors.primary, width: 3)),
-      child: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Icon(
-              widget.timeIcon,
-              color: AppColors.primary,
-            ),
-            Text(
-              widget.time,
-              style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.primary,
-                  fontSize: 19),
-            )
-          ],
+    return GestureDetector(
+      onTap: () {
+        isSelected = !isSelected;
+        setState(() {});
+      },
+      child: Container(
+        height: 50,
+        width: MediaQuery.of(context).size.width * 0.4,
+        decoration: BoxDecoration(
+            color: isSelected ? AppColors.primary : AppColors.white,
+            borderRadius: BorderRadius.circular(80),
+            border: Border.all(color: AppColors.primary, width: 3)),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(
+                widget.timeIcon,
+                color: isSelected ? AppColors.white : AppColors.primary,
+              ),
+              Text(
+                widget.time,
+                style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.bold,
+                    color: isSelected ? AppColors.white : AppColors.primary,
+                    fontSize: 19),
+              )
+            ],
+          ),
         ),
       ),
     );
