@@ -51,8 +51,14 @@ class _BookAppointment1State extends State<BookAppointment1> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              MorningEvening(),
-              MorningEvening(),
+              MorningEvening(
+                timeIcon: Icons.sunny,
+                time: 'Morning',
+              ),
+              MorningEvening(
+                timeIcon: Icons.lightbulb,
+                time: 'Evening',
+              ),
             ],
           ),
         ],
