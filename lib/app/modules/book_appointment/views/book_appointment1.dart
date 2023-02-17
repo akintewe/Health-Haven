@@ -79,10 +79,13 @@ class _BookAppointment1State extends State<BookAppointment1> {
                 TimeWidget(time: '11:00AM'),
               ],
             ),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TimeWidget(time: '09:00AM'),
+                TimeWidget(time: '13:00AM'),
                 TimeWidget(time: '10:00AM'),
                 TimeWidget(time: '11:00AM'),
               ],
