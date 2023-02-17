@@ -86,8 +86,8 @@ class _BookAppointment1State extends State<BookAppointment1> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TimeWidget(time: '13:00AM'),
-                TimeWidget(time: '10:00AM'),
-                TimeWidget(time: '11:00AM'),
+                TimeWidget(time: '14:00AM'),
+                TimeWidget(time: '15:00AM'),
               ],
             ),
           ],
