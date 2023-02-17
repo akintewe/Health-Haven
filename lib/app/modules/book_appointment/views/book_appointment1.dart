@@ -1,8 +1,11 @@
+import 'package:cancer_chat/app/modules/book_appointment/widgets/morning_evening.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../widgets/booking_title.dart';
 
 class BookAppointment1 extends StatefulWidget {
   const BookAppointment1({super.key});
@@ -34,7 +37,26 @@ class _BookAppointment1State extends State<BookAppointment1> {
           ),
         ),
       ),
-      body: ,
+      body: Column(
+        children: [
+          SizedBox(
+            height: 20,
+          ),
+          bookingTitle(
+            title: 'Monday, March 25 2022',
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              MorningEvening(),
+              MorningEvening(),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
