@@ -1,11 +1,16 @@
+import 'package:cancer_chat/app/modules/Profile/Notification.dart';
+import 'package:cancer_chat/app/modules/Profile/SecurityPage.dart';
+import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import '../../../core/theme/colors.dart';
+import 'HelpPage.dart';
 
 class ProfileSettings extends StatefulWidget {
+  
   const ProfileSettings({super.key});
-
+     
   @override
   State<ProfileSettings> createState() => _ProfileSettingsState();
 }
@@ -15,6 +20,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
   @override
   Widget build(BuildContext context) {
     
+   
     return Scaffold(
       bottomNavigationBar: 
     
@@ -52,7 +58,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
         child: SafeArea(
           child: Column(children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20, top: 30),
+              padding: const EdgeInsets.only(left: 20, top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -93,7 +99,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 12,
             ),
             Row(
               children: [
@@ -194,11 +200,25 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
-                  child: Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.blue[800],
+                  child: MaterialButton(
+                   minWidth: 6,
+                    child: Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.blue[800],
+                     
+                    ),
+                    onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NotifiPage(
+                               
+                                )));
+                    },
                   ),
+                  
                 ),
+                
               ],
             ),
             SizedBox(
@@ -239,9 +259,20 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
-                  child: Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.blue[800],
+                  child: MaterialButton(
+                     minWidth: 6,
+                     onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SecurityPage(
+                               
+                                )));
+                    },
+                    child: Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.blue[800],
+                    ),
                   ),
                 ),
               ],
@@ -329,9 +360,20 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
-                  child: Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.blue[800],
+                  child: MaterialButton(
+                     minWidth: 6,
+                     onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HelpPage(
+                               
+                                )));
+                    },
+                    child: Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.blue[800],
+                    ),
                   ),
                 ),
               ],

@@ -125,6 +125,7 @@ final GoRouter _router =
     pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
       context: context,
       state: state,
+      // ignore: prefer_const_constructors
       child:   ProfileSettings(),
     ),
     ),
