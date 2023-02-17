@@ -37,31 +37,38 @@ class _BookAppointment1State extends State<BookAppointment1> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          bookingTitle(
-            title: 'Monday, March 25 2022',
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              MorningEvening(
-                timeIcon: Icons.sunny,
-                time: 'Morning',
-              ),
-              MorningEvening(
-                timeIcon: Icons.lightbulb,
-                time: 'Evening',
-              ),
-            ],
-          ),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            bookingTitle(
+              title: 'Monday, March 25 2022',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                MorningEvening(
+                  timeIcon: Icons.sunny,
+                  time: 'Morning',
+                ),
+                MorningEvening(
+                  timeIcon: Icons.lightbulb,
+                  time: 'Evening',
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            bookingTitle(title: 'Choose the Hour')
+          ],
+        ),
       ),
     );
   }

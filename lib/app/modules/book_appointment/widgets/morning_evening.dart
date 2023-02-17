@@ -25,7 +25,7 @@ class _MorningEveningState extends State<MorningEvening> {
       },
       child: Container(
         height: 50,
-        width: MediaQuery.of(context).size.width * 0.4,
+        width: MediaQuery.of(context).size.width * 0.45,
         decoration: BoxDecoration(
             color: isSelected ? AppColors.primary : AppColors.white,
             borderRadius: BorderRadius.circular(80),
