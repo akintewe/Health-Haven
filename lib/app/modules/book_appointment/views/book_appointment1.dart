@@ -101,6 +101,10 @@ class _BookAppointment1State extends State<BookAppointment1> {
                 TimeWidget(time: '19:00AM'),
               ],
             ),
+            SizedBox(
+              height: 15,
+            ),
+            bookingTitle(title: 'Fee information'),
           ],
         ),
       ),
