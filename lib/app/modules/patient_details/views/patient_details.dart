@@ -3,6 +3,7 @@ import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PatientDetails extends StatefulWidget {
@@ -21,7 +22,9 @@ class _PatientDetailsState extends State<PatientDetails> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/appointment1');
+            },
             icon: Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary,
