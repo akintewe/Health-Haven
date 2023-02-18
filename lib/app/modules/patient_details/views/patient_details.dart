@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/patient_details/widgets/patient_detail_title_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -33,6 +34,9 @@ class _PatientDetailsState extends State<PatientDetails> {
             fontSize: 30,
           ),
         ),
+      ),
+      body: Column(
+        children: [PatientTitleWidget(title: 'Full Name \*')],
       ),
     );
   }
