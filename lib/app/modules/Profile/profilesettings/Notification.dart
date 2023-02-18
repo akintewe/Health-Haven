@@ -1,7 +1,8 @@
-import 'package:cancer_chat/app/modules/Profile/Profile_Settings.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import '../../../core/theme/colors.dart';
+import '../../../../core/theme/colors.dart';
+import 'Profile_Settings.dart';
 class NotifiPage extends StatefulWidget {
 
   const NotifiPage({super.key});

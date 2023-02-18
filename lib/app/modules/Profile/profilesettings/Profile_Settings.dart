@@ -3,24 +3,32 @@ import 'package:cancer_chat/app/modules/Profile/profilesettings/SecurityPage.dar
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-
-import '../../../core/theme/colors.dart';
-import 'helppage/HelpPage.dart';
+import '../../../../core/theme/colors.dart';
+import '../helppage/HelpPage.dart';
 
 class ProfileSettings extends StatefulWidget {
+  
   const ProfileSettings({super.key});
-
+     
   @override
   State<ProfileSettings> createState() => _ProfileSettingsState();
 }
 
 class _ProfileSettingsState extends State<ProfileSettings> {
-  int index = 0;
+  int index=0;
   @override
   Widget build(BuildContext context) {
+    
+   
     return Scaffold(
-      bottomNavigationBar: GNav(
+      bottomNavigationBar: 
+    
+      GNav(
+        
+        
+        
           gap: 6,
+          
           activeColor: AppColors.primary600,
           color: AppColors.primary600,
           tabBackgroundColor: AppColors.primary100,
@@ -103,12 +111,13 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                       backgroundImage: AssetImage('assets/icons/profile.png'),
                     ),
                     CircleAvatar(
-                      radius: 10,
-                      backgroundColor: Colors.blue[900],
-                      child: Icon(
-                        Icons.edit,
-                        size: 10,
-                      ),
+                        radius: 10,
+                 backgroundColor: Colors.blue[900],
+                         child: Icon(Icons.edit,
+                         size: 10,
+                         
+                         ),
+
                     ),
                   ],
                 ),
@@ -191,19 +200,24 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
                   child: MaterialButton(
-                    minWidth: 6,
+                   minWidth: 6,
                     child: Icon(
                       Icons.arrow_forward_ios_outlined,
                       color: Colors.blue[800],
+                     
                     ),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => NotifiPage()));
+                    onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NotifiPage(
+                               
+                                )));
                     },
                   ),
+                  
                 ),
+                
               ],
             ),
             SizedBox(
@@ -245,12 +259,14 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
                   child: MaterialButton(
-                    minWidth: 6,
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SecurityPage()));
+                     minWidth: 6,
+                     onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SecurityPage(
+                               
+                                )));
                     },
                     child: Icon(
                       Icons.arrow_forward_ios_outlined,
@@ -344,10 +360,14 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
                   child: MaterialButton(
-                    minWidth: 6,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HelpPage()));
+                     minWidth: 6,
+                     onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HelpPage(
+                               
+                                )));
                     },
                     child: Icon(
                       Icons.arrow_forward_ios_outlined,
@@ -419,115 +439,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       color: Color.fromARGB(255, 233, 169, 169),
                     ),
-                    // ignore: sort_child_properties_last
-                    child: MaterialButton(
-                      onPressed: () {
-                        showModalBottomSheet(
-                          shape:RoundedRectangleBorder(
-                            borderRadius: BorderRadiusDirectional.vertical(
-                              top: Radius.circular(30)
-                            )
-                          ),
-                          context: context,
-                          builder: (context) => SingleChildScrollView(
-                            
-                            child: Container(
-                              width: 300,
-                              height: 230,
-                             decoration: BoxDecoration(borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30),
-                            
-                             ),
-                            
-                             )  ,
-                             
-                              child: Column(
-                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.login_rounded,
-                                    color: Colors.blue,
-                                    size: 35,
-                                  ),
-                                  SizedBox(
-                                    height: 30,
-                                  ),
-                                  Text('Are you sure you want to logout?'),
-                                  SizedBox(
-                                    height: 35,
-                                  ),
-                                  Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                        
-                                        decoration: BoxDecoration(
-                                          border:Border.all(
-                                            color: Colors.blue,
-                                          ) ,
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(25),
-                                          )
-                                        ),
-
-                                          child: Material(
-                                           
-                                            elevation: 5,
-                                          color: Colors.white,
-                                          
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            child: MaterialButton(
-                                             
-                                              onPressed: () {},
-                                              minWidth: 150,
-                                              height: 42,
-                                              child: Text(
-                                                'Cancel',
-                                                style: TextStyle(
-                                                  color: Colors.blue,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Material(
-                                          elevation: 5,
-                                          color: Colors.blue[700],
-                                          borderRadius:
-                                              BorderRadius.circular(25),
-                                          child: MaterialButton(
-                                            onPressed: () {},
-                                            minWidth: 150,
-                                            height: 42,
-                                            child: Text(
-                                              'Yes, Logout',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ]),
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                      child: Icon(
-                        Icons.login_rounded,
-                        color: Color.fromARGB(255, 199, 16, 40),
-                      ),
+                    child: Icon(
+                      Icons.login_rounded,
+                      color: Color.fromARGB(255, 199, 16, 40),
                     ),
                     width: 48,
                     height: 48,

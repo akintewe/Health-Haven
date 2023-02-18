@@ -1,7 +1,11 @@
-import 'package:cancer_chat/app/modules/Profile/Profile_Settings.dart';
+import 'package:cancer_chat/app/modules/Profile/helppage/Contact%20_Us.dart';
+
+import 'package:cancer_chat/app/modules/Profile/helppage/Privacy_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import '../../../core/theme/colors.dart';
+import '../../../../core/theme/colors.dart';
+import '../profilesettings/Profile_Settings.dart';
+import 'TermsandConditions_page.dart';
 class HelpPage extends StatefulWidget {
 
   const HelpPage({super.key});
@@ -141,9 +145,20 @@ class _HelpPageState extends State<HelpPage> {
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
-                  child: Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.blue[800],
+                  child:MaterialButton(
+                     minWidth: 6,
+                     onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ContactUs(
+                               
+                                )));
+                    },
+                    child: Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.blue[800],
+                    ),
                   ),
                 ),
               ],
@@ -173,9 +188,20 @@ class _HelpPageState extends State<HelpPage> {
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
-                  child: Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.blue[800],
+                  child: MaterialButton(
+                     minWidth: 6,
+                     onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TermsandConditions(
+                               
+                                )));
+                    },
+                    child: Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.blue[800],
+                    ),
                   ),
                 ),
               ],
@@ -205,9 +231,20 @@ class _HelpPageState extends State<HelpPage> {
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
-                  child: Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.blue[800],
+                  child:MaterialButton(
+                     minWidth: 6,
+                     onPressed: (){
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PrivacyPage(
+                               
+                                )));
+                    },
+                    child: Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.blue[800],
+                    ),
                   ),
                 ),
               ],
