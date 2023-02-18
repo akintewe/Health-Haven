@@ -38,7 +38,13 @@ class _PatientDetailsState extends State<PatientDetails> {
       ),
       body: Column(
         children: [
+          SizedBox(
+            height: 20,
+          ),
           PatientTitleWidget(title: 'Full Name '),
+          SizedBox(
+            height: 20,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 3, right: 8),
             child: TextFormField(
@@ -46,6 +52,9 @@ class _PatientDetailsState extends State<PatientDetails> {
               decoration: InputDecoration(
                 isDense: true,
                 hintText: 'Full Name',
+                hintStyle: GoogleFonts.roboto(
+                  color: AppColors.grey70,
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(60),
                 ),
