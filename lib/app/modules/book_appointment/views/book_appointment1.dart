@@ -109,7 +109,12 @@ class _BookAppointment1State extends State<BookAppointment1> {
             SizedBox(
               height: 10,
             ),
-            FeeInfoWidget()
+            FeeInfoWidget(
+              comment: 'Can message with doctor',
+              header: 'Messaging',
+              price: '\$5',
+              icon: Icons.message,
+            )
           ],
         ),
       ),

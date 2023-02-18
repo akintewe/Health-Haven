@@ -24,65 +24,72 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
   bool isPressed = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 90,
-      width: MediaQuery.of(context).size.width * 0.9,
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: AppColors.grey80,
-          ),
-          borderRadius: BorderRadius.circular(20)),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 10,
-          ),
-          CircleAvatar(
-            backgroundColor: AppColors.primary100,
-            radius: 35,
-            child: Icon(
-              widget.icon,
-              size: 30,
+    return GestureDetector(
+      onTap: () {
+        isPressed = !isPressed;
+        setState(() {});
+      },
+      child: Container(
+        height: 90,
+        width: MediaQuery.of(context).size.width * 0.9,
+        decoration: BoxDecoration(
+            color: isPressed ? AppColors.primary : Colors.white,
+            border: Border.all(
+              color: AppColors.grey80,
             ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                widget.header,
-                style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: isPressed ? Colors.white : Colors.black,
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                widget.comment,
-                style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.w600,
-                  color: isPressed ? Colors.white : AppColors.grey50,
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.12,
-          ),
-          Text(
-            widget.price,
-            style: GoogleFonts.roboto(
-              fontWeight: FontWeight.bold,
-              color: isPressed ? Colors.white : AppColors.primary,
-              fontSize: 25,
+            borderRadius: BorderRadius.circular(20)),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 10,
             ),
-          )
-        ],
+            CircleAvatar(
+              backgroundColor: isPressed ? Colors.white : AppColors.primary100,
+              radius: 35,
+              child: Icon(
+                widget.icon,
+                size: 30,
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  widget.header,
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: isPressed ? Colors.white : Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  widget.comment,
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w600,
+                    color: isPressed ? Colors.white : AppColors.grey50,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.12,
+            ),
+            Text(
+              widget.price,
+              style: GoogleFonts.roboto(
+                fontWeight: FontWeight.bold,
+                color: isPressed ? Colors.white : AppColors.primary,
+                fontSize: 25,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
