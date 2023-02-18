@@ -78,7 +78,7 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
               ],
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.12,
+              width: MediaQuery.of(context).size.width * 0.09,
             ),
             Text(
               widget.price,

@@ -5,6 +5,7 @@ import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/booking_title.dart';
@@ -24,7 +25,9 @@ class _BookAppointment1State extends State<BookAppointment1> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/doctor-1');
+            },
             icon: Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary,
@@ -107,14 +110,50 @@ class _BookAppointment1State extends State<BookAppointment1> {
             ),
             bookingTitle(title: 'Fee information'),
             SizedBox(
-              height: 10,
+              height: 15,
             ),
             FeeInfoWidget(
               comment: 'Can message with doctor',
               header: 'Messaging',
               price: '\$5',
               icon: Icons.message,
-            )
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            FeeInfoWidget(
+                header: 'Voice Call',
+                comment: 'Can make call with doctor',
+                icon: Icons.phone,
+                price: '\$10'),
+            SizedBox(
+              height: 15,
+            ),
+            FeeInfoWidget(
+                header: 'Video Call',
+                comment: 'Can video call with doctor',
+                icon: Icons.video_call,
+                price: '\$20'),
+            SizedBox(
+              height: 30,
+            ),
+            SizedBox(
+              height: 60,
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'Next',
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
+              ),
+            ),
           ],
         ),
       ),
