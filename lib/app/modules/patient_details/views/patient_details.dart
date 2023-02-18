@@ -36,32 +36,39 @@ class _PatientDetailsState extends State<PatientDetails> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          PatientTitleWidget(title: 'Full Name '),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 3, right: 8),
-            child: TextFormField(
-              controller: textEditingController,
-              decoration: InputDecoration(
-                isDense: true,
-                hintText: 'Full Name',
-                hintStyle: GoogleFonts.roboto(
-                  color: AppColors.grey70,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(60),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            PatientTitleWidget(title: 'Full Name '),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 3, right: 8),
+              child: TextFormField(
+                controller: textEditingController,
+                decoration: InputDecoration(
+                  isDense: true,
+                  hintText: 'Full Name',
+                  hintStyle: GoogleFonts.roboto(
+                    color: AppColors.grey70,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(60),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: 20,
+            ),
+            PatientTitleWidget(title: 'Select Your Age Range')
+          ],
+        ),
       ),
     );
   }
