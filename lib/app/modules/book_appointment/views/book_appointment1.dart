@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/book_appointment/widgets/fee_information_widget.dart';
 import 'package:cancer_chat/app/modules/book_appointment/widgets/morning_evening.dart';
 import 'package:cancer_chat/app/modules/book_appointment/widgets/time_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
@@ -105,6 +106,10 @@ class _BookAppointment1State extends State<BookAppointment1> {
               height: 15,
             ),
             bookingTitle(title: 'Fee information'),
+            SizedBox(
+              height: 10,
+            ),
+            FeeInfoWidget()
           ],
         ),
       ),
