@@ -5,13 +5,23 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FeeInfoWidget extends StatefulWidget {
-  const FeeInfoWidget({super.key});
+  final String header;
+  final String comment;
+  final IconData icon;
+  final String price;
+  const FeeInfoWidget(
+      {super.key,
+      required this.header,
+      required this.comment,
+      required this.icon,
+      required this.price});
 
   @override
   State<FeeInfoWidget> createState() => _FeeInfoWidgetState();
 }
 
 class _FeeInfoWidgetState extends State<FeeInfoWidget> {
+  bool isPressed = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +41,7 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
             backgroundColor: AppColors.primary100,
             radius: 35,
             child: Icon(
-              Icons.message,
+              widget.icon,
               size: 30,
             ),
           ),
@@ -42,18 +52,21 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Messaging',
+                widget.header,
                 style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.bold, fontSize: 20),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: isPressed ? Colors.white : Colors.black,
+                ),
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
-                'Can message with doctor',
+                widget.comment,
                 style: GoogleFonts.roboto(
                   fontWeight: FontWeight.w600,
-                  color: AppColors.grey50,
+                  color: isPressed ? Colors.white : AppColors.grey50,
                 ),
               )
             ],
@@ -62,10 +75,10 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
             width: MediaQuery.of(context).size.width * 0.12,
           ),
           Text(
-            '\$5',
+            widget.price,
             style: GoogleFonts.roboto(
               fontWeight: FontWeight.bold,
-              color: AppColors.primary,
+              color: isPressed ? Colors.white : AppColors.primary,
               fontSize: 25,
             ),
           )
