@@ -20,11 +20,20 @@ class _PatientTitleWidgetState extends State<PatientTitleWidget> {
         SizedBox(
           width: 20,
         ),
-        Text(
-          widget.title,
-          style: GoogleFonts.roboto(
-              color: AppColors.grey30, fontWeight: FontWeight.w600),
-        )
+        RichText(
+            text: TextSpan(
+                text: widget.title,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.grey30,
+                  fontSize: 16,
+                ),
+                children: [
+              TextSpan(
+                text: '\*',
+                style: GoogleFonts.roboto(color: Colors.red),
+              )
+            ]))
       ],
     );
   }

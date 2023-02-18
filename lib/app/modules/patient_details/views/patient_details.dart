@@ -13,6 +13,7 @@ class PatientDetails extends StatefulWidget {
 }
 
 class _PatientDetailsState extends State<PatientDetails> {
+  TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +37,22 @@ class _PatientDetailsState extends State<PatientDetails> {
         ),
       ),
       body: Column(
-        children: [PatientTitleWidget(title: 'Full Name \*')],
+        children: [
+          PatientTitleWidget(title: 'Full Name '),
+          Padding(
+            padding: const EdgeInsets.only(left: 3, right: 8),
+            child: TextFormField(
+              controller: textEditingController,
+              decoration: InputDecoration(
+                isDense: true,
+                hintText: 'Full Name',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(60),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
