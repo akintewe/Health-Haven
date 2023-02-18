@@ -24,15 +24,22 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
           borderRadius: BorderRadius.circular(20)),
       child: Row(
         children: [
+          SizedBox(
+            width: 10,
+          ),
           CircleAvatar(
             backgroundColor: AppColors.primary100,
-            radius: 30,
-            child: Icon(Icons.message),
+            radius: 35,
+            child: Icon(
+              Icons.message,
+              size: 30,
+            ),
           ),
           SizedBox(
             width: 10,
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Messaging',
@@ -42,10 +49,25 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
               SizedBox(
                 height: 10,
               ),
-              Text('Can message with doctor', style: GoogleFonts.roboto(
-                
-              ),)
+              Text(
+                'Can message with doctor',
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.grey50,
+                ),
+              )
             ],
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.12,
+          ),
+          Text(
+            '\$5',
+            style: GoogleFonts.roboto(
+              fontWeight: FontWeight.bold,
+              color: AppColors.primary,
+              fontSize: 25,
+            ),
           )
         ],
       ),
