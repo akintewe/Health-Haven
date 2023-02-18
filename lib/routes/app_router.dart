@@ -7,6 +7,7 @@ import 'package:cancer_chat/app/modules/forgot_password/views/input_pin.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:cancer_chat/app/modules/introduction_page/controller/page_controller.dart';
 import 'package:cancer_chat/app/modules/notifications_view/views/notification.dart';
+import 'package:cancer_chat/app/modules/patient_details/views/patient_details.dart';
 import 'package:cancer_chat/app/modules/review_page/views/review.dart';
 import 'package:cancer_chat/app/modules/search_page/view/search_page.dart';
 import 'package:cancer_chat/app/modules/sign_in/views/sign_in.dart';
@@ -160,6 +161,12 @@ final GoRouter _router =
     name: Routes.bookAppointment1,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: BookAppointment1()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.patientDetails,
+    name: Routes.patientDetails,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: PatientDetails()),
   )
   // GoRoute(
   //   path: _AppRoutePaths.notifications,

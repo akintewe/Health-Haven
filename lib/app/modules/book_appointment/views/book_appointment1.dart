@@ -141,7 +141,9 @@ class _BookAppointment1State extends State<BookAppointment1> {
               height: 60,
               width: MediaQuery.of(context).size.width * 0.9,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.go('/patientDetails');
+                },
                 child: Text(
                   'Next',
                   style: GoogleFonts.roboto(
