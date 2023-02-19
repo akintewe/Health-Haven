@@ -1,4 +1,5 @@
 import 'package:cancer_chat/app/modules/patient_details/widgets/patient_detail_title_widget.dart';
+import 'package:cancer_chat/app/modules/patient_details/widgets/select_age_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -73,7 +74,40 @@ class _PatientDetailsState extends State<PatientDetails> {
             SizedBox(
               height: 10,
             ),
-            
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  SelectAgeWidget(
+                    age: '10 +',
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  SelectAgeWidget(
+                    age: '20 +',
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  SelectAgeWidget(
+                    age: '30 +',
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  SelectAgeWidget(
+                    age: '40 +',
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  SelectAgeWidget(
+                    age: '50 +',
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
