@@ -69,7 +69,11 @@ class _PatientDetailsState extends State<PatientDetails> {
             SizedBox(
               height: 20,
             ),
-            PatientTitleWidget(title: 'Select Your Age Range')
+            PatientTitleWidget(title: 'Select Your Age Range'),
+            SizedBox(
+              height: 10,
+            ),
+            
           ],
         ),
       ),
