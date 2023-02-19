@@ -108,6 +108,30 @@ class _PatientDetailsState extends State<PatientDetails> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            PatientTitleWidget(title: 'Phone Number'),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 3, right: 8),
+              child: TextFormField(
+                controller: textEditingController,
+                decoration: InputDecoration(
+                  isDense: true,
+                  hintText: 'Phone Number',
+                  suffixIcon: Icon(Icons.phone),
+                  hintStyle: GoogleFonts.roboto(
+                    color: AppColors.grey70,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(60),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
