@@ -132,6 +132,13 @@ class _PatientDetailsState extends State<PatientDetails> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
+            PatientTitleWidget(title: 'Gender'),
+            SizedBox(
+              height: ,
+            ),
           ],
         ),
       ),
