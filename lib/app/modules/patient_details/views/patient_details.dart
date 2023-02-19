@@ -15,6 +15,12 @@ class PatientDetails extends StatefulWidget {
 }
 
 class _PatientDetailsState extends State<PatientDetails> {
+  String? _selectedValue;
+  List<String> _gender = [
+    'Male',
+    'Female',
+    'Prefer not to say',
+  ];
   TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -137,8 +143,34 @@ class _PatientDetailsState extends State<PatientDetails> {
             ),
             PatientTitleWidget(title: 'Gender'),
             SizedBox(
-              height: ,
+              height: 10,
             ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 1.0,
+                ),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: DropdownButtonFormField(
+                  items: _gender.map((gender) {
+                    return DropdownMenuItem(
+                      value: gender,
+                      child: Text(gender),
+                    );
+                  }).toList(),
+                  decoration: InputDecoration(
+                    hintText: 'Gender',
+                    border: InputBorder.none,
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedValue = value as String?;
+                    });
+                  }),
+            )
           ],
         ),
       ),
