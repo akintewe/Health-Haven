@@ -1,4 +1,5 @@
 import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
+import 'package:cancer_chat/app/modules/Profile/Profile_Settings.dart';
 import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
 import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     MainHomePage(),
     BookAppointment1(),
     Doctor1(),
-    ProfilePage(),
+    ProfileSettings()
   ];
   @override
   Widget build(BuildContext context) {
@@ -42,11 +43,11 @@ class _HomePageState extends State<HomePage> {
           ),
           GButton(
             icon: Icons.calendar_month,
-            text: 'Schedule',
+            text: 'Appointment',
           ),
           GButton(
             icon: Icons.list,
-            text: 'List',
+            text: 'History',
           ),
           GButton(
             icon: Icons.person,
