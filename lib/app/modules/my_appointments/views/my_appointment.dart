@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/my_appointments/widgets/my_appointment_card_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
@@ -124,14 +125,12 @@ class _MyAppointmentState extends State<MyAppointment> {
             color: Colors.white,
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: RoundedSearchBar(),
-                    ),
-                  ],
-                )
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: RoundedSearchBar(),
+                ),
+                
+                AppointmentCard()
               ],
             ),
           ),
@@ -162,7 +161,7 @@ class RoundedSearchBar extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: 'Search',
                 border: InputBorder.none,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 10.0),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 15.0),
               ),
             ),
           ),
