@@ -9,6 +9,7 @@ import 'package:flutter_credit_card/custom_card_type_icon.dart';
 import 'package:flutter_credit_card/glassmorphism_config.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../../core/theme/colors.dart';
 
@@ -219,10 +220,92 @@ class _PaymentPageState extends State<PaymentPage> {
                         return Center(
                           child: Container(
                             height: 400,
-                            width: MediaQuery.of(context).size.width * 0.8,
+                            width: MediaQuery.of(context).size.width * 0.84,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
+                            ),
+                            child: Column(
+                              children: [
+                                LottieBuilder.asset(
+                                  'assets/animation/messages.json',
+                                  width: 200,
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  'Successful',
+                                  style: GoogleFonts.roboto(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 30,
+                                      color: AppColors.primary),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Your appointment was booked successfully',
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.black,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Dr.Jenny Wilson will message you',
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.black,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'soon.',
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.black,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                SizedBox(
+                                  height: 45,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.74,
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Ok',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(50))),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         );
