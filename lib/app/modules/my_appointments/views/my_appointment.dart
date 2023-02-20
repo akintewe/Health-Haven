@@ -1,4 +1,5 @@
 import 'package:cancer_chat/core/theme/colors.dart';
+import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -50,6 +51,39 @@ class _MyAppointmentState extends State<MyAppointment> {
             ],
           ),
         ],
+      ),
+      body: ContainedTabBarView(
+        tabs: [
+          Text('First'),
+          Text('Second'),
+        ],
+        tabBarProperties: TabBarProperties(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 32.0,
+            vertical: 8.0,
+          ),
+          indicator: ContainerTabIndicator(
+            width: MediaQuery.of(context).size.width * 0.5,
+            radius: BorderRadius.circular(16.0),
+            color: AppColors.primary,
+            borderWidth: 2.0,
+            borderColor: AppColors.primary,
+          ),
+          labelColor: Colors.white,
+          unselectedLabelColor: AppColors.primary,
+        ),
+        views: [
+          Container(
+            color: AppColors.white,
+            child: Column(
+              children: [
+                
+              ],
+            ),
+          ),
+          Container(color: Colors.green),
+        ],
+        onChange: (index) => print(index),
       ),
     );
   }
