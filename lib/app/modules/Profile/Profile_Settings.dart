@@ -86,9 +86,14 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     CircleAvatar(
                       radius: 20,
                       backgroundColor: Colors.blue[900],
-                      child: Icon(
-                        Icons.edit,
-                        size: 20,
+                      child: IconButton(
+                        onPressed: () {
+                          context.go('/Profile-Page');
+                        },
+                        icon: Icon(
+                          Icons.edit,
+                          size: 20,
+                        ),
                       ),
                     ),
                   ],
