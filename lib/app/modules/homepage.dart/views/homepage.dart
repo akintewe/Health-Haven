@@ -1,3 +1,6 @@
+import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
+import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
+import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -14,35 +17,67 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
   TextEditingController textEditingController = TextEditingController();
+  static const List<Widget> _widgetOptions = <Widget>[
+    MainHomePage(),
+    BookAppointment1(),
+    Doctor1(),
+    ProfilePage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const GNav(
-          gap: 6,
-          activeColor: AppColors.primary600,
-          color: AppColors.primary600,
-          tabBackgroundColor: AppColors.primary100,
-          padding: EdgeInsets.all(18),
-          tabBorderRadius: 15,
-          tabs: [
-            GButton(
-              icon: Icons.home,
-              text: 'Home',
-            ),
-            GButton(
-              icon: Icons.calendar_month,
-              text: 'Schedule',
-            ),
-            GButton(
-              icon: Icons.list,
-              text: 'List',
-            ),
-            GButton(
-              icon: Icons.person,
-              text: 'Profile',
-            ),
-          ]),
+      bottomNavigationBar: GNav(
+        gap: 6,
+        activeColor: AppColors.primary600,
+        color: AppColors.primary600,
+        tabBackgroundColor: AppColors.primary100,
+        padding: EdgeInsets.all(18),
+        tabBorderRadius: 15,
+        tabs: [
+          GButton(
+            icon: Icons.home,
+            text: 'Home',
+          ),
+          GButton(
+            icon: Icons.calendar_month,
+            text: 'Schedule',
+          ),
+          GButton(
+            icon: Icons.list,
+            text: 'List',
+          ),
+          GButton(
+            icon: Icons.person,
+            text: 'Profile',
+          ),
+        ],
+        selectedIndex: _selectedIndex,
+        onTabChange: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+    );
+  }
+}
+
+class MainHomePage extends StatefulWidget {
+  const MainHomePage({super.key});
+
+  @override
+  State<MainHomePage> createState() => _MainHomePageState();
+}
+
+class _MainHomePageState extends State<MainHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: Row(

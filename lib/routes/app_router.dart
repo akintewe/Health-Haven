@@ -51,7 +51,7 @@ abstract class AppRouter {
 
 final GoRouter _router =
 // change the value of this initial location to the name of your allocated screen
-    GoRouter(initialLocation: _AppRoutePaths. ProfileSettings, routes: [
+    GoRouter(initialLocation: _AppRoutePaths.splashscreen, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
