@@ -20,31 +20,6 @@ class _ProfileSettingsState extends State<ProfileSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: GNav(
-          gap: 6,
-          activeColor: AppColors.primary600,
-          color: AppColors.primary600,
-          tabBackgroundColor: AppColors.primary100,
-          padding: EdgeInsets.all(18),
-          tabBorderRadius: 15,
-          tabs: [
-            GButton(
-              icon: Icons.home,
-              text: 'Home',
-            ),
-            GButton(
-              icon: Icons.calendar_month,
-              text: 'Schedule',
-            ),
-            GButton(
-              icon: Icons.list,
-              text: 'List',
-            ),
-            GButton(
-              icon: Icons.person,
-              text: 'Profile',
-            ),
-          ]),
       backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: SafeArea(
@@ -104,11 +79,11 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                       backgroundImage: AssetImage('assets/icons/profile.png'),
                     ),
                     CircleAvatar(
-                      radius: 10,
+                      radius: 20,
                       backgroundColor: Colors.blue[900],
                       child: Icon(
                         Icons.edit,
-                        size: 10,
+                        size: 20,
                       ),
                     ),
                   ],
@@ -433,27 +408,22 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     child: MaterialButton(
                       onPressed: () {
                         showModalBottomSheet(
-                          shape:RoundedRectangleBorder(
-                            borderRadius: BorderRadiusDirectional.vertical(
-                              top: Radius.circular(30)
-                            )
-                          ),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadiusDirectional.vertical(
+                                  top: Radius.circular(30))),
                           context: context,
                           builder: (context) => SingleChildScrollView(
-                            
                             child: Container(
                               width: 300,
                               height: 230,
-                             decoration: BoxDecoration(borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30),
-                            
-                             ),
-                            
-                             )  ,
-                             
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  topRight: Radius.circular(30),
+                                ),
+                              ),
                               child: Column(
-                                 mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(
                                     Icons.login_rounded,
@@ -472,25 +442,19 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Container(
-                                        
-                                        decoration: BoxDecoration(
-                                          border:Border.all(
-                                            color: Colors.blue,
-                                          ) ,
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(25),
-                                          )
-                                        ),
-
+                                          decoration: BoxDecoration(
+                                              border: Border.all(
+                                                color: Colors.blue,
+                                              ),
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(25),
+                                              )),
                                           child: Material(
-                                           
                                             elevation: 5,
-                                          color: Colors.white,
-                                          
+                                            color: Colors.white,
                                             borderRadius:
                                                 BorderRadius.circular(25),
                                             child: MaterialButton(
-                                             
                                               onPressed: () {},
                                               minWidth: 150,
                                               height: 42,
