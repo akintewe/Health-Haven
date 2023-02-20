@@ -120,9 +120,54 @@ class _MyAppointmentState extends State<MyAppointment> {
               ],
             ),
           ),
-          Container(color: Colors.green),
+          Container(
+            color: Colors.white,
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: RoundedSearchBar(),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
         ],
         onChange: (index) => print(index),
+      ),
+    );
+  }
+}
+
+class RoundedSearchBar extends StatelessWidget {
+  final ValueChanged<String>? onChanged;
+
+  const RoundedSearchBar({Key? key, this.onChanged}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextField(
+              onChanged: onChanged,
+              decoration: InputDecoration(
+                hintText: 'Search',
+                border: InputBorder.none,
+                contentPadding: const EdgeInsets.symmetric(horizontal: 10.0),
+              ),
+            ),
+          ),
+          Icon(Icons.search),
+        ],
       ),
     );
   }
