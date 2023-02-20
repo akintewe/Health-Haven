@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/Profile/profilesettings/Invite_page.dart';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/Notification.dart';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/SecurityPage.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
@@ -297,7 +298,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 ),
                 Spacer(),
                 Padding(
-                  padding: const EdgeInsets.only(right: 14),
+                  padding: const EdgeInsets.only(right: 28),
                   child: Icon(
                     Icons.arrow_forward_ios_outlined,
                     color: Colors.blue[800],
@@ -395,9 +396,18 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(right: 14),
-                  child: Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.blue[800],
+                  child: MaterialButton(
+                    minWidth: 6,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => InvitePsge()));
+                    },
+                    child: Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.blue[800],
+                    ),
                   ),
                 ),
               ],

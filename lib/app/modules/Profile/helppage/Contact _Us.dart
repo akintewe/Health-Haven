@@ -81,12 +81,10 @@ class _ContactUsState extends State<ContactUs> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               
-                    SizedBox(
-                      height: 10,
-                    ),
+                   
                    Padding(
                            padding: const EdgeInsets.only(left: 45),
                            child: Row(
