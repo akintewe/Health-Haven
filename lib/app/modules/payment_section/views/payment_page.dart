@@ -7,6 +7,7 @@ import 'package:flutter_credit_card/credit_card_model.dart';
 import 'package:flutter_credit_card/credit_card_widget.dart';
 import 'package:flutter_credit_card/custom_card_type_icon.dart';
 import 'package:flutter_credit_card/glassmorphism_config.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -32,37 +33,56 @@ class _PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: AppColors.primary,
-              size: 29,
-            )),
-        title: Text(
-          'Payment',
-          style: GoogleFonts.roboto(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-            fontSize: 28,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          leading: IconButton(
+              onPressed: () {
+                context.go('/patientDetails');
+              },
+              icon: Icon(
+                Icons.arrow_back_rounded,
+                color: AppColors.primary,
+                size: 29,
+              )),
+          title: Text(
+            'Payment',
+            style: GoogleFonts.roboto(
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 28,
+            ),
           ),
+          actions: [
+            Row(
+              children: [
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: AppColors.primary100,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.add_rounded,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+              ],
+            )
+          ],
         ),
-        actions: [
-          Container(
-            
-          )
-        ],
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
-        child: SafeArea(
-          child: Column(
-            children: <Widget>[
+        body: Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+            child: SafeArea(
+                child: Column(children: <Widget>[
               const SizedBox(
                 height: 30,
               ),
@@ -100,134 +120,147 @@ class _PaymentPageState extends State<PaymentPage> {
                 ],
               ),
               Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
+                  child: SingleChildScrollView(
+                      child: Column(children: <Widget>[
+                CreditCardForm(
+                  formKey: formKey,
+                  obscureCvv: true,
+                  obscureNumber: true,
+                  cardNumber: cardNumber,
+                  cvvCode: cvvCode,
+                  isHolderNameVisible: true,
+                  isCardNumberVisible: true,
+                  isExpiryDateVisible: true,
+                  cardHolderName: cardHolderName,
+                  expiryDate: expiryDate,
+                  themeColor: Colors.blue,
+                  textColor: Colors.black,
+                  cardNumberDecoration: InputDecoration(
+                    labelText: 'Number',
+                    hintText: 'XXXX XXXX XXXX XXXX',
+                    hintStyle: const TextStyle(color: Colors.black),
+                    labelStyle: GoogleFonts.roboto(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    focusedBorder: border,
+                    enabledBorder: border,
+                  ),
+                  expiryDateDecoration: InputDecoration(
+                    hintStyle: const TextStyle(color: Colors.black),
+                    labelStyle: GoogleFonts.roboto(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    focusedBorder: border,
+                    enabledBorder: border,
+                    labelText: 'Expired Date',
+                    hintText: 'XX/XX',
+                  ),
+                  cvvCodeDecoration: InputDecoration(
+                    hintStyle: const TextStyle(color: Colors.black),
+                    labelStyle: GoogleFonts.roboto(
+                        color: Colors.black, fontWeight: FontWeight.w700),
+                    focusedBorder: border,
+                    enabledBorder: border,
+                    labelText: 'CVV',
+                    hintText: 'XXX',
+                  ),
+                  cardHolderDecoration: InputDecoration(
+                    hintStyle: const TextStyle(
+                      color: Colors.black,
+                    ),
+                    labelStyle: GoogleFonts.roboto(
+                        color: Colors.black, fontWeight: FontWeight.w700),
+                    focusedBorder: border,
+                    enabledBorder: border,
+                    labelText: 'Full Name',
+                  ),
+                  onCreditCardModelChange: onCreditCardModelChange,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      CreditCardForm(
-                        formKey: formKey,
-                        obscureCvv: true,
-                        obscureNumber: true,
-                        cardNumber: cardNumber,
-                        cvvCode: cvvCode,
-                        isHolderNameVisible: true,
-                        isCardNumberVisible: true,
-                        isExpiryDateVisible: true,
-                        cardHolderName: cardHolderName,
-                        expiryDate: expiryDate,
-                        themeColor: Colors.blue,
-                        textColor: Colors.black,
-                        cardNumberDecoration: InputDecoration(
-                          labelText: 'Number',
-                          hintText: 'XXXX XXXX XXXX XXXX',
-                          hintStyle: const TextStyle(color: Colors.black),
-                          labelStyle: GoogleFonts.roboto(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          focusedBorder: border,
-                          enabledBorder: border,
-                        ),
-                        expiryDateDecoration: InputDecoration(
-                          hintStyle: const TextStyle(color: Colors.black),
-                          labelStyle: GoogleFonts.roboto(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          focusedBorder: border,
-                          enabledBorder: border,
-                          labelText: 'Expired Date',
-                          hintText: 'XX/XX',
-                        ),
-                        cvvCodeDecoration: InputDecoration(
-                          hintStyle: const TextStyle(color: Colors.black),
-                          labelStyle: GoogleFonts.roboto(
-                              color: Colors.black, fontWeight: FontWeight.w700),
-                          focusedBorder: border,
-                          enabledBorder: border,
-                          labelText: 'CVV',
-                          hintText: 'XXX',
-                        ),
-                        cardHolderDecoration: InputDecoration(
-                          hintStyle: const TextStyle(
-                            color: Colors.black,
-                          ),
-                          labelStyle: GoogleFonts.roboto(
-                              color: Colors.black, fontWeight: FontWeight.w700),
-                          focusedBorder: border,
-                          enabledBorder: border,
-                          labelText: 'Full Name',
-                        ),
-                        onCreditCardModelChange: onCreditCardModelChange,
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            const Text(
-                              'Card Image',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                              ),
-                            ),
-                            const Spacer(),
-                            Switch(
-                              value: useBackgroundImage,
-                              inactiveTrackColor: Colors.grey,
-                              activeColor: Colors.white,
-                              activeTrackColor: AppColors.primary,
-                              onChanged: (bool value) => setState(() {
-                                useBackgroundImage = value;
-                              }),
-                            ),
-                          ],
+                      const Text(
+                        'Card Image',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      GestureDetector(
-                        onTap: _onValidate,
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: <Color>[
-                                AppColors.primary,
-                                AppColors.white,
-                              ],
-                              begin: Alignment(-1, -4),
-                              end: Alignment(5, 2),
-                            ),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          padding: EdgeInsets.symmetric(vertical: 15),
-                          width: double.infinity,
-                          alignment: Alignment.center,
-                          child: Text(
-                            'Pay Now',
-                            style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
+                      const Spacer(),
+                      Switch(
+                        value: useBackgroundImage,
+                        inactiveTrackColor: Colors.grey,
+                        activeColor: Colors.white,
+                        activeTrackColor: AppColors.primary,
+                        onChanged: (bool value) => setState(() {
+                          useBackgroundImage = value;
+                        }),
                       ),
                     ],
                   ),
                 ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+                const SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    _onValidate;
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        // Build the dialogue box content
+                        return AlertDialog(
+                          title: Text('My Dialogue Box'),
+                          content: Text('This is my dialogue box content'),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                // Close the dialogue box when the "OK" button is pressed
+                                Navigator.of(context).pop();
+                              },
+                              child: Text('OK'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  child: Container(
+                    margin:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: <Color>[
+                          AppColors.primary,
+                          AppColors.white,
+                        ],
+                        begin: Alignment(-1, -4),
+                        end: Alignment(5, 2),
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Pay Now',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                )
+              ])))
+            ]))));
   }
 
   void _onValidate() {
