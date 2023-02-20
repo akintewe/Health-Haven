@@ -62,15 +62,59 @@ class _AppointmentCardState extends State<AppointmentCard> {
                   ))
             ],
           ),
+          SizedBox(
+            width: 13,
+          ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Dr. Guy Hawkins',
                 style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              RichText(
+                text: TextSpan(
+                    text: 'Voice Call -',
+                    children: [
+                      TextSpan(
+                          text: 'Completed',
+                          style: GoogleFonts.roboto(
+                              color: Colors.green, fontSize: 14)),
+                    ],
+                    style:
+                        GoogleFonts.roboto(color: Colors.black, fontSize: 14)),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '13:00 - 13:30 PM',
+                style: GoogleFonts.roboto(color: Colors.black),
               )
             ],
+          ),
+          SizedBox(
+            width: 18,
+          ),
+          Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: AppColors.primary100,
+            ),
+            child: Center(
+              child: Icon(
+                Icons.call,
+                color: AppColors.primary,
+              ),
+            ),
           ),
         ],
       ),
