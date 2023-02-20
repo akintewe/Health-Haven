@@ -30,4 +30,5 @@ abstract class Routes {
   static const String bookAppointment1 = 'appointment1';
   static const String patientDetails = 'patientDetails';
   static const String paymentPage = 'paymentPage';
+  static const String myAppointment = 'myAppointment';
 }

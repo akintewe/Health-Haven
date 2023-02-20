@@ -10,6 +10,8 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
+import '../../my_appointments/views/my_appointment.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -22,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   TextEditingController textEditingController = TextEditingController();
   static const List<Widget> _widgetOptions = <Widget>[
     MainHomePage(),
-    BookAppointment1(),
+   MyAppointment(),
     Doctor1(),
     ProfileSettings()
   ];

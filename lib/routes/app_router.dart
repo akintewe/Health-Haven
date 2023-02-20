@@ -6,6 +6,7 @@ import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.da
 import 'package:cancer_chat/app/modules/forgot_password/views/input_pin.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:cancer_chat/app/modules/introduction_page/controller/page_controller.dart';
+import 'package:cancer_chat/app/modules/my_appointments/views/my_appointment.dart';
 import 'package:cancer_chat/app/modules/notifications_view/views/notification.dart';
 import 'package:cancer_chat/app/modules/patient_details/views/patient_details.dart';
 import 'package:cancer_chat/app/modules/payment_section/views/payment_page.dart';
@@ -185,7 +186,15 @@ final GoRouter _router =
     name: Routes.profilePage,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: ProfilePage()),
-  )
+  ),
+   GoRoute(
+    path: _AppRoutePaths.myAppointment,
+    name: Routes.myAppointment,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: MyAppointment()),
+  ),
+  
+
   // GoRoute(
   //   path: _AppRoutePaths.notifications,
   //   name: Routes.notifications,
