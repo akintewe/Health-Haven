@@ -3,6 +3,7 @@ import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyAppointment extends StatefulWidget {
@@ -77,7 +78,45 @@ class _MyAppointmentState extends State<MyAppointment> {
             color: AppColors.white,
             child: Column(
               children: [
-                
+                SizedBox(
+                  height: 100,
+                ),
+                Image.asset('assets/images/sad-face.png'),
+                SizedBox(
+                  height: 30,
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'You don\'t have an appointment',
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.26,
+                ),
+                SizedBox(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      context.go('/appointment1');
+                    },
+                    child: Text(
+                      'Book Appointment Now',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50))),
+                  ),
+                ),
               ],
             ),
           ),
