@@ -218,8 +218,12 @@ class _PaymentPageState extends State<PaymentPage> {
                         // Build the dialogue box content
                         return Center(
                           child: Container(
-                            height: 30,
-                            width: 40,
+                            height: 400,
+                            width: MediaQuery.of(context).size.width * 0.8,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                            ),
                           ),
                         );
                       },
