@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:remixicon/remixicon.dart';
 
 class MyAppointment extends StatefulWidget {
   const MyAppointment({super.key});
@@ -21,7 +22,11 @@ class _MyAppointmentState extends State<MyAppointment> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Image.asset('assets/images/app-logo.png'),
+        leading: Icon(
+          Remix.shield_cross_fill,
+          color: AppColors.primary,
+          size: 50,
+        ),
         title: Text(
           'My Appointments',
           style: GoogleFonts.roboto(

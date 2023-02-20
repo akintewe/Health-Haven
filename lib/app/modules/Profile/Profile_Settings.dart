@@ -5,6 +5,7 @@ import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:remixicon/remixicon.dart';
 
 import '../../../core/theme/colors.dart';
 import 'helppage/HelpPage.dart';
@@ -31,10 +32,10 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    child: Image.asset(
-                      'assets/images/app-logo.png',
-                      width: 50,
-                      height: 59,
+                    child: Icon(
+                      Remix.shield_cross_fill,
+                      color: AppColors.primary,
+                      size: 50,
                     ),
                   ),
                   SizedBox(
