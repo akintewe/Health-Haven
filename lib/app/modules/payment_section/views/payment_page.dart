@@ -216,18 +216,11 @@ class _PaymentPageState extends State<PaymentPage> {
                       context: context,
                       builder: (BuildContext context) {
                         // Build the dialogue box content
-                        return AlertDialog(
-                          title: Text('My Dialogue Box'),
-                          content: Text('This is my dialogue box content'),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                // Close the dialogue box when the "OK" button is pressed
-                                Navigator.of(context).pop();
-                              },
-                              child: Text('OK'),
-                            ),
-                          ],
+                        return Center(
+                          child: Container(
+                            height: 30,
+                            width: 40,
+                          ),
                         );
                       },
                     );
