@@ -32,6 +32,30 @@ class _PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: AppColors.primary,
+              size: 29,
+            )),
+        title: Text(
+          'Payment',
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 28,
+          ),
+        ),
+        actions: [
+          Container(
+            
+          )
+        ],
+      ),
       body: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
