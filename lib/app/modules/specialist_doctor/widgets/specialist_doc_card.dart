@@ -17,6 +17,15 @@ class SpecialistDocCard extends StatelessWidget {
     return Container(
       height: 150,
       decoration:  BoxDecoration(
+        gradient:  LinearGradient(
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: [
+        Colors.black.withOpacity(.0),
+        Colors.black.withOpacity(1),
+      ],
+    ),
+  
           color: color,
           borderRadius: BorderRadius.all(Radius.circular(13))),
       child: Column(

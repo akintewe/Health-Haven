@@ -1,8 +1,7 @@
 import 'package:cancer_chat/app/modules/doctor_pages/widgets/date_scroll_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,59 +18,60 @@ class _Doctor1State extends State<Doctor1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: 60.h,
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
             onPressed: () {
               context.go('/home-page');
             },
-            icon: Icon(
+            icon:  Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary,
-              size: 27,
+              size: 27.sp,
             )),
         title: Text(
           'Dr. Jenny Wilson',
           style: GoogleFonts.roboto(
             color: Colors.black,
             fontWeight: FontWeight.bold,
-            fontSize: 27,
+            fontSize: 20.sp,
           ),
         ),
         actions: [
           Row(
             children: [
               Container(
-                height: 60,
-                width: 60,
+                height: 40,
+                width: 40,
                 decoration: BoxDecoration(
                   color: AppColors.primary90,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
                     child: Image.asset(
                   'assets/icons/love.png',
-                  width: 30,
+                  //width: 30,
+                  height: 20.h,
                 )),
               ),
-              SizedBox(
-                width: 20,
+               SizedBox(
+                width: 10.w,
               ),
               GestureDetector(
                 onTap: () {
                   showModalBottomSheet(
-                      shape: RoundedRectangleBorder(
+                      shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(40),
                               topRight: Radius.circular(40))),
                       context: context,
-                      builder: (context) => Container(
+                      builder: (context) => SizedBox(
                             height: 280,
                             width: 100,
                             child: Column(
                               children: [
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
                                 Row(
@@ -87,7 +87,7 @@ class _Doctor1State extends State<Doctor1> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Row(
@@ -101,7 +101,7 @@ class _Doctor1State extends State<Doctor1> {
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Row(
@@ -126,7 +126,7 @@ class _Doctor1State extends State<Doctor1> {
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Row(
@@ -163,7 +163,7 @@ class _Doctor1State extends State<Doctor1> {
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 40,
                                 ),
                                 Row(
@@ -188,8 +188,8 @@ class _Doctor1State extends State<Doctor1> {
                                     )
                                   ],
                                 ),
-                                SizedBox(
-                                  height: 10,
+                                 SizedBox(
+                                  height: 10.h,
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -230,23 +230,23 @@ class _Doctor1State extends State<Doctor1> {
                           ));
                 },
                 child: Container(
-                  height: 60,
-                  width: 60,
+                  height: 35.h,
+                  width: 40.w,
                   decoration: BoxDecoration(
                     color: AppColors.primary90,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Center(
+                  child:  const Center(
                     child: Icon(
                       Icons.share,
                       color: AppColors.primary800,
-                      size: 30,
+                      //size: 20.h,
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                width: 10,
+               SizedBox(
+                width: 10.w,
               ),
             ],
           ),
@@ -260,45 +260,48 @@ class _Doctor1State extends State<Doctor1> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 130,
+                  height: 110,
                   width: MediaQuery.of(context).size.width * 0.92,
                   decoration: BoxDecoration(
                     border: Border.all(
-                        color: Color.fromARGB(250, 227, 227, 227), width: 1),
+                        color: const Color.fromARGB(250, 227, 227, 227), width: 1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          bottomLeft: Radius.circular(20),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
                         ),
                         child: Image.asset(
                           'assets/images/woman.jpg',
                           width: 86,
                         ),
                       ),
-                      SizedBox(
-                        width: 10,
+                       SizedBox(
+                        width: 20.w,
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Text(
                             'Dr. Jenny Wilson',
                             style: GoogleFonts.roboto(
-                                fontWeight: FontWeight.bold, fontSize: 25),
+                                fontWeight: FontWeight.bold, fontSize: 16.sp),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.star_rounded,
                                 color: AppColors.primary,
                               ),
@@ -306,12 +309,12 @@ class _Doctor1State extends State<Doctor1> {
                                 '4.9 (3821 reviews)',
                                 style: GoogleFonts.roboto(
                                     color: AppColors.grey,
-                                    fontSize: 16,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w400),
                               )
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Text(
@@ -319,7 +322,7 @@ class _Doctor1State extends State<Doctor1> {
                             style: GoogleFonts.roboto(
                                 color: AppColors.grey,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 16),
+                                fontSize: 13.sp),
                           )
                         ],
                       ),
@@ -328,7 +331,7 @@ class _Doctor1State extends State<Doctor1> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -343,15 +346,15 @@ class _Doctor1State extends State<Doctor1> {
                   ),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 40,
                       ),
                       Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          CircleAvatar(
+                          const CircleAvatar(
                             radius: 30,
                             backgroundColor: AppColors.primary90,
                             child: Center(
@@ -361,7 +364,7 @@ class _Doctor1State extends State<Doctor1> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Text(
@@ -371,7 +374,7 @@ class _Doctor1State extends State<Doctor1> {
                                 color: AppColors.primary,
                                 fontSize: 20),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
@@ -381,15 +384,15 @@ class _Doctor1State extends State<Doctor1> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 25,
                       ),
                       Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          CircleAvatar(
+                          const CircleAvatar(
                             radius: 30,
                             backgroundColor: AppColors.primary90,
                             child: Center(
@@ -399,7 +402,7 @@ class _Doctor1State extends State<Doctor1> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Text(
@@ -409,7 +412,7 @@ class _Doctor1State extends State<Doctor1> {
                                 color: AppColors.primary,
                                 fontSize: 20),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
@@ -419,15 +422,15 @@ class _Doctor1State extends State<Doctor1> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 25,
                       ),
                       Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          CircleAvatar(
+                          const CircleAvatar(
                             radius: 30,
                             backgroundColor: AppColors.primary90,
                             child: Center(
@@ -437,7 +440,7 @@ class _Doctor1State extends State<Doctor1> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Text(
@@ -447,7 +450,7 @@ class _Doctor1State extends State<Doctor1> {
                                 color: AppColors.primary,
                                 fontSize: 20),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
@@ -462,14 +465,14 @@ class _Doctor1State extends State<Doctor1> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Text(
@@ -482,14 +485,14 @@ class _Doctor1State extends State<Doctor1> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Text(
@@ -502,14 +505,14 @@ class _Doctor1State extends State<Doctor1> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Text(
@@ -522,14 +525,14 @@ class _Doctor1State extends State<Doctor1> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Text(
@@ -542,12 +545,12 @@ class _Doctor1State extends State<Doctor1> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Text('Reviews',
@@ -572,14 +575,14 @@ class _Doctor1State extends State<Doctor1> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Text(
@@ -592,11 +595,11 @@ class _Doctor1State extends State<Doctor1> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            DayScroll(),
-            SizedBox(
+            const DayScroll(),
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -604,6 +607,9 @@ class _Doctor1State extends State<Doctor1> {
               width: MediaQuery.of(context).size.width * 0.8,
               child: ElevatedButton(
                 onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
                 child: Text(
                   'Book Appointment',
                   style: GoogleFonts.roboto(
@@ -611,12 +617,9 @@ class _Doctor1State extends State<Doctor1> {
                     fontSize: 20,
                   ),
                 ),
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50))),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ],
