@@ -22,4 +22,14 @@ abstract class _AppRoutePaths {
   static const String introduction = '/introduction';
   static const String pinInput = '/pin-input';
   static const String splashscreen = '/splash-screen';
+  static const String doctor1 = '/doctor-1';
+  static const String notificationView = '/notificationView';
+  static const String favouritesView = '/favouritesView';
+  static const String searchPage = '/searchPage';
+  static const String specialistDoctor = '/specialistDoctor';
+  static const String topDoctor = '/topDoctors';
+  static const String reviews = '/reviews';
+  static const String bookAppointment1 = '/appointment1';
+  static const String patientDetails = '/patientDetails';
+  static const String paymentPage = '/paymentPage';
 }

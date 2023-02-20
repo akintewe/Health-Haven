@@ -1,6 +1,8 @@
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:cancer_chat/core/utils/functions/size_fit.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -73,7 +75,7 @@ class _IntroPageState extends State<IntroPage> {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
                         Text('Thousands of ',
-                            style: TextStyle(
+                            style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
                               fontSize: 30,
@@ -85,7 +87,7 @@ class _IntroPageState extends State<IntroPage> {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
                         Text('Doctors',
-                            style: TextStyle(
+                            style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
                               fontSize: 30,
@@ -123,7 +125,7 @@ class _IntroPageState extends State<IntroPage> {
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
                               'You can easily contact with ',
-                              style: TextStyle(
+                              style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                               ),
@@ -139,7 +141,7 @@ class _IntroPageState extends State<IntroPage> {
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
                               'thousands of doctors and professional',
-                              style: TextStyle(
+                              style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                               ),
@@ -155,7 +157,7 @@ class _IntroPageState extends State<IntroPage> {
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
                               'medical experts for your needs.',
-                              style: TextStyle(
+                              style: GoogleFonts.roboto(
                                   fontWeight: FontWeight.w500, fontSize: 16),
                             )
                           ],
@@ -201,7 +203,7 @@ class _IntroPage2State extends State<IntroPage2> {
                     onTap: () {},
                     child: Text(
                       'Skip',
-                      style: TextStyle(
+                      style: GoogleFonts.roboto(
                         color: Colors.white,
                         fontSize: 20,
                       ),
@@ -237,7 +239,7 @@ class _IntroPage2State extends State<IntroPage2> {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
                         Text('Chat with',
-                            style: TextStyle(
+                            style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
                               color: AppColors.primary,
@@ -249,7 +251,7 @@ class _IntroPage2State extends State<IntroPage2> {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
                         Text('Doctors',
-                            style: TextStyle(
+                            style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
                               color: AppColors.primary,
@@ -287,7 +289,7 @@ class _IntroPage2State extends State<IntroPage2> {
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
                               'Book an appointment with any doctor.',
-                              style: TextStyle(
+                              style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                               ),
@@ -303,7 +305,7 @@ class _IntroPage2State extends State<IntroPage2> {
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
                               'Chat with any doctor easily,',
-                              style: TextStyle(
+                              style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                               ),
@@ -319,7 +321,7 @@ class _IntroPage2State extends State<IntroPage2> {
                                     MediaQuery.of(context).size.width * 0.07),
                             Text(
                               'and get consultation.',
-                              style: TextStyle(
+                              style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                               ),
@@ -367,7 +369,7 @@ class _IntroPage3State extends State<IntroPage3> {
                     onTap: () {},
                     child: Text(
                       'Skip',
-                      style: TextStyle(
+                      style: GoogleFonts.roboto(
                         color: Colors.white,
                         fontSize: 20,
                       ),
@@ -406,7 +408,7 @@ class _IntroPage3State extends State<IntroPage3> {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
                         Text('Track your',
-                            style: TextStyle(
+                            style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
                               color: AppColors.primary,
@@ -418,7 +420,7 @@ class _IntroPage3State extends State<IntroPage3> {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
                         Text('appointments',
-                            style: TextStyle(
+                            style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
                               color: AppColors.primary,
@@ -432,7 +434,7 @@ class _IntroPage3State extends State<IntroPage3> {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.06),
                         Text('the easy way..',
-                            style: TextStyle(
+                            style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
                               color: AppColors.primary,
@@ -453,11 +455,13 @@ class _IntroPage3State extends State<IntroPage3> {
                                       shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   )),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context.go('/sign-in');
+                                  },
                                   child: Center(
                                     child: Text(
                                       'Get Started',
-                                      style: TextStyle(fontSize: 20),
+                                      style: GoogleFonts.roboto(fontSize: 20),
                                     ),
                                   )),
                             ),

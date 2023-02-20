@@ -20,4 +20,14 @@ abstract class Routes {
   static const String introduction = 'Introduction';
   static const String pinInput = 'Pin Input';
   static const String splashScreen = 'SplashScreen';
+  static const String doctor1 = 'Doctor 1';
+  static const String notificationView = 'notificationView';
+  static const String favouritesView = 'favouritesView';
+  static const String searchPage = 'searchPage';
+  static const String specialistDoctor = 'specialistDoctor';
+  static const String topDoctor = 'topDoctor';
+  static const String reviews = 'Reviews';
+  static const String bookAppointment1 = 'appointment1';
+  static const String patientDetails = 'patientDetails';
+  static const String paymentPage = 'paymentPage';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../core/utils/functions/size_fit.dart';
@@ -26,11 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(Duration(seconds: 4), () {});
     // Navigator.pushReplacement(
     //     context, MaterialPageRoute(builder: (context) => IntroPage()));
-    Get.to(
-      const HomePage(),
-      transition: Transition.fadeIn,
-      duration: Duration(seconds: 2),
-    );
+    context.go('/introduction');
   }
 
   @override

@@ -1,9 +1,9 @@
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:remixicon/remixicon.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: GNav(
+      bottomNavigationBar: const GNav(
           gap: 6,
           activeColor: AppColors.primary600,
           color: AppColors.primary600,
@@ -44,48 +44,78 @@ class _HomePageState extends State<HomePage> {
             ),
           ]),
       appBar: AppBar(
-        leading: Image.asset('assets/images/app-logo.png'),
+        automaticallyImplyLeading: false,
+        leading: Row(
+          children: [
+            Container(
+              margin: const EdgeInsetsDirectional.only(start: 10),
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  color: AppColors.primary,
+                  borderRadius: BorderRadius.circular(13)),
+              child: const Center(
+                child: Icon(
+                  Remix.shield_cross_fill,
+                ),
+              ),
+            ),
+          ],
+        ),
+        centerTitle: false,
+        titleSpacing: 0,
         toolbarHeight: 90,
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          'Doctor Q',
+          'Health-H',
           style: GoogleFonts.actor(
               color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
         ),
         actions: [
           Row(
             children: [
-              Container(
-                height: 60,
-                width: 61,
-                decoration: BoxDecoration(
-                    color: AppColors.primary100,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Center(
-                    child: Icon(
-                  Icons.notifications,
-                  size: 30,
-                  color: AppColors.primary800,
-                )),
+              InkWell(
+                onTap: () {
+                  context.go("/notificationView");
+                  // context.go("/notifications"),
+                },
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      color: AppColors.primary100,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: const Center(
+                      child: Icon(
+                    Icons.notifications,
+                    size: 22,
+                    color: AppColors.primary800,
+                  )),
+                ),
               ),
-              SizedBox(
-                width: 20,
+              const SizedBox(
+                width: 15,
               ),
-              Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                    color: AppColors.primary100,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Center(
-                  child: Image.asset(
-                    'assets/images/heart.png',
-                    width: 28,
+              InkWell(
+                onTap: () {
+                  context.push("/favouritesView");
+                },
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      color: AppColors.primary100,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/heart.png',
+                      width: 20,
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
             ],
@@ -100,14 +130,18 @@ class _HomePageState extends State<HomePage> {
               textEditingController: TextEditingController(),
               isOriginalAnimation: false,
               buttonBorderColour: Colors.black45,
-              buttonWidget: Icon(Icons.search),
-              secondaryButtonWidget: Icon(Icons.cancel),
-              trailingWidget: Icon(Icons.sort),
+              buttonWidget: const Icon(Icons.search),
+              secondaryButtonWidget: const Icon(Icons.cancel),
+              trailingWidget: const Icon(Icons.sort),
               onFieldSubmitted: (String value) {
                 debugPrint('onFieldSubmitted value $value');
               },
+              onPressButton: (hello) {
+                context.push("/searchPage");
+              },
+              onChanged: () {},
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
@@ -120,24 +154,30 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
-                Text(
-                  'See all',
-                  style: TextStyle(
-                      color: AppColors.primary400, fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {
+                    context.push('/specialistDoctor');
+                  },
+                  child: const Text(
+                    'See all',
+                    style: TextStyle(
+                        color: AppColors.primary400,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
@@ -145,31 +185,31 @@ class _HomePageState extends State<HomePage> {
                     width: 160,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Color.fromARGB(255, 225, 74, 124)),
+                        color: const Color.fromARGB(255, 225, 74, 124)),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         Image.asset('assets/icons/heart-shape2.png'),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text(
+                        const Text(
                           'Cardio',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
-                        Text(
+                        const Text(
                           'Specialist',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         Text(
@@ -181,7 +221,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
@@ -192,31 +232,31 @@ class _HomePageState extends State<HomePage> {
                         color: AppColors.primary300),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         Image.asset(
                           'assets/icons/tooth1.png',
                           width: 64,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text(
+                        const Text(
                           'Dental',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
-                        Text(
+                        const Text(
                           'Specialist',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         Text(
@@ -228,7 +268,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
@@ -236,31 +276,31 @@ class _HomePageState extends State<HomePage> {
                     width: 160,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Color.fromARGB(255, 193, 210, 91)),
+                        color: Color.fromARGB(255, 193, 157, 223)),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         Image.asset('assets/icons/view.png'),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text(
+                        const Text(
                           'Eye',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
-                        Text(
+                        const Text(
                           'Specialist',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         Text(
@@ -272,7 +312,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
@@ -283,28 +323,28 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.grey),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         Image.asset('assets/icons/bone.png'),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text(
+                        const Text(
                           'Human',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
-                        Text(
+                        const Text(
                           'Chiropractor',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         Text(
@@ -319,7 +359,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Row(
@@ -332,63 +372,72 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
-                Text(
-                  'See all',
-                  style: TextStyle(
-                      color: AppColors.primary400, fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {
+                    context.push("/topDoctors");
+                  },
+                  child: const Text(
+                    'See all',
+                    style: TextStyle(
+                        color: AppColors.primary400,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Container(
-                    height: 280,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Color.fromARGB(255, 247, 246, 246),
-                            width: 3),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                'assets/images/person1.jpg',
-                                height: 200,
-                                fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () => context.go('/doctor-1'),
+                    child: Container(
+                      height: 280,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 247, 246, 246),
+                              width: 3),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  'assets/images/person1.jpg',
+                                  height: 200,
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                          Positioned(
+                              bottom: 30,
+                              left: 30,
+                              child: Text(
+                                'Dr. Yusuf Rashmid',
+                                style: GoogleFonts.balooDa2(
+                                    fontWeight: FontWeight.bold, fontSize: 17),
                               )),
-                        ),
-                        Positioned(
-                            bottom: 30,
-                            left: 30,
-                            child: Text(
-                              'Dr. Yusuf Rashmid',
-                              style: GoogleFonts.balooDa2(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            )),
-                        Positioned(
-                            bottom: 6,
-                            left: 30,
-                            child: Text(
-                              'Cardio Specialist',
-                              style: GoogleFonts.b612Mono(
-                                  fontWeight: FontWeight.w500, fontSize: 13),
-                            ))
-                      ],
+                          Positioned(
+                              bottom: 6,
+                              left: 30,
+                              child: Text(
+                                'Cardio Specialist',
+                                style: GoogleFonts.b612Mono(
+                                    fontWeight: FontWeight.w500, fontSize: 13),
+                              ))
+                        ],
+                      ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
@@ -396,7 +445,7 @@ class _HomePageState extends State<HomePage> {
                     width: 200,
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: Color.fromARGB(255, 247, 246, 246),
+                            color: const Color.fromARGB(255, 247, 246, 246),
                             width: 3),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20)),
@@ -431,7 +480,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
@@ -439,7 +488,7 @@ class _HomePageState extends State<HomePage> {
                     width: 200,
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: Color.fromARGB(255, 247, 246, 246),
+                            color: const Color.fromARGB(255, 247, 246, 246),
                             width: 3),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20)),
@@ -474,7 +523,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
@@ -482,7 +531,7 @@ class _HomePageState extends State<HomePage> {
                     width: 200,
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: Color.fromARGB(255, 247, 246, 246),
+                            color: const Color.fromARGB(255, 247, 246, 246),
                             width: 3),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20)),
