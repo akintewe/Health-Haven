@@ -206,7 +206,7 @@ class _PatientDetailsState extends State<PatientDetails> {
               width: MediaQuery.of(context).size.width * 0.9,
               child: ElevatedButton(
                 onPressed: () {
-                  context.go('/patientDetails');
+                  context.go('/paymentPage');
                 },
                 child: Text(
                   'Next',
