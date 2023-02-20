@@ -2,6 +2,7 @@ import 'package:cancer_chat/app/modules/Profile/profilesettings/Invite_page.dart
 import 'package:cancer_chat/app/modules/Profile/profilesettings/Notification.dart';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/SecurityPage.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
+import 'package:cancer_chat/app/modules/sign_in/views/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -514,7 +515,15 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                                           borderRadius:
                                               BorderRadius.circular(25),
                                           child: MaterialButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                               Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignIn(
+                               
+                                )));
+                    
+                                            },
                                             minWidth: 150,
                                             height: 42,
                                             child: Text(

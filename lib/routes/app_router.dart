@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
 import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
-=======
-import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
-import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
->>>>>>> main
 import 'package:cancer_chat/app/modules/emptypage.dart';
 import 'package:cancer_chat/app/modules/favouriates/views/favourites_view.dart';
 import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.dart';
@@ -54,12 +49,8 @@ abstract class AppRouter {
 }
 
 final GoRouter _router =
-<<<<<<< HEAD
 // change the value of this initial location to the name of your allocated screen
     GoRouter(initialLocation: _AppRoutePaths. ProfileSettings, routes: [
-=======
-    GoRouter(initialLocation: _AppRoutePaths.splashscreen, routes: [
->>>>>>> main
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
@@ -129,7 +120,6 @@ final GoRouter _router =
         context: context, state: state, child: const HomePage()),
   ),
   GoRoute(
-<<<<<<< HEAD
     path: _AppRoutePaths.ProfilePage,
     name: Routes.ProfilePage,
     pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
@@ -149,71 +139,4 @@ final GoRouter _router =
     ),
     ),
     
-=======
-    path: _AppRoutePaths.doctor1,
-    name: Routes.doctor1,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: const Doctor1()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.notificationView,
-    name: Routes.notificationView,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: const NotificationView()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.favouritesView,
-    name: Routes.favouritesView,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: const FavouritesView()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.reviews,
-    name: Routes.reviews,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: const Reviews()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.searchPage,
-    name: Routes.searchPage,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: const SearchPage()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.specialistDoctor,
-    name: Routes.specialistDoctor,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: const SpecialistDoctor()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.topDoctor,
-    name: Routes.topDoctor,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: const TopDoctors()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.bookAppointment1,
-    name: Routes.bookAppointment1,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: BookAppointment1()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.patientDetails,
-    name: Routes.patientDetails,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: PatientDetails()),
-  ),
-  GoRoute(
-    path: _AppRoutePaths.paymentPage,
-    name: Routes.paymentPage,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: PaymentPage()),
-  )
-  // GoRoute(
-  //   path: _AppRoutePaths.notifications,
-  //   name: Routes.notifications,
-  //   pageBuilder: (context, state) => buildPageWithDefaultTransition(
-  //       context: context, state: state, child: const Doctor2()),
-  // ),
->>>>>>> main
 ]);
