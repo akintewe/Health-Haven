@@ -49,7 +49,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 expiryDate: expiryDate,
                 cardHolderName: cardHolderName,
                 cvvCode: cvvCode,
-                bankName: 'Axis Bank',
+                bankName: 'Access Bank',
                 frontCardBorder:
                     !useGlassMorphism ? Border.all(color: Colors.grey) : null,
                 backCardBorder:
@@ -58,9 +58,10 @@ class _PaymentPageState extends State<PaymentPage> {
                 obscureCardNumber: true,
                 obscureCardCvv: true,
                 isHolderNameVisible: true,
-                cardBgColor: AppColors.red,
-                backgroundImage:
-                    useBackgroundImage ? 'assets/images/card_bg.png' : null,
+                cardBgColor: AppColors.primary,
+                backgroundImage: useBackgroundImage
+                    ? 'assets/images/card_background.jpg'
+                    : null,
                 isSwipeGestureEnabled: true,
                 onCreditCardWidgetChange: (CreditCardBrand creditCardBrand) {},
                 customCardTypeIcons: <CustomCardTypeIcon>[
@@ -115,18 +116,22 @@ class _PaymentPageState extends State<PaymentPage> {
                         ),
                         cvvCodeDecoration: InputDecoration(
                           hintStyle: const TextStyle(color: Colors.black),
-                          labelStyle: GoogleFonts.roboto(color: Colors.black),
+                          labelStyle: GoogleFonts.roboto(
+                              color: Colors.black, fontWeight: FontWeight.w700),
                           focusedBorder: border,
                           enabledBorder: border,
                           labelText: 'CVV',
                           hintText: 'XXX',
                         ),
                         cardHolderDecoration: InputDecoration(
-                          hintStyle: const TextStyle(color: Colors.white),
-                          labelStyle: const TextStyle(color: Colors.white),
+                          hintStyle: const TextStyle(
+                            color: Colors.black,
+                          ),
+                          labelStyle: GoogleFonts.roboto(
+                              color: Colors.black, fontWeight: FontWeight.w700),
                           focusedBorder: border,
                           enabledBorder: border,
-                          labelText: 'Card Holder',
+                          labelText: 'Full Name',
                         ),
                         onCreditCardModelChange: onCreditCardModelChange,
                       ),
@@ -139,34 +144,9 @@ class _PaymentPageState extends State<PaymentPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             const Text(
-                              'Glassmorphism',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                              ),
-                            ),
-                            const Spacer(),
-                            Switch(
-                              value: useGlassMorphism,
-                              inactiveTrackColor: Colors.grey,
-                              activeColor: Colors.white,
-                              activeTrackColor: AppColors.primary,
-                              onChanged: (bool value) => setState(() {
-                                useGlassMorphism = value;
-                              }),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            const Text(
                               'Card Image',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontSize: 18,
                               ),
                             ),
@@ -198,20 +178,19 @@ class _PaymentPageState extends State<PaymentPage> {
                                 AppColors.white,
                               ],
                               begin: Alignment(-1, -4),
-                              end: Alignment(1, 4),
+                              end: Alignment(5, 2),
                             ),
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          padding: EdgeInsets.symmetric(vertical: 15),
                           width: double.infinity,
                           alignment: Alignment.center,
-                          child: const Text(
-                            'Validate',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: 'halter',
-                              fontSize: 14,
-                              package: 'flutter_credit_card',
+                          child: Text(
+                            'Pay Now',
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                              fontSize: 15,
                             ),
                           ),
                         ),
