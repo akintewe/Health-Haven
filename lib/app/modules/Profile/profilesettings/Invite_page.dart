@@ -407,7 +407,7 @@ class _InvitePsgeState extends State<InvitePsge> {
                   ),
                   Spacer(),
                         ButtonWidget(),
-                ],
+                ],          
               ),
             ),
           ]),
