@@ -2,6 +2,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -29,9 +30,9 @@ class _SignInState extends State<SignIn> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/app_logo.png',
-                  height: 200,
-                  width: 200,
+                  'assets/images/app-logo.png',
+                  height: 150,
+                  width: 150,
                 ),
                 SizedBox(
                   height: 20,
@@ -178,6 +179,7 @@ class _SignInState extends State<SignIn> {
                         print("sucess");
                         emailController.clear();
                         passController.clear();
+                        context.go('/home-page');
                       }
                     },
                     minWidth: 320,
@@ -319,9 +321,11 @@ class _SignInState extends State<SignIn> {
                             fontWeight: FontWeight.w300, fontSize: 14),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go('/sign-up');
+                        },
                         child: Text(
-                          'Sign in',
+                          'Sign Up',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
