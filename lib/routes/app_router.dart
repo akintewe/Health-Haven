@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
+import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
+=======
 import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
 import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
+>>>>>>> main
 import 'package:cancer_chat/app/modules/emptypage.dart';
 import 'package:cancer_chat/app/modules/favouriates/views/favourites_view.dart';
 import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.dart';
@@ -18,6 +23,9 @@ import 'package:cancer_chat/app/modules/top_doctor/view/top_doctor.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../app/modules/Profile/ProfilePage.dart';
+
+import '../app/modules/Profile/Profile_Settings.dart';
 import '../app/modules/dashboard_screen/view/dashboard.dart';
 import '../app/modules/specialist_doctor/view/specialist_doctor.dart';
 import '../core/utils/helpers/fade_animation.dart';
@@ -46,7 +54,12 @@ abstract class AppRouter {
 }
 
 final GoRouter _router =
+<<<<<<< HEAD
+// change the value of this initial location to the name of your allocated screen
+    GoRouter(initialLocation: _AppRoutePaths. ProfileSettings, routes: [
+=======
     GoRouter(initialLocation: _AppRoutePaths.splashscreen, routes: [
+>>>>>>> main
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
@@ -116,6 +129,27 @@ final GoRouter _router =
         context: context, state: state, child: const HomePage()),
   ),
   GoRoute(
+<<<<<<< HEAD
+    path: _AppRoutePaths.ProfilePage,
+    name: Routes.ProfilePage,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+      context: context,
+      state: state,
+      child:  ProfilePage(),
+    ),
+  ),
+   GoRoute(
+        path: _AppRoutePaths.ProfileSettings,
+    name: Routes.ProfileSettings,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+      context: context,
+      state: state,
+      // ignore: prefer_const_constructors
+      child:   ProfileSettings(),
+    ),
+    ),
+    
+=======
     path: _AppRoutePaths.doctor1,
     name: Routes.doctor1,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
@@ -181,4 +215,5 @@ final GoRouter _router =
   //   pageBuilder: (context, state) => buildPageWithDefaultTransition(
   //       context: context, state: state, child: const Doctor2()),
   // ),
+>>>>>>> main
 ]);

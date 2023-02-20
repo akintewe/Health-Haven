@@ -26,59 +26,55 @@ class _SignInState extends State<SignIn> {
           child: Form(
             key: _SignIn,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/images/app-logo.png',
-                  height: 150,
-                  width: 150,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Sign in to your account',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  height: 34,
-                ),
-                Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 35),
-                        child: Row(
-                          children: [
-                            Text('Email'),
-                            Text(
-                              '*',
-                              style: TextStyle(color: Colors.red),
-                            ),
-                          ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/app_logo.png',height: 200,width: 200,),
+           SizedBox(height: 20,),
+            Text(
+              'Sign in to your account',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 34,
+            ),
+            Container(
+              child: Column(
+
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left:35 ),
+                    child: Row(
+                      children: [
+                        Text('Email'),
+                        Text(
+                          '*',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 3 ,right: 8),
+                    child: TextFormField(
+
+                      keyboardType: TextInputType.emailAddress,
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        hintText:  'Email',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(60),
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 3, right: 8),
-                        child: TextFormField(
-                            keyboardType: TextInputType.emailAddress,
-                            controller: emailController,
-                            decoration: InputDecoration(
-                              isDense: true,
-                              hintText: 'Email',
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(60),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return "invalid email";
-                              }
-                              validator:
+                        validator:(value) {
+                          if (value!.isEmpty) {
+                            return "invalid email";
+                          }
+                            validator:
                               (String value) {
                                 if (value.isEmpty) {
                                   return "invalid email";
