@@ -1,7 +1,7 @@
 abstract class Routes {
   static const String signUp = "Sign up";
-  static const String ProfileSettings = "ProfileSettings";
-  static const String ProfilePage = "ProfilePage";
+  static const String profileSettings = "ProfileSettings";
+  static const String profilePage = "ProfilePage";
   static const String signInOptions = "Sign in options";
   static const String signIn = 'Sign in';
   static const String forgotPassword = "Forgot password";

@@ -3,6 +3,7 @@ import 'package:cancer_chat/app/modules/Profile/profilesettings/Notification.dar
 import 'package:cancer_chat/app/modules/Profile/profilesettings/SecurityPage.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import '../../../core/theme/colors.dart';
@@ -54,10 +55,14 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Colors.grey[300],
                       ),
-                      child: Icon(
-                        Icons.edit,
-                        color: Colors.blue[800],
-                      ),
+                      child: IconButton(
+                          onPressed: () {
+                            context.go('/Profile-Page');
+                          },
+                          icon: Icon(
+                            Icons.edit,
+                            color: Colors.blue[800],
+                          )),
                       width: 48,
                       height: 48,
                     ),

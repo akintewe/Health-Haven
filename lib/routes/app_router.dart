@@ -179,6 +179,12 @@ final GoRouter _router =
     name: Routes.paymentPage,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: PaymentPage()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.profilePage,
+    name: Routes.profilePage,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: ProfilePage()),
   )
   // GoRoute(
   //   path: _AppRoutePaths.notifications,
