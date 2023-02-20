@@ -5,7 +5,22 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppointmentCard extends StatefulWidget {
-  const AppointmentCard({super.key});
+  final String name;
+  final String mode;
+  final String status;
+  final String time;
+  final String image;
+  final IconData icon1;
+  final IconData icon2;
+  const AppointmentCard(
+      {super.key,
+      required this.name,
+      required this.mode,
+      required this.status,
+      required this.time,
+      required this.image,
+      required this.icon1,
+      required this.icon2});
 
   @override
   State<AppointmentCard> createState() => _AppointmentCardState();
@@ -36,7 +51,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                       height: 100,
                       width: 90,
                       child: Image.asset(
-                        'assets/images/person2.jpg',
+                        widget.image,
                         fit: BoxFit.cover,
                       )),
                 ),
@@ -55,7 +70,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                     ),
                     child: Center(
                       child: Icon(
-                        Icons.call,
+                        widget.icon1,
                         color: Colors.white,
                       ),
                     ),
@@ -69,7 +84,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Dr. Guy Hawkins',
+                widget.name,
                 style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -80,10 +95,10 @@ class _AppointmentCardState extends State<AppointmentCard> {
               ),
               RichText(
                 text: TextSpan(
-                    text: 'Voice Call -',
+                    text: widget.mode,
                     children: [
                       TextSpan(
-                          text: 'Completed',
+                          text: widget.status,
                           style: GoogleFonts.roboto(
                               color: Colors.green, fontSize: 14)),
                     ],
@@ -94,7 +109,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                 height: 10,
               ),
               Text(
-                '13:00 - 13:30 PM',
+                widget.time,
                 style: GoogleFonts.roboto(color: Colors.black),
               )
             ],
@@ -111,7 +126,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
             ),
             child: Center(
               child: Icon(
-                Icons.call,
+                widget.icon2,
                 color: AppColors.primary,
               ),
             ),

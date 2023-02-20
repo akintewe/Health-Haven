@@ -123,15 +123,95 @@ class _MyAppointmentState extends State<MyAppointment> {
           ),
           Container(
             color: Colors.white,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: RoundedSearchBar(),
-                ),
-                
-                AppointmentCard()
-              ],
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: RoundedSearchBar(),
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        'Wednesday, March 27 2022',
+                        style: GoogleFonts.roboto(
+                          color: AppColors.grey60,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  AppointmentCard(
+                    image: 'assets/images/doctor2.jpg',
+                    name: 'DR. Guy Hawkins',
+                    mode: 'Voice Call -',
+                    status: 'Completed',
+                    time: '13:00 - 13:30PM',
+                    icon1: Icons.call,
+                    icon2: Icons.call,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  AppointmentCard(
+                    image: 'assets/images/doctor3.jpg',
+                    name: 'DR. Mary Steward',
+                    mode: 'Messages -',
+                    status: 'Completed',
+                    time: '15:00 - 16:30PM',
+                    icon1: Icons.message,
+                    icon2: Icons.message,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        'Monday, March 24 2022',
+                        style: GoogleFonts.roboto(
+                          color: AppColors.grey60,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  AppointmentCard(
+                    image: 'assets/images/person1.jpg',
+                    name: 'DR. Kareem King',
+                    mode: 'Video Call -',
+                    status: 'Completed',
+                    time: '18:00 - 18:30PM',
+                    icon1: Icons.video_call,
+                    icon2: Icons.video_call,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  AppointmentCard(
+                    image: 'assets/images/doctor3.jpg',
+                    name: 'DR. Mary Steward',
+                    mode: 'Messages -',
+                    status: 'Completed',
+                    time: '15:00 - 16:30PM',
+                    icon1: Icons.message,
+                    icon2: Icons.message,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
