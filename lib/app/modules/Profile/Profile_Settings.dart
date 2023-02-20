@@ -102,7 +102,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     CircleAvatar(
                       radius: 50,
                       backgroundColor: Color.fromARGB(255, 187, 96, 63),
-                      backgroundImage: AssetImage('assets/icons/profile.png'),
+                      backgroundImage: AssetImage('assets/icons/man.png'),
                     ),
                     CircleAvatar(
                       radius: 10,
