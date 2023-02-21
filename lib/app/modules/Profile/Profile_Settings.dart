@@ -85,7 +85,8 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     CircleAvatar(
                       radius: 50,
                       backgroundColor: Color.fromARGB(255, 187, 96, 63),
-                      backgroundImage: AssetImage('assets/icons/profile.png'),
+                      backgroundImage: NetworkImage(
+                          FirebaseAuth.instance.currentUser!.photoURL!),
                     ),
                     CircleAvatar(
                       radius: 20,
@@ -108,7 +109,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Column(
                   children: [
                     Text(
-                      'Adam Smith',
+                      ("${FirebaseAuth.instance.currentUser!.displayName}"),
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
@@ -116,7 +117,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                       height: 15,
                     ),
                     Text(
-                      'adam.smith123@youdomain.com',
+                      ("${FirebaseAuth.instance.currentUser!.email}"),
                       style: TextStyle(
                           fontSize: 10,
                           color: Colors.black54,
@@ -126,7 +127,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                       height: 15,
                     ),
                     Text(
-                      'indonesia',
+                      'Nigeria',
                       style: TextStyle(
                           fontSize: 10,
                           color: Colors.black54,
