@@ -22,6 +22,7 @@ import '../app/modules/Profile/ProfilePage.dart';
 
 import '../app/modules/Profile/Profile_Settings.dart';
 import '../app/modules/dashboard_screen/view/dashboard.dart';
+import '../app/modules/sign_in/views/Specialist_SignIn.dart';
 import '../app/modules/specialist_doctor/view/specialist_doctor.dart';
 import '../core/utils/helpers/fade_animation.dart';
 import 'app_routes.dart';
@@ -50,7 +51,7 @@ abstract class AppRouter {
 
 final GoRouter _router =
 // change the value of this initial location to the name of your allocated screen
-    GoRouter(initialLocation: _AppRoutePaths. ProfileSettings, routes: [
+    GoRouter(initialLocation: _AppRoutePaths. SpecialistSignIN, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
@@ -128,6 +129,7 @@ final GoRouter _router =
       child:  ProfilePage(),
     ),
   ),
+  
    GoRoute(
         path: _AppRoutePaths.ProfileSettings,
     name: Routes.ProfileSettings,
@@ -136,6 +138,16 @@ final GoRouter _router =
       state: state,
       // ignore: prefer_const_constructors
       child:   ProfileSettings(),
+    ),
+    ),
+     GoRoute(
+        path: _AppRoutePaths.SpecialistSignIN,
+    name: Routes.SpecialistSignIN,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+      context: context,
+      state: state,
+    
+      child:   SpecialistSignIN(),
     ),
     ),
     

@@ -4,6 +4,7 @@ abstract class _AppRoutePaths {
   static const String signUp = "/sign-up";
    static const String  ProfileSettings = "/Profile-Settings";
    static const String ProfilePage = "/Profile-Page";
+   static const String SpecialistSignIN = "/Specialist-SignIN";
   static const String signInOptions = "/sign-in-options";
   static const String signIn = '/sign-in';
   static const String forgotPassword = "/forgot-password";

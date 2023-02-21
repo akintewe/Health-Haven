@@ -3,6 +3,7 @@ abstract class Routes {
   static const String ProfileSettings = "ProfileSettings";
   static const String ProfilePage = "ProfilePage";
   static const String signInOptions = "Sign in options";
+  static const String SpecialistSignIN = "SpecialistSignIN  options";
   static const String signIn = 'Sign in';
   static const String forgotPassword = "Forgot password";
   static const String resetPassword = 'Reset password';
