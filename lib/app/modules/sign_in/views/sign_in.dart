@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/firebase_services/service/firebase_services.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -302,11 +303,17 @@ class _SignInState extends State<SignIn> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                child: Image.asset(
-                                  'assets/icons/Google.png',
-                                  width: 30,
-                                  height: 30,
+                              GestureDetector(
+                                onTap: () async {
+                                  await FirebaseServices().signInWithGoogle();
+                                  context.go('/home-page');
+                                },
+                                child: Container(
+                                  child: Image.asset(
+                                    'assets/icons/Google.png',
+                                    width: 30,
+                                    height: 30,
+                                  ),
                                 ),
                               ),
                               SizedBox(
