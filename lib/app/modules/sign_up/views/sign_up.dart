@@ -1,4 +1,5 @@
 import 'package:cancer_chat/core/theme/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -171,6 +172,16 @@ class _SignUpState extends State<SignUp> {
                   child: MaterialButton(
                     onPressed: () {
                       if (_SignUp.currentState!.validate()) {
+                        FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                                email: emailController.text,
+                                password: passController.text)
+                            .then((value) {
+                          print('Created new account');
+                          context.go('/sign-in');
+                        }).onError((error, stackTrace) {
+                          print('Error ${error.toString()}');
+                        });
                         print("sucess");
                         emailController.clear();
                         passController.clear();

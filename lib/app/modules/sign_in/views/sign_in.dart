@@ -1,4 +1,5 @@
 import 'package:cancer_chat/core/theme/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -178,10 +179,15 @@ class _SignInState extends State<SignIn> {
                   child: MaterialButton(
                     onPressed: () {
                       if (_SignIn.currentState!.validate()) {
-                        print("sucess");
-                        emailController.clear();
-                        passController.clear();
-                        context.go('/home-page');
+                        FirebaseAuth.instance
+                            .signInWithEmailAndPassword(
+                                email: emailController.text,
+                                password: passController.text)
+                            .then((value) {
+                          context.go('/home-page');
+                        }).onError((error, stackTrace) {
+                          print("Error ${error.toString()}");
+                        });
                       }
                     },
                     minWidth: 320,

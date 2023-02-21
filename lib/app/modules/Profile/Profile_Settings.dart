@@ -2,6 +2,8 @@ import 'package:cancer_chat/app/modules/Profile/profilesettings/Invite_page.dart
 import 'package:cancer_chat/app/modules/Profile/profilesettings/Notification.dart';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/SecurityPage.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -489,7 +491,14 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                                           borderRadius:
                                               BorderRadius.circular(25),
                                           child: MaterialButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              FirebaseAuth.instance
+                                                  .signOut()
+                                                  .then((value) {
+                                                print('Logged out of account');
+                                                context.go('/sign-in');
+                                              });
+                                            },
                                             minWidth: 150,
                                             height: 42,
                                             child: Text(
@@ -510,7 +519,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                         );
                       },
                       child: Icon(
-                        Icons.login_rounded,
+                        Icons.logout_rounded,
                         color: Color.fromARGB(255, 199, 16, 40),
                       ),
                     ),

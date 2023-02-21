@@ -290,9 +290,7 @@ class _Doctor1State extends State<Doctor1> {
                           Text(
                             'Dr. Jenny Wilson',
                             style: GoogleFonts.roboto(
-                                fontWeight: FontWeight.bold,
-                                fontSize:
-                                    MediaQuery.of(context).size.height * 0.04),
+                                fontWeight: FontWeight.bold, fontSize: 23),
                           ),
                           SizedBox(
                             height: 10,
@@ -321,8 +319,7 @@ class _Doctor1State extends State<Doctor1> {
                             style: GoogleFonts.roboto(
                                 color: AppColors.grey,
                                 fontWeight: FontWeight.w500,
-                                fontSize:
-                                    MediaQuery.of(context).size.height * 0.02),
+                                fontSize: 15),
                           )
                         ],
                       ),
