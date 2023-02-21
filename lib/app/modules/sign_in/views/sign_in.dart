@@ -222,7 +222,9 @@ class _SignInState extends State<SignIn> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go('/forgot-password');
+                        },
                         child: Text(
                           'forgot the password?',
                           style: TextStyle(
