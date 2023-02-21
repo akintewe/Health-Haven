@@ -1,10 +1,12 @@
 import 'package:cancer_chat/app/modules/firebase_services/service/firebase_services.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remixicon/remixicon.dart';
 
@@ -14,12 +16,54 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  bool loading = false;
   late String _email;
   final _SignIn = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passController = TextEditingController();
   bool passToggle = true;
   bool? isChecked = false;
+  void _loginWithFacebook() async {
+    setState(() {
+      loading = true;
+    });
+    try {
+      final facebookLoginResult = await FacebookAuth.instance.login();
+      final userData = await FacebookAuth.instance.getUserData();
+
+      final FacebookAuthCredential = FacebookAuthProvider.credential(
+          facebookLoginResult.accessToken!.token);
+      await FirebaseAuth.instance.signInWithCredential(FacebookAuthCredential);
+
+      await FirebaseFirestore.instance.collection('users').add({
+        'email': userData['email'],
+        'imageUrl': userData['picture']['data']['url'],
+        'name': userData['name'],
+      });
+      context.go('/home-page');
+    } on Exception catch (e) {
+      var content = '';
+      switch (e.toString()) {
+        case 'account-exists-with-different-credential':
+          content = 'This account exists with a different provider';
+          break;
+        case 'Invalid-credential':
+          content = 'Unknown error has occured';
+          break;
+      }
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                title: Text('Login with facebook failed'),
+                content: Text(content),
+              ));
+    } finally {
+      setState(() {
+        loading = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,12 +177,14 @@ class _SignInState extends State<SignIn> {
                               suffixIcon: InkWell(
                                 onTap: () {
                                   setState(() {
+                                    obscureText:
+                                    false;
                                     passToggle = !passToggle;
                                   });
                                 },
                                 child: Icon(passToggle
                                     ? Icons.visibility_off
-                                    : Icons.visibility_off),
+                                    : Icons.visibility_outlined),
                               ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(100),
@@ -248,40 +294,50 @@ class _SignInState extends State<SignIn> {
                   child: Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          width: 160,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                  offset: Offset(0, 2),
-                                  color: Colors.black12,
-                                  blurRadius: 10),
-                            ],
-                            color: Colors.white,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                child: Image.asset(
-                                  'assets/icons/face.png',
-                                  width: 30,
-                                  height: 30,
+                        child: GestureDetector(
+                          onTap: () {
+                            _loginWithFacebook();
+                          },
+                          child: Container(
+                            width: 160,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                    offset: Offset(0, 2),
+                                    color: Colors.black12,
+                                    blurRadius: 10),
+                              ],
+                              color: Colors.white,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  child: Image.asset(
+                                    'assets/icons/face.png',
+                                    width: 30,
+                                    height: 30,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                'FaceBook',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
+                                SizedBox(
+                                  width: 10,
                                 ),
-                              ),
-                            ],
+                                GestureDetector(
+                                  onTap: () {
+                                    _loginWithFacebook();
+                                  },
+                                  child: Text(
+                                    'FaceBook',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
