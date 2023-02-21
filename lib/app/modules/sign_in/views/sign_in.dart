@@ -185,8 +185,18 @@ class _SignInState extends State<SignIn> {
                                 password: passController.text)
                             .then((value) {
                           context.go('/home-page');
-                        }).onError((error, stackTrace) {
+                        }).catchError((error, stackTrace) {
                           print("Error ${error.toString()}");
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    'Invalid username or password',
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                );
+                              });
                         });
                       }
                     },
