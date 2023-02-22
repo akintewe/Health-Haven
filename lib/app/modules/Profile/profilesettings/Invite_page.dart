@@ -90,7 +90,7 @@ class _InvitePsgeState extends State<InvitePsge> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/person3.jpg',
+                    'assets/images/doctor2.jpg',
                     width: 70,
                     height: 80,
                   ),
@@ -137,7 +137,7 @@ class _InvitePsgeState extends State<InvitePsge> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/person2.jpg',
+                    'assets/images/woman1.jpg',
                     width: 70,
                     height: 80,
                   ),
@@ -233,7 +233,7 @@ class _InvitePsgeState extends State<InvitePsge> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/doctor2.jpg',
+                    'assets/images/woman2.jpg',
                     width: 70,
                     height: 80,
                   ),
@@ -377,7 +377,7 @@ class _InvitePsgeState extends State<InvitePsge> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/person2.jpg',
+                    'assets/images/woman3.jpg',
                     width: 70,
                     height: 80,
                   ),

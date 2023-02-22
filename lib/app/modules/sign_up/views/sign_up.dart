@@ -202,6 +202,7 @@ class _SignUpState extends State<SignUp> {
                     height: 42,
                     child: const Text(
                       'Sign UP',
+
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
@@ -210,7 +211,33 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ),
-                const SizedBox(
+
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Are you a medical specialist ? ',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        context.go('/Specialist-SignIN');
+                      },
+                      child: Text(
+                        'Sign up here',
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+
                   height: 30,
                 ),
                 const Text('or continue with'),
