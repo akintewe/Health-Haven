@@ -3,8 +3,6 @@ import 'package:cancer_chat/app/modules/book_appointment/widgets/morning_evening
 import 'package:cancer_chat/app/modules/book_appointment/widgets/time_widget.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -26,9 +24,9 @@ class _BookAppointment1State extends State<BookAppointment1> {
         elevation: 0,
         leading: IconButton(
             onPressed: () {
-              context.go('/doctor-1');
+              context.go('/myAppointment');
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary,
               size: 29,
@@ -46,18 +44,18 @@ class _BookAppointment1State extends State<BookAppointment1> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            bookingTitle(
+            const bookingTitle(
               title: 'Monday, March 25 2022',
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
+              children: const [
                 MorningEvening(
                   timeIcon: Icons.sunny,
                   time: 'Morning',
@@ -68,73 +66,73 @@ class _BookAppointment1State extends State<BookAppointment1> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
-            bookingTitle(title: 'Choose the Hour'),
-            SizedBox(
+            const bookingTitle(title: 'Choose the Hour'),
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              children: const [
                 TimeWidget(time: '09:00AM'),
                 TimeWidget(time: '10:00AM'),
                 TimeWidget(time: '11:00AM'),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              children: const [
                 TimeWidget(time: '13:00AM'),
                 TimeWidget(time: '14:00AM'),
                 TimeWidget(time: '15:00AM'),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              children: const [
                 TimeWidget(time: '17:00AM'),
                 TimeWidget(time: '18:00AM'),
                 TimeWidget(time: '19:00AM'),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            bookingTitle(title: 'Fee information'),
-            SizedBox(
+            const bookingTitle(title: 'Fee information'),
+            const SizedBox(
               height: 15,
             ),
-            FeeInfoWidget(
+            const FeeInfoWidget(
               comment: 'Can message with doctor',
               header: 'Messaging',
               price: '\$5',
               icon: Icons.message,
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            FeeInfoWidget(
+            const FeeInfoWidget(
                 header: 'Voice Call',
                 comment: 'Can make call with doctor',
                 icon: Icons.phone,
                 price: '\$10'),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            FeeInfoWidget(
+            const FeeInfoWidget(
                 header: 'Video Call',
                 comment: 'Can video call with doctor',
                 icon: Icons.video_call,
                 price: '\$20'),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             SizedBox(
@@ -144,6 +142,9 @@ class _BookAppointment1State extends State<BookAppointment1> {
                 onPressed: () {
                   context.go('/patientDetails');
                 },
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
                 child: Text(
                   'Next',
                   style: GoogleFonts.roboto(
@@ -151,9 +152,6 @@ class _BookAppointment1State extends State<BookAppointment1> {
                     fontSize: 20,
                   ),
                 ),
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50))),
               ),
             ),
           ],

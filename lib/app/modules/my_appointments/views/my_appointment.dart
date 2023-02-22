@@ -2,8 +2,6 @@ import 'package:cancer_chat/app/modules/my_appointments/widgets/my_appointment_c
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:remixicon/remixicon.dart';
@@ -22,7 +20,7 @@ class _MyAppointmentState extends State<MyAppointment> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Icon(
+        leading: const Icon(
           Remix.shield_cross_fill,
           color: AppColors.primary,
           size: 50,
@@ -47,12 +45,12 @@ class _MyAppointmentState extends State<MyAppointment> {
                 ),
                 child: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add_rounded,
                       color: AppColors.primary,
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
             ],
@@ -60,8 +58,9 @@ class _MyAppointmentState extends State<MyAppointment> {
         ],
       ),
       body: ContainedTabBarView(
-        tabs: [
+        tabs: const [
           Text('First'),
+          //is this not supposed to bed Upcoming and past appointments ??
           Text('Second'),
         ],
         tabBarProperties: TabBarProperties(
@@ -84,11 +83,11 @@ class _MyAppointmentState extends State<MyAppointment> {
             color: AppColors.white,
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 Image.asset('assets/images/sad-face.png'),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Align(
@@ -111,6 +110,9 @@ class _MyAppointmentState extends State<MyAppointment> {
                     onPressed: () {
                       context.go('/appointment1');
                     },
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50))),
                     child: Text(
                       'Book Appointment Now',
                       style: GoogleFonts.roboto(
@@ -118,9 +120,6 @@ class _MyAppointmentState extends State<MyAppointment> {
                         fontSize: 20,
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50))),
                   ),
                 ),
               ],
@@ -132,13 +131,13 @@ class _MyAppointmentState extends State<MyAppointment> {
               scrollDirection: Axis.vertical,
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
                     child: RoundedSearchBar(),
                   ),
                   Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Text(
@@ -150,36 +149,36 @@ class _MyAppointmentState extends State<MyAppointment> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  AppointmentCard(
+                  const AppointmentCard(
                     image: 'assets/images/doctor2.jpg',
                     name: 'DR. Guy Hawkins',
-                    mode: 'Voice Call -',
+                    mode: 'Voice Call - ',
                     status: 'Completed',
                     time: '13:00 - 13:30PM',
                     icon1: Icons.call,
                     icon2: Icons.call,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  AppointmentCard(
+                  const AppointmentCard(
                     image: 'assets/images/doctor3.jpg',
                     name: 'DR. Mary Steward',
-                    mode: 'Messages -',
+                    mode: 'Messages - ',
                     status: 'Completed',
                     time: '15:00 - 16:30PM',
                     icon1: Icons.message,
                     icon2: Icons.message,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Text(
@@ -191,25 +190,25 @@ class _MyAppointmentState extends State<MyAppointment> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  AppointmentCard(
+                  const AppointmentCard(
                     image: 'assets/images/person1.jpg',
                     name: 'DR. Kareem King',
-                    mode: 'Video Call -',
+                    mode: 'Video Call - ',
                     status: 'Completed',
                     time: '18:00 - 18:30PM',
                     icon1: Icons.video_call,
                     icon2: Icons.video_call,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  AppointmentCard(
+                  const AppointmentCard(
                     image: 'assets/images/doctor3.jpg',
                     name: 'DR. Mary Steward',
-                    mode: 'Messages -',
+                    mode: 'Messages - ',
                     status: 'Completed',
                     time: '15:00 - 16:30PM',
                     icon1: Icons.message,
@@ -243,14 +242,14 @@ class RoundedSearchBar extends StatelessWidget {
           Expanded(
             child: TextField(
               onChanged: onChanged,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Search',
                 border: InputBorder.none,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 15.0),
+                contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
               ),
             ),
           ),
-          Icon(Icons.search),
+          const Icon(Icons.search),
         ],
       ),
     );

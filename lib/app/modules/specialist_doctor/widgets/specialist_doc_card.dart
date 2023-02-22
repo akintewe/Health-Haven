@@ -4,20 +4,30 @@ import '../../../../core/theme/colors.dart';
 
 class SpecialistDocCard extends StatelessWidget {
   const SpecialistDocCard({
-    super.key, required this.image, required this.title, required this.figure, required this.color,
+    super.key, required this.image, required this.title, required this.figure, required this.endColor, required this.startColor,
   });
   
   final String image;
   final String title;
   final String figure;
-  final Color color;
+  final Color endColor;
+  final Color startColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 150,
       decoration:  BoxDecoration(
-          color: color,
+        gradient:  LinearGradient(
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: [
+       startColor,
+       endColor
+      ],
+    ),
+  
+         // color: color,
           borderRadius: BorderRadius.all(Radius.circular(13))),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

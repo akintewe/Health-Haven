@@ -2,15 +2,14 @@ import 'package:cancer_chat/app/modules/firebase_services/service/firebase_servi
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remixicon/remixicon.dart';
 
 class SignIn extends StatefulWidget {
+  const SignIn({super.key});
+
   @override
   State<SignIn> createState() => _SignInState();
 }
@@ -54,7 +53,7 @@ class _SignInState extends State<SignIn> {
       showDialog(
           context: context,
           builder: (context) => AlertDialog(
-                title: Text('Login with facebook failed'),
+                title: const Text('Login with facebook failed'),
                 content: Text(content),
               ));
     } finally {
@@ -77,19 +76,19 @@ class _SignInState extends State<SignIn> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(
+                const Icon(
                   Remix.shield_cross_fill,
                   color: AppColors.primary,
                   size: 100,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   'Sign in to your account',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 34,
                 ),
                 Container(
@@ -98,7 +97,7 @@ class _SignInState extends State<SignIn> {
                       Padding(
                         padding: const EdgeInsets.only(left: 35),
                         child: Row(
-                          children: [
+                          children: const [
                             Text('Email'),
                             Text(
                               '*',
@@ -107,7 +106,7 @@ class _SignInState extends State<SignIn> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Padding(
@@ -142,15 +141,16 @@ class _SignInState extends State<SignIn> {
                               (String email) {
                                 _email = email;
                               };
+                              return null;
                             }),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 35),
                         child: Row(
-                          children: [
+                          children: const [
                             Text('Password'),
                             Text(
                               '*',
@@ -159,7 +159,7 @@ class _SignInState extends State<SignIn> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Padding(
@@ -194,6 +194,7 @@ class _SignInState extends State<SignIn> {
                               if (value!.isEmpty) {
                                 return "!password doesnt match email";
                               }
+                              return null;
                             }),
                       ),
                       Row(
@@ -201,7 +202,7 @@ class _SignInState extends State<SignIn> {
                           Checkbox(
                               value: isChecked,
                               activeColor: Colors.blue[700],
-                              side: BorderSide(color: Colors.blue),
+                              side: const BorderSide(color: Colors.blue),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
                               onChanged: (newBool) {
@@ -209,7 +210,7 @@ class _SignInState extends State<SignIn> {
                                   isChecked = newBool;
                                 });
                               }),
-                          Text(
+                          const Text(
                             'Remember me',
                             style: TextStyle(
                                 fontSize: 13, fontWeight: FontWeight.bold),
@@ -237,7 +238,7 @@ class _SignInState extends State<SignIn> {
                           showDialog(
                               context: context,
                               builder: (context) {
-                                return AlertDialog(
+                                return const AlertDialog(
                                   title: Text(
                                     'Invalid username or password',
                                     style: TextStyle(color: Colors.red),
@@ -249,7 +250,7 @@ class _SignInState extends State<SignIn> {
                     },
                     minWidth: 320,
                     height: 42,
-                    child: Text(
+                    child: const Text(
                       'Sign in',
                       style: TextStyle(
                         color: Colors.white,
@@ -259,7 +260,7 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(
@@ -271,7 +272,7 @@ class _SignInState extends State<SignIn> {
                         onPressed: () {
                           context.go('/forgot-password');
                         },
-                        child: Text(
+                        child: const Text(
                           'forgot the password?',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -282,11 +283,11 @@ class _SignInState extends State<SignIn> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Text('or continue with'),
-                SizedBox(
+                const Text('or continue with'),
+                const SizedBox(
                   height: 25,
                 ),
                 Padding(
@@ -303,7 +304,7 @@ class _SignInState extends State<SignIn> {
                             height: 60,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                     offset: Offset(0, 2),
                                     color: Colors.black12,
@@ -321,14 +322,14 @@ class _SignInState extends State<SignIn> {
                                     height: 30,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 GestureDetector(
                                   onTap: () {
                                     _loginWithFacebook();
                                   },
-                                  child: Text(
+                                  child: const Text(
                                     'FaceBook',
                                     style: TextStyle(
                                       fontSize: 15,
@@ -341,7 +342,7 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 25,
                       ),
                       Expanded(
@@ -350,7 +351,7 @@ class _SignInState extends State<SignIn> {
                           height: 60,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                   offset: Offset(0, 2),
                                   color: Colors.black12,
@@ -374,10 +375,10 @@ class _SignInState extends State<SignIn> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 6,
                               ),
-                              Text(
+                              const Text(
                                 'Google',
                                 style: TextStyle(
                                   fontSize: 20,
@@ -398,8 +399,8 @@ class _SignInState extends State<SignIn> {
                     mainAxisAlignment: MainAxisAlignment.center,
 
                     children: [
-                      Text(
-                        'Already have an account?',
+                      const Text(
+                        'Don\'t have an account?',
                         style: TextStyle(
                             fontWeight: FontWeight.w300, fontSize: 14),
                       ),
@@ -407,7 +408,7 @@ class _SignInState extends State<SignIn> {
                         onPressed: () {
                           context.go('/sign-up');
                         },
-                        child: Text(
+                        child: const Text(
                           'Sign Up',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,

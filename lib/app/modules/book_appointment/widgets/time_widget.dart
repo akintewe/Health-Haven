@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -23,7 +22,7 @@ class _TimeWidgetState extends State<TimeWidget> {
         setState(() {});
       },
       child: Container(
-        height: 50,
+        height: 40.h,
         width: MediaQuery.of(context).size.width * 0.3,
         decoration: BoxDecoration(
             color: isSelected ? AppColors.primary : AppColors.white,
@@ -38,7 +37,7 @@ class _TimeWidgetState extends State<TimeWidget> {
                 style: GoogleFonts.roboto(
                     fontWeight: FontWeight.bold,
                     color: isSelected ? AppColors.white : AppColors.primary,
-                    fontSize: 19),
+                    fontSize: 17.sp),
               )
             ],
           ),

@@ -1,7 +1,6 @@
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppointmentCard extends StatefulWidget {
@@ -43,7 +42,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
             children: [
               Positioned(
                 child: ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20),
                   ),
@@ -62,7 +61,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                   child: Container(
                     height: 40,
                     width: 40,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                       ),
@@ -77,21 +76,22 @@ class _AppointmentCardState extends State<AppointmentCard> {
                   ))
             ],
           ),
-          SizedBox(
+          const SizedBox(
             width: 13,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 widget.name,
                 style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 16.sp,
                 ),
               ),
-              SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.sp,
               ),
               RichText(
                 text: TextSpan(
@@ -100,12 +100,12 @@ class _AppointmentCardState extends State<AppointmentCard> {
                       TextSpan(
                           text: widget.status,
                           style: GoogleFonts.roboto(
-                              color: Colors.green, fontSize: 14)),
+                              color: Colors.green, fontSize: 13.sp)),
                     ],
                     style:
-                        GoogleFonts.roboto(color: Colors.black, fontSize: 14)),
+                        GoogleFonts.roboto(color: Colors.black, fontSize: 13.sp)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -114,7 +114,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             width: 18,
           ),
           Container(

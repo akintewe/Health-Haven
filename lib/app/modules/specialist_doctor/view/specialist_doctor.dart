@@ -71,7 +71,8 @@ class _SpecialistDoctorState extends State<SpecialistDoctor> {
                 image: specialistDoctor.image,
                 title: specialistDoctor.title,
                 figure: specialistDoctor.figure,
-                color: specialistDoctor.color,
+               startColor: specialistDoctor.startColor,
+                endColor: specialistDoctor.endColor,
               );
             }),
       ),

@@ -1,8 +1,5 @@
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remixicon/remixicon.dart';
@@ -21,6 +18,9 @@ class _SignUpState extends State<SignUp> {
   final passController = TextEditingController();
   bool passToggle = true;
   bool? isChecked = false;
+  
+  bool isVisible = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,19 +34,19 @@ class _SignUpState extends State<SignUp> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(
+                const Icon(
                   Remix.shield_cross_fill,
                   color: AppColors.primary,
                   size: 100,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   'Sign up for free',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 34,
                 ),
                 Container(
@@ -55,7 +55,7 @@ class _SignUpState extends State<SignUp> {
                       Padding(
                         padding: const EdgeInsets.only(left: 35),
                         child: Row(
-                          children: [
+                          children: const [
                             Text('Email'),
                             Text(
                               '*',
@@ -64,7 +64,7 @@ class _SignUpState extends State<SignUp> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Padding(
@@ -99,15 +99,16 @@ class _SignUpState extends State<SignUp> {
                               (String email) {
                                 _email = email;
                               };
+                              return null;
                             }),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 35),
                         child: Row(
-                          children: [
+                          children: const [
                             Text('Password'),
                             Text(
                               '*',
@@ -116,7 +117,7 @@ class _SignUpState extends State<SignUp> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Padding(
@@ -127,11 +128,20 @@ class _SignUpState extends State<SignUp> {
                         child: TextFormField(
                             controller: passController,
                             keyboardType: TextInputType.visiblePassword,
-                            obscureText: true,
+                            obscureText: passToggle,
                             decoration: InputDecoration(
                               isDense: true,
                               hintText: 'Password',
-                              suffixIcon: Icon(Icons.visibility_off),
+                              suffixIcon:  InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    obscureText:
+                                    false;
+                                    passToggle = !passToggle;
+                                  });
+                                },
+                                child: Icon(passToggle ? Icons.visibility_off : 
+                                Icons.visibility_outlined)),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(100),
                               ),
@@ -140,6 +150,7 @@ class _SignUpState extends State<SignUp> {
                               if (value!.isEmpty) {
                                 return "!password doesnt match email";
                               }
+                              return null;
                             }),
                       ),
                       Row(
@@ -147,7 +158,7 @@ class _SignUpState extends State<SignUp> {
                           Checkbox(
                               value: isChecked,
                               activeColor: Colors.blue[700],
-                              side: BorderSide(color: Colors.blue),
+                              side: const BorderSide(color: Colors.blue),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
                               onChanged: (newBool) {
@@ -155,7 +166,7 @@ class _SignUpState extends State<SignUp> {
                                   isChecked = newBool;
                                 });
                               }),
-                          Text(
+                          const Text(
                             'Remember me',
                             style: TextStyle(
                                 fontSize: 12, fontWeight: FontWeight.bold),
@@ -189,8 +200,9 @@ class _SignUpState extends State<SignUp> {
                     },
                     minWidth: 320,
                     height: 42,
-                    child: Text(
-                      'Sign Up',
+                    child: const Text(
+                      'Sign UP',
+
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
@@ -199,6 +211,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ),
+
                 SizedBox(
                   height: 20,
                 ),
@@ -224,10 +237,11 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
                 SizedBox(
+
                   height: 30,
                 ),
-                Text('or continue with'),
-                SizedBox(
+                const Text('or continue with'),
+                const SizedBox(
                   height: 20,
                 ),
                 Padding(
@@ -252,10 +266,10 @@ class _SignUpState extends State<SignUp> {
                                   height: 30,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 6,
                               ),
-                              Text(
+                              const Text(
                                 'FaceBook',
                                 style: TextStyle(
                                   fontSize: 15,
@@ -266,7 +280,7 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 25,
                       ),
                       Expanded(
@@ -287,10 +301,10 @@ class _SignUpState extends State<SignUp> {
                                   height: 30,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
-                              Text(
+                              const Text(
                                 'Google',
                                 style: TextStyle(
                                   fontSize: 20,
@@ -311,7 +325,7 @@ class _SignUpState extends State<SignUp> {
                     mainAxisAlignment: MainAxisAlignment.center,
 
                     children: [
-                      Text(
+                      const Text(
                         'Already have an account?',
                         style: TextStyle(
                             fontWeight: FontWeight.w300, fontSize: 14),
@@ -320,7 +334,7 @@ class _SignUpState extends State<SignUp> {
                         onPressed: () {
                           context.go('/sign-in');
                         },
-                        child: Text(
+                        child: const Text(
                           'Sign in',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,

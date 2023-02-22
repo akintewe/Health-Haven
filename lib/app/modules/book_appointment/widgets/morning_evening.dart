@@ -1,7 +1,6 @@
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MorningEvening extends StatefulWidget {
@@ -24,12 +23,12 @@ class _MorningEveningState extends State<MorningEvening> {
         setState(() {});
       },
       child: Container(
-        height: 50,
+        height: 40.h,
         width: MediaQuery.of(context).size.width * 0.45,
         decoration: BoxDecoration(
             color: isSelected ? AppColors.primary : AppColors.white,
             borderRadius: BorderRadius.circular(80),
-            border: Border.all(color: AppColors.primary, width: 3)),
+            border: Border.all(color: AppColors.primary, width: 2.5.sp)),
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -41,9 +40,9 @@ class _MorningEveningState extends State<MorningEvening> {
               Text(
                 widget.time,
                 style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w700,
                     color: isSelected ? AppColors.white : AppColors.primary,
-                    fontSize: 19),
+                    fontSize: 18.sp),
               )
             ],
           ),
