@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_credit_card/credit_card_brand.dart';
 import 'package:flutter_credit_card/credit_card_form.dart';
 import 'package:flutter_credit_card/credit_card_model.dart';
@@ -41,7 +39,7 @@ class _PaymentPageState extends State<PaymentPage> {
               onPressed: () {
                 context.go('/patientDetails');
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_rounded,
                 color: AppColors.primary,
                 size: 29,
@@ -64,14 +62,14 @@ class _PaymentPageState extends State<PaymentPage> {
                     color: AppColors.primary100,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Icon(
                       Icons.add_rounded,
                       color: AppColors.primary,
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 5,
                 ),
               ],
@@ -231,7 +229,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                   'assets/animation/messages.json',
                                   width: 200,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 Text(
@@ -241,7 +239,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       fontSize: 30,
                                       color: AppColors.primary),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Row(
@@ -283,7 +281,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 SizedBox(
@@ -291,7 +289,13 @@ class _PaymentPageState extends State<PaymentPage> {
                                   width:
                                       MediaQuery.of(context).size.width * 0.74,
                                   child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      context.go("/appointment1");
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(50))),
                                     child: Text(
                                       'Ok',
                                       style: GoogleFonts.roboto(
@@ -299,10 +303,6 @@ class _PaymentPageState extends State<PaymentPage> {
                                         fontSize: 20,
                                       ),
                                     ),
-                                    style: ElevatedButton.styleFrom(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50))),
                                   ),
                                 ),
                               ],
@@ -326,7 +326,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       ),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    padding: EdgeInsets.symmetric(vertical: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 15),
                     width: double.infinity,
                     alignment: Alignment.center,
                     child: Text(

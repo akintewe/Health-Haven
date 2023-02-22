@@ -608,16 +608,9 @@ class _Doctor1State extends State<Doctor1> {
               height: 60,
               width: MediaQuery.of(context).size.width * 0.8,
               child: ElevatedButton(
-<<<<<<< HEAD
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50))),
-=======
                 onPressed: () {
                   context.go('/appointment1');
                 },
->>>>>>> d6c65f194fd475fbc0c4c341d5a77e62bb0315a1
                 child: Text(
                   'Book Appointment',
                   style: GoogleFonts.roboto(

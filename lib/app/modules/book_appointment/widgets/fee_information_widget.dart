@@ -1,7 +1,6 @@
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FeeInfoWidget extends StatefulWidget {
@@ -30,8 +29,8 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
         setState(() {});
       },
       child: Container(
-        height: 90,
-        width: MediaQuery.of(context).size.width * 0.9,
+        height: 90.h,
+        width: MediaQuery.of(context).size.width * 0.9.sp,
         decoration: BoxDecoration(
             color: isPressed ? AppColors.primary : Colors.white,
             border: Border.all(
@@ -41,31 +40,32 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
         child: Row(
           children: [
             SizedBox(
-              width: 10,
+              width: 10.w,
             ),
             CircleAvatar(
               backgroundColor: isPressed ? Colors.white : AppColors.primary100,
-              radius: 35,
+              radius: 30,
               child: Icon(
                 widget.icon,
-                size: 30,
+                size: 25.sp,
               ),
             ),
             SizedBox(
-              width: 10,
+              width: 15.w,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   widget.header,
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 18.sp,
                     color: isPressed ? Colors.white : Colors.black,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -78,14 +78,14 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
               ],
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.09,
+              width: MediaQuery.of(context).size.width * 0.06,
             ),
             Text(
               widget.price,
               style: GoogleFonts.roboto(
                 fontWeight: FontWeight.bold,
                 color: isPressed ? Colors.white : AppColors.primary,
-                fontSize: 25,
+                fontSize: 23.sp,
               ),
             )
           ],
