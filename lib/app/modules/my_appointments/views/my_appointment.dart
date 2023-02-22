@@ -59,9 +59,10 @@ class _MyAppointmentState extends State<MyAppointment> {
       ),
       body: ContainedTabBarView(
         tabs: const [
-          Text('First'),
+          Text('Upcoming'),
           //is this not supposed to bed Upcoming and past appointments ??
-          Text('Second'),
+          //it is... i am suprised it changed back to first and second cause i wrote upcoming and past
+          Text('Past'),
         ],
         tabBarProperties: TabBarProperties(
           padding: const EdgeInsets.symmetric(
@@ -164,14 +165,17 @@ class _MyAppointmentState extends State<MyAppointment> {
                   const SizedBox(
                     height: 15,
                   ),
-                  const AppointmentCard(
-                    image: 'assets/images/doctor3.jpg',
-                    name: 'DR. Mary Steward',
-                    mode: 'Messages - ',
-                    status: 'Completed',
-                    time: '15:00 - 16:30PM',
-                    icon1: Icons.message,
-                    icon2: Icons.message,
+                  GestureDetector(
+                    onTap: (){},
+                    child: const AppointmentCard(
+                      image: 'assets/images/doctor3.jpg',
+                      name: 'DR. Mary Steward',
+                      mode: 'Messages - ',
+                      status: 'Completed',
+                      time: '15:00 - 16:30PM',
+                      icon1: Icons.message,
+                      icon2: Icons.message,
+                    ),
                   ),
                   const SizedBox(
                     height: 15,
