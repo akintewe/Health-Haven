@@ -201,15 +201,6 @@ final GoRouter _router =
   //   pageBuilder: (context, state) => buildPageWithDefaultTransition(
   //       context: context, state: state, child: const Doctor2()),
   // ),
-  GoRoute(
-    path: _AppRoutePaths.profilePage,
-    name: Routes.profilePage,
-    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
-      context: context,
-      state: state,
-      child: ProfilePage(),
-    ),
-  ),
 
   GoRoute(
     path: _AppRoutePaths.profileSettings,

@@ -84,16 +84,21 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                   children: [
                     CircleAvatar(
                       radius: 50,
-                      backgroundColor: Color.fromARGB(255, 187, 96, 63),
                       backgroundImage: NetworkImage(
                           FirebaseAuth.instance.currentUser!.photoURL!),
-                      child: IconButton(
-                        onPressed: () {
-                          context.go('/Profile-Page');
-                        },
-                        icon: Icon(
-                          Icons.edit,
-                          size: 20,
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: CircleAvatar(
+                          child: IconButton(
+                            onPressed: () {
+                              context.go('/Profile-Page');
+                            },
+                            icon: Icon(
+                              Icons.edit,
+                              size: 20,
+                              color: AppColors.white,
+                            ),
+                          ),
                         ),
                       ),
                     ),
