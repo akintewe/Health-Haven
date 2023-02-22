@@ -84,8 +84,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                   children: [
                     CircleAvatar(
                       radius: 50,
-                      backgroundImage: NetworkImage(
-                          FirebaseAuth.instance.currentUser!.photoURL!),
+                      backgroundImage: AssetImage('assets/images/user.png'),
                       child: Align(
                         alignment: Alignment.bottomRight,
                         child: CircleAvatar(

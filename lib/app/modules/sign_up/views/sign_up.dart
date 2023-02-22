@@ -190,7 +190,7 @@ class _SignUpState extends State<SignUp> {
                     minWidth: 320,
                     height: 42,
                     child: Text(
-                      'Sign UP',
+                      'Sign Up',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
@@ -198,6 +198,30 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Are you a medical specialist ? ',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        context.go('/Specialist-SignIN');
+                      },
+                      child: Text(
+                        'Sign up here',
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 SizedBox(
                   height: 30,
