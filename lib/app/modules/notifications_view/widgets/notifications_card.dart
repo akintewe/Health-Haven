@@ -5,7 +5,11 @@ import '../../../../core/theme/colors.dart';
 
 class NotificationsCard extends StatelessWidget {
   const NotificationsCard({
-    super.key, required this.title, required this.content, required this.color, required this.icon,
+    super.key,
+    required this.title,
+    required this.content,
+    required this.color,
+    required this.icon,
   });
 
   final String title;
@@ -21,40 +25,38 @@ class NotificationsCard extends StatelessWidget {
       decoration: const BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.all(Radius.circular(10))),
-      child: Row(
-         
+      child: Row(children: [
+        Container(
+            margin: const EdgeInsets.symmetric(vertical: 20),
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+            child: Icon(
+              icon,
+              color: AppColors.white,
+            )),
+        const SizedBox(
+          width: 15,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-                margin: const EdgeInsets.symmetric(vertical: 20),
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                    color: color,
-                    shape: BoxShape.circle),
-                child:  Icon(
-                  icon,
-                  color: AppColors.white,
-                )),
-            const SizedBox(
-              width: 15,
+            Text(
+              title,
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.w700, fontSize: 13),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.w700, fontSize: 15),
-                ),
-                const SizedBox(height: 6,),
-                Text(
-                  content,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.roboto(fontSize: 12),
-                ),
-              ],
-            )
-          ]),
+            const SizedBox(
+              height: 6,
+            ),
+            Text(
+              content,
+              overflow: TextOverflow.ellipsis,
+              style: GoogleFonts.roboto(fontSize: 10),
+            ),
+          ],
+        )
+      ]),
     );
   }
 }

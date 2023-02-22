@@ -248,7 +248,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                     Text(
                                       'Your appointment was booked successfully',
                                       style: GoogleFonts.roboto(
-                                        fontSize: 15,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
                                       ),
@@ -261,7 +261,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                     Text(
                                       'Dr.Jenny Wilson will message you',
                                       style: GoogleFonts.roboto(
-                                        fontSize: 15,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
                                       ),
@@ -274,7 +274,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                     Text(
                                       'soon.',
                                       style: GoogleFonts.roboto(
-                                        fontSize: 15,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
                                       ),

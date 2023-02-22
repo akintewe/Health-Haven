@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   TextEditingController textEditingController = TextEditingController();
   static const List<Widget> _widgetOptions = <Widget>[
     MainHomePage(),
-   MyAppointment(),
+    MyAppointment(),
     Doctor1(),
     ProfileSettings()
   ];
@@ -187,7 +187,7 @@ class _MainHomePageState extends State<MainHomePage> {
               children: [
                 Text(
                   'Specialist Doctor',
-                  style: GoogleFonts.b612Mono(
+                  style: GoogleFonts.roboto(
                       color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
@@ -405,7 +405,7 @@ class _MainHomePageState extends State<MainHomePage> {
               children: [
                 Text(
                   'Top Doctors',
-                  style: GoogleFonts.b612Mono(
+                  style: GoogleFonts.roboto(
                       color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
