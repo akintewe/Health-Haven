@@ -1,11 +1,10 @@
-
 import 'dart:io';
 
+import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
-
-
+import 'package:remixicon/remixicon.dart';
 
 class SpecialistSignIN extends StatefulWidget {
   const SpecialistSignIN({super.key});
@@ -15,17 +14,17 @@ class SpecialistSignIN extends StatefulWidget {
 }
 
 class _SpecialistSignINState extends State<SpecialistSignIN> {
-    File ?image;
-   final imagepicker= ImagePicker();
-   uploadImage() async{
- var pickedImage = await imagepicker.getImage(source: ImageSource.gallery);
- if(pickedImage!=null){
- setState(() {
-     image =File(pickedImage.path);
- });
+  File? image;
+  final imagepicker = ImagePicker();
+  uploadImage() async {
+    var pickedImage = await imagepicker.getImage(source: ImageSource.gallery);
+    if (pickedImage != null) {
+      setState(() {
+        image = File(pickedImage.path);
+      });
+    } else {}
+  }
 
- }else{}
-   }
   var _currencies = [
     "male",
     "female",
@@ -41,9 +40,9 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
   final adressController = TextEditingController();
   final dateController = TextEditingController();
   final genderController = TextEditingController();
-   final  passController =TextEditingController();
-  
-  
+  final passController = TextEditingController();
+  final hospitalController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,10 +56,10 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/images/app-logo.png',
-                          height: 200,
-                          width: 200,
+                        Icon(
+                          Remix.shield_cross_fill,
+                          size: 100,
+                          color: AppColors.primary,
                         ),
                         SizedBox(
                           height: 20,
@@ -89,9 +88,9 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                           height: 10,
                         ),
                         Container(
-                          height: 40,
+                          height: 50,
                           width: 340,
-                          child: TextField(
+                          child: TextFormField(
                             keyboardType: TextInputType.text,
                             controller: fullnameController,
                             decoration: InputDecoration(
@@ -102,6 +101,9 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                               ),
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 35),
@@ -119,7 +121,7 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                           height: 10,
                         ),
                         Container(
-                           height: 40,
+                          height: 70,
                           width: 340,
                           child: TextFormField(
                               keyboardType: TextInputType.emailAddress,
@@ -153,7 +155,6 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                                 };
                               }),
                         ),
-                        
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
                           child: Row(
@@ -170,7 +171,7 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                           height: 10,
                         ),
                         SizedBox(
-                          height: 40,
+                          height: 50,
                           width: 340,
                           child: FormField<String>(
                             builder: (FormFieldState<String> state) {
@@ -190,8 +191,7 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                                 isEmpty: _currentSelectedValue == '',
                                 child: DropdownButtonHideUnderline(
                                   child: DropdownButton<String>(
-                                    focusColor:
-                                        Colors.grey[300],
+                                    focusColor: Colors.grey[300],
                                     value: _currentSelectedValue,
                                     isDense: true,
                                     onChanged: (newValue) {
@@ -216,7 +216,7 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                           height: 20,
                         ),
                         Container(
-                          height: 40,
+                          height: 50,
                           width: 340,
                           child: TextField(
                             keyboardType: TextInputType.phone,
@@ -229,6 +229,9 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                               ),
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
@@ -246,7 +249,7 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                           height: 10,
                         ),
                         Container(
-                          height: 40,
+                          height: 50,
                           width: 340,
                           child: TextField(
                             keyboardType: TextInputType.text,
@@ -259,6 +262,9 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                               ),
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
@@ -276,11 +282,11 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                           height: 10,
                         ),
                         Container(
-                          height: 40,
+                          height: 50,
                           width: 340,
                           child: TextField(
                             keyboardType: TextInputType.text,
-                            controller: adressController,
+                            controller: hospitalController,
                             decoration: InputDecoration(
                               isDense: true,
                               hintText: 'Hospital Name',
@@ -296,61 +302,60 @@ class _SpecialistSignINState extends State<SpecialistSignIN> {
                         Container(
                           width: 400,
                           height: 200,
-                          color: Colors.grey[100],
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey[100],
+                          ),
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                               
-                          
                                 ElevatedButton(
-                                  onPressed: (){
+                                  onPressed: () {
                                     uploadImage();
                                   },
-                                  child: Text('UPload Medical School certification',
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                  child: Text(
+                                    'UPload Medical School certification',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ),
-                          image==null?Text('no picture'):
-                                Image.file(image!),
-                    
+                                image == null
+                                    ? Text('no picture')
+                                    : Image.file(image!),
                               ]),
-                            
                         ),
-                        SizedBox(height: 20,),
- Material(
-                  elevation: 5,
-                  color: Colors.blue[700],
-                  borderRadius: BorderRadius.circular(25),
-                  child: MaterialButton(
-                    onPressed: () {
-                      if (_SignIn.currentState!.validate()) {
-                        print("sucess");
-                        emailController.clear();
-                        passController.clear();
-                        context.go('/home-page');
-                      }
-                    },
-                    minWidth: 320,
-                    height: 42,
-                    child: Text(
-                      'Sign in',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                      ])
-                      )
-                      ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Material(
+                          elevation: 5,
+                          color: Colors.blue[700],
+                          borderRadius: BorderRadius.circular(25),
+                          child: MaterialButton(
+                            onPressed: () {
+                              if (_SignIn.currentState!.validate()) {
+                                print("sucess");
+                                emailController.clear();
+                                passController.clear();
+                                context.go('/sign-in');
+                              }
+                            },
+                            minWidth: 320,
+                            height: 42,
+                            child: Text(
+                              'Sign in',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ]))),
         ));
   }
-
-
 }
