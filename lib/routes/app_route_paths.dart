@@ -2,8 +2,9 @@ part of 'app_router.dart';
 
 abstract class _AppRoutePaths {
   static const String signUp = "/sign-up";
-  static const String profileSettings = "/Profile-Settings";
-  static const String profilePage = "/Profile-Page";
+   static const String  profileSettings = "/Profile-Settings";
+   static const String profilePage = "/Profile-Page";
+   static const String specialistSignIN = "/Specialist-SignIN";
   static const String signInOptions = "/sign-in-options";
   static const String signIn = '/sign-in';
   static const String forgotPassword = "/forgot-password";

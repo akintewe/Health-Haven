@@ -87,10 +87,6 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                       backgroundColor: Color.fromARGB(255, 187, 96, 63),
                       backgroundImage: NetworkImage(
                           FirebaseAuth.instance.currentUser!.photoURL!),
-                    ),
-                    CircleAvatar(
-                      radius: 20,
-                      backgroundColor: Colors.blue[900],
                       child: IconButton(
                         onPressed: () {
                           context.go('/Profile-Page');

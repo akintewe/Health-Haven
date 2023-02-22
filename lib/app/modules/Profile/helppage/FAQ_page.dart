@@ -14,6 +14,10 @@ class FAQPage extends StatefulWidget {
 
 class _FAQPageState extends State<FAQPage> {
   bool ispressed = false;
+  bool ispress = false;
+  bool isChecked = false;
+  bool ischeck = false;
+  bool ispree = false;
 
   @override
   Widget build(BuildContext context) {
@@ -88,13 +92,9 @@ class _FAQPageState extends State<FAQPage> {
                   child: Container(
                     height: 37,
                     width: 100,
-                   
                     decoration: BoxDecoration(
-                       color: ispressed ? AppColors.white : AppColors.primary,
-                        border: Border.all(
-                          color:Colors.blue
-                              
-                        ),
+                        color: ispressed ? AppColors.primary : AppColors.white,
+                        border: Border.all(color: Colors.blue),
                         borderRadius: BorderRadius.all(
                           Radius.circular(25),
                         )),
@@ -104,7 +104,9 @@ class _FAQPageState extends State<FAQPage> {
                         Text(
                           'General',
                           style: TextStyle(
-                            color: Colors.blue[800],
+                            color: ispressed
+                                ? Color.fromARGB(255, 239, 242, 247)
+                                : Colors.blue[800],
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -116,113 +118,145 @@ class _FAQPageState extends State<FAQPage> {
                 SizedBox(
                   width: 12,
                 ),
-                Container(
-                  height: 37,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color:
-                            AppColors.primary,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25),
-                      )),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Login',
-                        style: TextStyle(
-                          color: Colors.blue[800],
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: () {
+                    ispress = !ispress;
+                    setState(() {});
+                  },
+                  child: Container(
+                    height: 37,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        color: ispress ? AppColors.primary : AppColors.white,
+                        border: Border.all(
+                          color: AppColors.primary,
                         ),
-                      ),
-                    ],
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25),
+                        )),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Login',
+                          style: TextStyle(
+                            color: ispress
+                                ? Color.fromARGB(255, 239, 242, 247)
+                                : Colors.blue[800],
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: 12,
                 ),
-                Container(
-                  height: 37,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color:
-                            AppColors.primary,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25),
-                      )),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Account',
-                        style: TextStyle(
-                          color: Colors.blue[800],
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: () {
+                    ispree = !ispree;
+                    setState(() {});
+                  },
+                  child: Container(
+                    height: 37,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        color: ispree ? AppColors.primary : AppColors.white,
+                        border: Border.all(
+                          color: AppColors.primary,
                         ),
-                      ),
-                    ],
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25),
+                        )),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Account',
+                          style: TextStyle(
+                            color: ispree
+                                ? Color.fromARGB(255, 239, 242, 247)
+                                : Colors.blue[800],
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: 12,
                 ),
-                Container(
-                  height: 37,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color:
-                        AppColors.primary,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25),
-                      )),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Doctor',
-                        style: TextStyle(
-                          color: Colors.blue[800],
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: () {
+                    isChecked = !isChecked;
+                    setState(() {});
+                  },
+                  child: Container(
+                    height: 37,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        color: isChecked ? AppColors.primary : AppColors.white,
+                        border: Border.all(
+                          color: AppColors.primary,
                         ),
-                      ),
-                    ],
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25),
+                        )),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Doctor',
+                          style: TextStyle(
+                            color: isChecked
+                                ? Color.fromARGB(255, 239, 242, 247)
+                                : Colors.blue[800],
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: 12,
                 ),
-                Container(
-                  height: 37,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color:
-                             AppColors.primary,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25),
-                      )),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Tips',
-                        style: TextStyle(
-                          color: Colors.blue[800],
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: () {
+                    ischeck = !ischeck;
+                    setState(() {});
+                  },
+                  child: Container(
+                    height: 37,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        color: ischeck ? AppColors.primary : AppColors.white,
+                        border: Border.all(
+                          color: AppColors.primary,
                         ),
-                      ),
-                    ],
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25),
+                        )),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Tips',
+                          style: TextStyle(
+                            color: ischeck
+                                ? Color.fromARGB(255, 239, 242, 247)
+                                : Colors.blue[800],
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

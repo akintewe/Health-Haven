@@ -24,6 +24,7 @@ import '../app/modules/Profile/ProfilePage.dart';
 import '../app/modules/Profile/Profile_Settings.dart';
 import '../app/modules/Profile/Profile_Settings.dart';
 import '../app/modules/dashboard_screen/view/dashboard.dart';
+import '../app/modules/sign_in/views/Specialist_SignIn.dart';
 import '../app/modules/specialist_doctor/view/specialist_doctor.dart';
 import '../core/utils/helpers/fade_animation.dart';
 import 'app_routes.dart';
@@ -201,4 +202,34 @@ final GoRouter _router =
   //   pageBuilder: (context, state) => buildPageWithDefaultTransition(
   //       context: context, state: state, child: const Doctor2()),
   // ),
+    path: _AppRoutePaths.ProfilePage,
+    name: Routes.ProfilePage,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+      context: context,
+      state: state,
+      child:  ProfilePage(),
+    ),
+  ),
+  
+   GoRoute(
+        path: _AppRoutePaths.profileSettings,
+    name: Routes.profileSettings,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+      context: context,
+      state: state,
+      // ignore: prefer_const_constructors
+      child:   ProfileSettings(),
+    ),
+    ),
+     GoRoute(
+        path: _AppRoutePaths.specialistSignIN,
+    name: Routes.specialistSignIN,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+      context: context,
+      state: state,
+    
+      child:   SpecialistSignIN(),
+    ),
+    ),
+    
 ]);
