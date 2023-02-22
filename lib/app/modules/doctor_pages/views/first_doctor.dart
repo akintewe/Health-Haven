@@ -366,9 +366,9 @@ class _Doctor1State extends State<Doctor1> {
                               ),
                             ),
                           ),
-                          const SizedBox(git commit 
-                            height: 20,
-                          ),
+                          // const SizedBox(
+                          //   height: 20,
+                          // ),
                           Text(
                             '5000+',
                             style: GoogleFonts.roboto(
