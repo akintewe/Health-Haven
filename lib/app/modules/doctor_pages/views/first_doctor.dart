@@ -25,7 +25,7 @@ class _Doctor1State extends State<Doctor1> {
             onPressed: () {
               context.go('/home-page');
             },
-            icon:  Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary,
               size: 27.sp,
@@ -55,7 +55,7 @@ class _Doctor1State extends State<Doctor1> {
                   height: 20.h,
                 )),
               ),
-               SizedBox(
+              SizedBox(
                 width: 10.w,
               ),
               GestureDetector(
@@ -188,7 +188,7 @@ class _Doctor1State extends State<Doctor1> {
                                     )
                                   ],
                                 ),
-                                 SizedBox(
+                                SizedBox(
                                   height: 10.h,
                                 ),
                                 Row(
@@ -236,7 +236,7 @@ class _Doctor1State extends State<Doctor1> {
                     color: AppColors.primary90,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child:  const Center(
+                  child: const Center(
                     child: Icon(
                       Icons.share,
                       color: AppColors.primary800,
@@ -245,7 +245,7 @@ class _Doctor1State extends State<Doctor1> {
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 width: 10.w,
               ),
             ],
@@ -264,7 +264,8 @@ class _Doctor1State extends State<Doctor1> {
                   width: MediaQuery.of(context).size.width * 0.92,
                   decoration: BoxDecoration(
                     border: Border.all(
-                        color: const Color.fromARGB(250, 227, 227, 227), width: 1),
+                        color: const Color.fromARGB(250, 227, 227, 227),
+                        width: 1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -281,14 +282,14 @@ class _Doctor1State extends State<Doctor1> {
                           width: 86,
                         ),
                       ),
-                       SizedBox(
+                      SizedBox(
                         width: 20.w,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
                           Text(
                             'Dr. Jenny Wilson',
@@ -322,7 +323,7 @@ class _Doctor1State extends State<Doctor1> {
                             style: GoogleFonts.roboto(
                                 color: AppColors.grey,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 13.sp),
+                                fontSize: 11.sp),
                           )
                         ],
                       ),
@@ -364,9 +365,9 @@ class _Doctor1State extends State<Doctor1> {
                               ),
                             ),
                           ),
-                          // const SizedBox(
-                          //   height: 20,
-                          // ),
+                          const SizedBox(
+                            height: 20,
+                          ),
                           Text(
                             '5000+',
                             style: GoogleFonts.roboto(
@@ -380,7 +381,7 @@ class _Doctor1State extends State<Doctor1> {
                           Text(
                             'Patients',
                             style: GoogleFonts.roboto(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                                fontWeight: FontWeight.bold, fontSize: 16),
                           )
                         ],
                       ),
@@ -418,7 +419,7 @@ class _Doctor1State extends State<Doctor1> {
                           Text(
                             'Work Years',
                             style: GoogleFonts.roboto(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                                fontWeight: FontWeight.bold, fontSize: 16),
                           )
                         ],
                       ),
@@ -448,7 +449,7 @@ class _Doctor1State extends State<Doctor1> {
                             style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primary,
-                                fontSize: 20),
+                                fontSize: 16),
                           ),
                           const SizedBox(
                             height: 5,
@@ -572,7 +573,7 @@ class _Doctor1State extends State<Doctor1> {
                     style: GoogleFonts.roboto(
                         color: AppColors.primary,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18),
+                        fontSize: 16),
                   ),
                 ),
               ],

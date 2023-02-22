@@ -166,7 +166,9 @@ class _MyAppointmentState extends State<MyAppointment> {
                     height: 15,
                   ),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: () {
+                      context.go('/myAppointmentPage');
+                    },
                     child: const AppointmentCard(
                       image: 'assets/images/doctor3.jpg',
                       name: 'DR. Mary Steward',

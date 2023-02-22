@@ -78,14 +78,14 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
               ],
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.06,
+              width: MediaQuery.of(context).size.width * 0.01,
             ),
             Text(
               widget.price,
               style: GoogleFonts.roboto(
                 fontWeight: FontWeight.bold,
                 color: isPressed ? Colors.white : AppColors.primary,
-                fontSize: 23.sp,
+                fontSize: 20.sp,
               ),
             )
           ],

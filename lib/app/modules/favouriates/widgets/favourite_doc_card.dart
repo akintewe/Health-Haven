@@ -6,9 +6,13 @@ import '../../../../core/theme/colors.dart';
 
 class FavouriteDocCard extends StatelessWidget {
   const FavouriteDocCard({
-    super.key, required this.name, required this.review, required this.title, required this.hospital,
+    super.key,
+    required this.name,
+    required this.review,
+    required this.title,
+    required this.hospital,
   });
-  
+
   final String name;
   final String review;
   final String title;
@@ -57,7 +61,7 @@ class FavouriteDocCard extends StatelessWidget {
                 style: GoogleFonts.roboto(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontSize: 15,
                 ),
               ),
               Row(
@@ -79,7 +83,7 @@ class FavouriteDocCard extends StatelessWidget {
                 style: GoogleFonts.roboto(
                   color: Colors.black,
                   fontWeight: FontWeight.w400,
-                  fontSize: 12,
+                  fontSize: 11,
                 ),
               ),
               Text(
@@ -91,9 +95,6 @@ class FavouriteDocCard extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-          const SizedBox(
-            width: 15,
           ),
           Container(
             height: 40,
