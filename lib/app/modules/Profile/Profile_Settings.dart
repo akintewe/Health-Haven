@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cancer_chat/app/modules/Profile/profilesettings/Invite_page.dart';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/Notification.dart';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/SecurityPage.dart';
@@ -8,6 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:remixicon/remixicon.dart';
 
 import '../../../core/theme/colors.dart';
@@ -21,6 +24,19 @@ class ProfileSettings extends StatefulWidget {
 }
 
 class _ProfileSettingsState extends State<ProfileSettings> {
+  File? _image;
+
+  Future getImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (image == null) return;
+
+    final imageTemporary = File(image.path);
+
+    setState(() {
+      this._image = imageTemporary;
+    });
+  }
+
   int index = 0;
   @override
   Widget build(BuildContext context) {
@@ -82,21 +98,30 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Stack(
                   alignment: AlignmentDirectional.bottomEnd,
                   children: [
+                    SizedBox(
+                      width: 10,
+                    ),
                     CircleAvatar(
+                      backgroundColor: Colors.transparent,
                       radius: 50,
-                      backgroundImage: AssetImage('assets/images/user.png'),
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: CircleAvatar(
-                          child: IconButton(
-                            onPressed: () {
-                              context.go('/Profile-Page');
-                            },
-                            icon: Icon(
-                              Icons.edit,
-                              size: 20,
-                              color: AppColors.white,
-                            ),
+                      child: _image != null
+                          ? Image.file(
+                              _image!,
+                              width: 85,
+                              height: 85,
+                              fit: BoxFit.cover,
+                            )
+                          : Image.asset('assets/images/user.png'),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: CircleAvatar(
+                        child: IconButton(
+                          onPressed: getImage,
+                          icon: Icon(
+                            Icons.edit,
+                            size: 20,
+                            color: AppColors.white,
                           ),
                         ),
                       ),
