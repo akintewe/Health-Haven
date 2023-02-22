@@ -1,7 +1,11 @@
+import 'package:cancer_chat/core/theme/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:remixicon/remixicon.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -30,10 +34,10 @@ class _SignUpState extends State<SignUp> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/images/app-logo.png',
-                  height: 150,
-                  width: 150,
+                Icon(
+                  Remix.shield_cross_fill,
+                  color: AppColors.primary,
+                  size: 100,
                 ),
                 SizedBox(
                   height: 20,
@@ -168,6 +172,16 @@ class _SignUpState extends State<SignUp> {
                   child: MaterialButton(
                     onPressed: () {
                       if (_SignUp.currentState!.validate()) {
+                        FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                                email: emailController.text,
+                                password: passController.text)
+                            .then((value) {
+                          print('Created new account');
+                          context.go('/sign-in');
+                        }).onError((error, stackTrace) {
+                          print('Error ${error.toString()}');
+                        });
                         print("sucess");
                         emailController.clear();
                         passController.clear();
@@ -279,7 +293,9 @@ class _SignUpState extends State<SignUp> {
                             fontWeight: FontWeight.w300, fontSize: 14),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go('/sign-in');
+                        },
                         child: Text(
                           'Sign in',
                           style: TextStyle(

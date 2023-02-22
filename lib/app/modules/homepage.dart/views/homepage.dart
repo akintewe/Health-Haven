@@ -1,3 +1,7 @@
+import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
+import 'package:cancer_chat/app/modules/Profile/Profile_Settings.dart';
+import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
+import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -6,6 +10,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
+import '../../my_appointments/views/my_appointment.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,35 +20,67 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
   TextEditingController textEditingController = TextEditingController();
+  static const List<Widget> _widgetOptions = <Widget>[
+    MainHomePage(),
+   MyAppointment(),
+    Doctor1(),
+    ProfileSettings()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const GNav(
-          gap: 6,
-          activeColor: AppColors.primary600,
-          color: AppColors.primary600,
-          tabBackgroundColor: AppColors.primary100,
-          padding: EdgeInsets.all(18),
-          tabBorderRadius: 15,
-          tabs: [
-            GButton(
-              icon: Icons.home,
-              text: 'Home',
-            ),
-            GButton(
-              icon: Icons.calendar_month,
-              text: 'Schedule',
-            ),
-            GButton(
-              icon: Icons.list,
-              text: 'List',
-            ),
-            GButton(
-              icon: Icons.person,
-              text: 'Profile',
-            ),
-          ]),
+      bottomNavigationBar: GNav(
+        gap: 6,
+        activeColor: AppColors.primary600,
+        color: AppColors.primary600,
+        tabBackgroundColor: AppColors.primary100,
+        padding: EdgeInsets.all(18),
+        tabBorderRadius: 15,
+        tabs: [
+          GButton(
+            icon: Icons.home,
+            text: 'Home',
+          ),
+          GButton(
+            icon: Icons.calendar_month,
+            text: 'Appointment',
+          ),
+          GButton(
+            icon: Icons.list,
+            text: 'History',
+          ),
+          GButton(
+            icon: Icons.person,
+            text: 'Profile',
+          ),
+        ],
+        selectedIndex: _selectedIndex,
+        onTabChange: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+    );
+  }
+}
+
+class MainHomePage extends StatefulWidget {
+  const MainHomePage({super.key});
+
+  @override
+  State<MainHomePage> createState() => _MainHomePageState();
+}
+
+class _MainHomePageState extends State<MainHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: Row(
@@ -69,7 +106,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          'DoctorQ',
+          'Health-H',
           style: GoogleFonts.actor(
               color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
         ),
@@ -77,10 +114,10 @@ class _HomePageState extends State<HomePage> {
           Row(
             children: [
               InkWell(
-               onTap: () {
-                context.go("/notificationView");
-                // context.go("/notifications"),
-               },
+                onTap: () {
+                  context.go("/notificationView");
+                  // context.go("/notifications"),
+                },
                 child: Container(
                   height: 40,
                   width: 40,
@@ -140,9 +177,7 @@ class _HomePageState extends State<HomePage> {
               onPressButton: (hello) {
                 context.push("/searchPage");
               },
-              onChanged: () {
-                
-              },
+              onChanged: () {},
             ),
             const SizedBox(
               height: 30,
@@ -167,7 +202,8 @@ class _HomePageState extends State<HomePage> {
                   child: const Text(
                     'See all',
                     style: TextStyle(
-                        color: AppColors.primary400, fontWeight: FontWeight.bold),
+                        color: AppColors.primary400,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
@@ -278,7 +314,7 @@ class _HomePageState extends State<HomePage> {
                     width: 160,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 193, 210, 91)),
+                        color: Color.fromARGB(255, 193, 157, 223)),
                     child: Column(
                       children: [
                         const SizedBox(
@@ -384,7 +420,8 @@ class _HomePageState extends State<HomePage> {
                   child: const Text(
                     'See all',
                     style: TextStyle(
-                        color: AppColors.primary400, fontWeight: FontWeight.bold),
+                        color: AppColors.primary400,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ],

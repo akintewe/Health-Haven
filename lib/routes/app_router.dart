@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
 import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
 import 'package:cancer_chat/app/modules/emptypage.dart';
 import 'package:cancer_chat/app/modules/favouriates/views/favourites_view.dart';
@@ -5,7 +6,10 @@ import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.da
 import 'package:cancer_chat/app/modules/forgot_password/views/input_pin.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:cancer_chat/app/modules/introduction_page/controller/page_controller.dart';
+import 'package:cancer_chat/app/modules/my_appointments/views/my_appointment.dart';
 import 'package:cancer_chat/app/modules/notifications_view/views/notification.dart';
+import 'package:cancer_chat/app/modules/patient_details/views/patient_details.dart';
+import 'package:cancer_chat/app/modules/payment_section/views/payment_page.dart';
 import 'package:cancer_chat/app/modules/review_page/views/review.dart';
 import 'package:cancer_chat/app/modules/search_page/view/search_page.dart';
 import 'package:cancer_chat/app/modules/sign_in/views/sign_in.dart';
@@ -15,6 +19,10 @@ import 'package:cancer_chat/app/modules/top_doctor/view/top_doctor.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../app/modules/Profile/ProfilePage.dart';
+
+import '../app/modules/Profile/Profile_Settings.dart';
+import '../app/modules/Profile/Profile_Settings.dart';
 import '../app/modules/dashboard_screen/view/dashboard.dart';
 import '../app/modules/specialist_doctor/view/specialist_doctor.dart';
 import '../core/utils/helpers/fade_animation.dart';
@@ -43,6 +51,7 @@ abstract class AppRouter {
 }
 
 final GoRouter _router =
+// change the value of this initial location to the name of your allocated screen
     GoRouter(initialLocation: _AppRoutePaths.splashscreen, routes: [
   ShellRoute(
       navigatorKey: _shellNavigatorKey,
@@ -154,6 +163,38 @@ final GoRouter _router =
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: const TopDoctors()),
   ),
+  GoRoute(
+    path: _AppRoutePaths.bookAppointment1,
+    name: Routes.bookAppointment1,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: BookAppointment1()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.patientDetails,
+    name: Routes.patientDetails,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: PatientDetails()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.paymentPage,
+    name: Routes.paymentPage,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: PaymentPage()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.profilePage,
+    name: Routes.profilePage,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: ProfilePage()),
+  ),
+   GoRoute(
+    path: _AppRoutePaths.myAppointment,
+    name: Routes.myAppointment,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: MyAppointment()),
+  ),
+  
+
   // GoRoute(
   //   path: _AppRoutePaths.notifications,
   //   name: Routes.notifications,

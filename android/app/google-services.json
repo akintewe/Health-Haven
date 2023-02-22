@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "250927208661",
+    "project_id": "health-haven-a4d19",
+    "storage_bucket": "health-haven-a4d19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250927208661:android:54d3b99996dad2deaaaa5c",
+        "android_client_info": {
+          "package_name": "com.example.cancer_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250927208661-aptig1sbc1bb65vpvuorp8osegcolti2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cancer_chat",
+            "certificate_hash": "f3c1051745b7272213a6b6fc169e8fc8096869fd"
+          }
+        },
+        {
+          "client_id": "250927208661-3vqhdl96lja3og60jfdqkkulr87doalj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxol_smO6uL0z12nsdfizQ6IGNCUaBxys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250927208661-3vqhdl96lja3og60jfdqkkulr87doalj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

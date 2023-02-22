@@ -1,5 +1,7 @@
 abstract class Routes {
   static const String signUp = "Sign up";
+  static const String profileSettings = "ProfileSettings";
+  static const String profilePage = "ProfilePage";
   static const String signInOptions = "Sign in options";
   static const String signIn = 'Sign in';
   static const String forgotPassword = "Forgot password";
@@ -25,5 +27,8 @@ abstract class Routes {
   static const String specialistDoctor = 'specialistDoctor';
   static const String topDoctor = 'topDoctor';
   static const String reviews = 'Reviews';
-
+  static const String bookAppointment1 = 'appointment1';
+  static const String patientDetails = 'patientDetails';
+  static const String paymentPage = 'paymentPage';
+  static const String myAppointment = 'myAppointment';
 }
