@@ -1,4 +1,4 @@
-import 'package:cancer_chat/app/modules/firebase_services/service/firebase_services.dart';
+
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remixicon/remixicon.dart';
+
+import '../service/firebase_services.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
