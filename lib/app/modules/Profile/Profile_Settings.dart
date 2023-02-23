@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/Invite_page.dart';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/Notification.dart';
 import 'package:cancer_chat/app/modules/Profile/profilesettings/SecurityPage.dart';
-import 'package:cancer_chat/app/modules/firebase_services/service/firebase_services.dart';
+
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -14,6 +14,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:remixicon/remixicon.dart';
 
 import '../../../core/theme/colors.dart';
+import '../sign_in/service/firebase_services.dart';
 import 'helppage/HelpPage.dart';
 
 class ProfileSettings extends StatefulWidget {

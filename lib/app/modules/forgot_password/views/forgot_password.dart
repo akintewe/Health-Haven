@@ -26,7 +26,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/sign-in');
+            },
             icon: Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary400,
@@ -117,7 +119,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20),
+                                fontSize: 18),
                           )
                         ],
                       ),
@@ -185,11 +187,22 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     borderRadius: BorderRadius.circular(20),
                   )),
                   onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: ((context) => Center(
+                              child: Container(
+                                height: 70,
+                                width: 90,
+                                decoration: BoxDecoration(
+                                  color: AppColors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            )));
+
                     FirebaseAuth.instance
                         .sendPasswordResetEmail(email: emailController.text)
-                        .then((value) {
-                      context.go('/sign-in');
-                    });
+                        .then((value) {});
                   },
                   child: Center(
                     child: Text(
