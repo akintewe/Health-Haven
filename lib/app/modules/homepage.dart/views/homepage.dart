@@ -607,6 +607,15 @@ class _MainHomePageState extends State<MainHomePage> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
+            TextButton(
+              child: Text('Connect with other users!'),
+              onPressed: () {
+                context.go('/chat-home');
+              },
+            )
           ],
         ),
       ),
