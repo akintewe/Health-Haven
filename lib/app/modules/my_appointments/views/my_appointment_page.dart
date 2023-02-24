@@ -351,6 +351,68 @@ class _MyAppointmentPageState extends State<MyAppointmentPage> {
                 )
               ],
             ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 1,
+              width: MediaQuery.of(context).size.width * 0.9,
+              decoration: BoxDecoration(color: AppColors.grey90),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Fee Information',
+                  style: GoogleFonts.roboto(
+                      fontSize: 19,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  '\$5 (Paid)',
+                  style: GoogleFonts.roboto(
+                      fontSize: 19,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.primary),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            SizedBox(
+              height: 60,
+              width: MediaQuery.of(context).size.width * 0.83,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
+                child: Text(
+                  'Message Now  (Start at 10:00AM)',
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
