@@ -611,10 +611,8 @@ class _MainHomePageState extends State<MainHomePage> {
               height: 10,
             ),
             TextButton(
-              child: Text('Connect with other users!'),
-              onPressed: () {
-                context.go('/chat-home');
-              },
+              child: Text('Connect with other users!   Coming soon....'),
+              onPressed: () {},
             )
           ],
         ),

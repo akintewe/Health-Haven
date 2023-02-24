@@ -203,7 +203,9 @@ class _IntroPage2State extends State<IntroPage2> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.go('/sign-in');
+                    },
                     child: Text(
                       'Skip',
                       style: GoogleFonts.roboto(
@@ -369,7 +371,9 @@ class _IntroPage3State extends State<IntroPage3> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.go('/sign-in');
+                    },
                     child: Text(
                       'Skip',
                       style: GoogleFonts.roboto(
