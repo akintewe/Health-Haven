@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -206,6 +207,9 @@ class _MyAppointmentPageState extends State<MyAppointmentPage> {
               width: MediaQuery.of(context).size.width * 0.9,
               decoration: BoxDecoration(color: AppColors.grey90),
             ),
+            SizedBox(
+              height: 20,
+            ),
             Row(
               children: [
                 SizedBox(
@@ -271,13 +275,81 @@ class _MyAppointmentPageState extends State<MyAppointmentPage> {
                 )
               ],
             ),
-             SizedBox(
+            SizedBox(
               height: 20,
             ),
             Container(
               height: 1,
               width: MediaQuery.of(context).size.width * 0.9,
               decoration: BoxDecoration(color: AppColors.grey90),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Patient Information',
+                  style: GoogleFonts.roboto(
+                      fontSize: 19,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Full Name : ${FirebaseAuth.instance.currentUser!.displayName}',
+                  style: GoogleFonts.roboto(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Age : 20',
+                  style: GoogleFonts.roboto(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Email : ${FirebaseAuth.instance.currentUser!.email}',
+                  style: GoogleFonts.roboto(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black),
+                )
+              ],
             ),
           ],
         ),
