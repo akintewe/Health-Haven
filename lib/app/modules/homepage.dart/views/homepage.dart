@@ -478,130 +478,139 @@ class _MainHomePageState extends State<MainHomePage> {
                   const SizedBox(
                     width: 20,
                   ),
-                  Container(
-                    height: 280,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 247, 246, 246),
-                            width: 3),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                'assets/images/person2.jpg',
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () => context.go('/doctor-1'),
+                    child: Container(
+                      height: 280,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 247, 246, 246),
+                              width: 3),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  'assets/images/person2.jpg',
+                                  height: 200,
+                                  width: 200,
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                          Positioned(
+                              bottom: 30,
+                              left: 30,
+                              child: Text(
+                                'Dr. James Doney',
+                                style: GoogleFonts.balooDa2(
+                                    fontWeight: FontWeight.bold, fontSize: 17),
                               )),
-                        ),
-                        Positioned(
-                            bottom: 30,
-                            left: 30,
-                            child: Text(
-                              'Dr. James Doney',
-                              style: GoogleFonts.balooDa2(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            )),
-                        Positioned(
-                            bottom: 6,
-                            left: 30,
-                            child: Text(
-                              'Eye Specialist',
-                              style: GoogleFonts.b612Mono(
-                                  fontWeight: FontWeight.w500, fontSize: 13),
-                            ))
-                      ],
+                          Positioned(
+                              bottom: 6,
+                              left: 30,
+                              child: Text(
+                                'Eye Specialist',
+                                style: GoogleFonts.b612Mono(
+                                    fontWeight: FontWeight.w500, fontSize: 13),
+                              ))
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
                     width: 20,
                   ),
-                  Container(
-                    height: 280,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 247, 246, 246),
-                            width: 3),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                'assets/images/person3.jpg',
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () => context.go('/doctor-1'),
+                    child: Container(
+                      height: 280,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 247, 246, 246),
+                              width: 3),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  'assets/images/person3.jpg',
+                                  height: 200,
+                                  width: 200,
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                          Positioned(
+                              bottom: 30,
+                              left: 30,
+                              child: Text(
+                                'Dr. Peter Jones',
+                                style: GoogleFonts.balooDa2(
+                                    fontWeight: FontWeight.bold, fontSize: 17),
                               )),
-                        ),
-                        Positioned(
-                            bottom: 30,
-                            left: 30,
-                            child: Text(
-                              'Dr. Peter Jones',
-                              style: GoogleFonts.balooDa2(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            )),
-                        Positioned(
-                            bottom: 6,
-                            left: 30,
-                            child: Text(
-                              'Chemo Specialist',
-                              style: GoogleFonts.b612Mono(
-                                  fontWeight: FontWeight.w500, fontSize: 13),
-                            )),
-                      ],
+                          Positioned(
+                              bottom: 6,
+                              left: 30,
+                              child: Text(
+                                'Chemo Specialist',
+                                style: GoogleFonts.b612Mono(
+                                    fontWeight: FontWeight.w500, fontSize: 13),
+                              )),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
                     width: 20,
                   ),
-                  Container(
-                    height: 280,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 247, 246, 246),
-                            width: 3),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                'assets/images/woman.jpg',
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () => context.go('/doctor-1'),
+                    child: Container(
+                      height: 280,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 247, 246, 246),
+                              width: 3),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  'assets/images/woman.jpg',
+                                  height: 200,
+                                  width: 200,
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                          Positioned(
+                              bottom: 30,
+                              left: 30,
+                              child: Text(
+                                'Dr. Mia Roseline',
+                                style: GoogleFonts.balooDa2(
+                                    fontWeight: FontWeight.bold, fontSize: 17),
                               )),
-                        ),
-                        Positioned(
-                            bottom: 30,
-                            left: 30,
-                            child: Text(
-                              'Dr. Mia Roseline',
-                              style: GoogleFonts.balooDa2(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            )),
-                        Positioned(
-                            bottom: 6,
-                            left: 30,
-                            child: Text(
-                              'Human Chiropractor',
-                              style: GoogleFonts.b612Mono(
-                                  fontWeight: FontWeight.w500, fontSize: 13),
-                            ))
-                      ],
+                          Positioned(
+                              bottom: 6,
+                              left: 30,
+                              child: Text(
+                                'Human Chiropractor',
+                                style: GoogleFonts.b612Mono(
+                                    fontWeight: FontWeight.w500, fontSize: 13),
+                              ))
+                        ],
+                      ),
                     ),
                   ),
                 ],
