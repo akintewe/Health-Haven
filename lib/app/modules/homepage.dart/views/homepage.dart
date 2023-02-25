@@ -2,6 +2,7 @@ import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
 import 'package:cancer_chat/app/modules/Profile/Profile_Settings.dart';
 import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
 import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
+import 'package:cancer_chat/app/modules/inapp_tour/in_app_tour_target.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -9,7 +10,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
+import '../../inapp_tour/in_app_storage.dart';
 import '../../my_appointments/views/my_appointment.dart';
 
 class HomePage extends StatefulWidget {
@@ -78,6 +81,53 @@ class MainHomePage extends StatefulWidget {
 }
 
 class _MainHomePageState extends State<MainHomePage> {
+  final notifications = GlobalKey();
+  final likes = GlobalKey();
+  final search = GlobalKey();
+  final doctorSections = GlobalKey();
+  final topDoctors = GlobalKey();
+
+  late TutorialCoachMark tutorialCoachMark;
+  bool isSaved = false;
+
+  void _initAddSitInAppTour() {
+    tutorialCoachMark = TutorialCoachMark(
+        targets: addSiteTargetsPage(
+            notifications: notifications,
+            likes: likes,
+            search: search,
+            doctorSections: doctorSections,
+            topDoctors: topDoctors),
+        colorShadow: AppColors.primary,
+        paddingFocus: 10,
+        hideSkip: false,
+        opacityShadow: 0.8,
+        onFinish: () {
+          print('completed');
+          SaveInAppTour().saveAddSiteStatus();
+        });
+  }
+
+  void _showInAppTour() {
+    Future.delayed(Duration(seconds: 2), () {
+      SaveInAppTour().getAddSiteStatus().then((value) {
+        if (value == false) {
+          tutorialCoachMark.show(context: context);
+        } else {
+          print('User has seen this page');
+        }
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _initAddSitInAppTour();
+    _showInAppTour();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,6 +169,7 @@ class _MainHomePageState extends State<MainHomePage> {
                   // context.go("/notifications"),
                 },
                 child: Container(
+                  key: notifications,
                   height: 40,
                   width: 40,
                   decoration: BoxDecoration(
@@ -140,6 +191,7 @@ class _MainHomePageState extends State<MainHomePage> {
                   context.push("/favouritesView");
                 },
                 child: Container(
+                  key: likes,
                   height: 40,
                   width: 40,
                   decoration: BoxDecoration(
@@ -165,6 +217,7 @@ class _MainHomePageState extends State<MainHomePage> {
         child: Column(
           children: [
             SearchBarAnimation(
+              key: search,
               textEditingController: TextEditingController(),
               isOriginalAnimation: false,
               buttonBorderColour: Colors.black45,
@@ -214,6 +267,7 @@ class _MainHomePageState extends State<MainHomePage> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
+                key: doctorSections,
                 children: [
                   const SizedBox(
                     width: 20,
@@ -432,6 +486,7 @@ class _MainHomePageState extends State<MainHomePage> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
+                key: topDoctors,
                 children: [
                   GestureDetector(
                     onTap: () => context.go('/doctor-1'),

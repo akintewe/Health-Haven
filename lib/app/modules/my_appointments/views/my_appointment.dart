@@ -20,10 +20,15 @@ class _MyAppointmentState extends State<MyAppointment> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: const Icon(
-          Remix.shield_cross_fill,
-          color: AppColors.primary,
-          size: 50,
+        leading: IconButton(
+          icon: Icon(
+            Remix.shield_cross_fill,
+            color: AppColors.primary,
+            size: 50,
+          ),
+          onPressed: () {
+            context.go('/home-page');
+          },
         ),
         title: Text(
           'My Appointments',
