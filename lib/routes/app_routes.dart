@@ -34,4 +34,5 @@ abstract class Routes {
   static const String myAppointment = 'myAppointment';
   static const String myAppointmentPage = 'myAppointmentPage';
   static const String chatHome = 'chatHome';
+  static const String messagingPage = 'messagingPage';
 }
