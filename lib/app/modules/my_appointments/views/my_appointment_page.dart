@@ -400,7 +400,9 @@ class _MyAppointmentPageState extends State<MyAppointmentPage> {
               height: 60,
               width: MediaQuery.of(context).size.width * 0.83,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.go('/messagingPage');
+                },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50))),
