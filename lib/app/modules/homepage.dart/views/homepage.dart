@@ -23,6 +23,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
   int _selectedIndex = 0;
   TextEditingController textEditingController = TextEditingController();
   static const List<Widget> _widgetOptions = <Widget>[
@@ -31,6 +32,8 @@ class _HomePageState extends State<HomePage> {
     Doctor1(),
     ProfileSettings()
   ];
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +50,7 @@ class _HomePageState extends State<HomePage> {
             text: 'Home',
           ),
           GButton(
+            
             icon: Icons.calendar_month,
             text: 'Appointment',
           ),
@@ -86,6 +90,7 @@ class _MainHomePageState extends State<MainHomePage> {
   final search = GlobalKey();
   final doctorSections = GlobalKey();
   final topDoctors = GlobalKey();
+  
 
   late TutorialCoachMark tutorialCoachMark;
   bool isSaved = false;
@@ -93,11 +98,13 @@ class _MainHomePageState extends State<MainHomePage> {
   void _initAddSitInAppTour() {
     tutorialCoachMark = TutorialCoachMark(
         targets: addSiteTargetsPage(
-            notifications: notifications,
-            likes: likes,
-            search: search,
-            doctorSections: doctorSections,
-            topDoctors: topDoctors),
+          notifications: notifications,
+          likes: likes,
+          search: search,
+          doctorSections: doctorSections,
+          topDoctors: topDoctors,
+       
+        ),
         colorShadow: AppColors.primary,
         paddingFocus: 10,
         hideSkip: false,
