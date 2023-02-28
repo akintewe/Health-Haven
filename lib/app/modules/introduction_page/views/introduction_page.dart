@@ -3,6 +3,7 @@ import 'package:cancer_chat/core/utils/functions/size_fit.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -33,7 +34,9 @@ class _IntroPageState extends State<IntroPage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.go('/sign-in');
+                    },
                     child: Text(
                       'Skip',
                       style: TextStyle(
@@ -200,7 +203,9 @@ class _IntroPage2State extends State<IntroPage2> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.go('/sign-in');
+                    },
                     child: Text(
                       'Skip',
                       style: GoogleFonts.roboto(
@@ -366,7 +371,9 @@ class _IntroPage3State extends State<IntroPage3> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.go('/sign-in');
+                    },
                     child: Text(
                       'Skip',
                       style: GoogleFonts.roboto(
@@ -455,7 +462,22 @@ class _IntroPage3State extends State<IntroPage3> {
                                       shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   )),
-                                  onPressed: () {
+                                  onPressed: () async {
+                                    PermissionStatus microphoneStatus =
+                                        await Permission.microphone.request();
+                                    if (microphoneStatus ==
+                                        PermissionStatus.granted) {}
+                                    if (microphoneStatus ==
+                                        PermissionStatus.denied) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(const SnackBar(
+                                              content: Text(
+                                                  'This permission is Recommended')));
+                                    }
+                                    if (microphoneStatus ==
+                                        PermissionStatus.permanentlyDenied) {
+                                      openAppSettings();
+                                    }
                                     context.go('/sign-in');
                                   },
                                   child: Center(

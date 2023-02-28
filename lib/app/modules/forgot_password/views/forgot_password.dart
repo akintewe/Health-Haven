@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -26,7 +27,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/sign-in');
+            },
             icon: Icon(
               Icons.arrow_back_rounded,
               color: AppColors.primary400,
@@ -117,7 +120,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20),
+                                fontSize: 18),
                           )
                         ],
                       ),
@@ -185,11 +188,60 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     borderRadius: BorderRadius.circular(20),
                   )),
                   onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: ((context) => Center(
+                              child: Container(
+                                height: 270,
+                                width: 270,
+                                decoration: BoxDecoration(
+                                  color: AppColors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Column(
+                                  children: [
+                                    LottieBuilder.asset(
+                                      'assets/animation/messages.json',
+                                      width: 180,
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Please check your email for the',
+                                          style: GoogleFonts.roboto(
+                                            color: AppColors.primary,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'verification code...',
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.w600,
+                                              color: AppColors.primary),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            )));
+
                     FirebaseAuth.instance
                         .sendPasswordResetEmail(email: emailController.text)
-                        .then((value) {
-                      context.go('/sign-in');
-                    });
+                        .then((value) {});
                   },
                   child: Center(
                     child: Text(

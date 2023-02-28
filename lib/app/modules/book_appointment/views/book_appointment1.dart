@@ -24,7 +24,7 @@ class _BookAppointment1State extends State<BookAppointment1> {
         elevation: 0,
         leading: IconButton(
             onPressed: () {
-              context.go('/myAppointment');
+              context.go('/home-page');
             },
             icon: const Icon(
               Icons.arrow_back_rounded,
