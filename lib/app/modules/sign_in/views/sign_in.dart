@@ -170,7 +170,7 @@ class _SignInState extends State<SignIn> {
                         child: TextFormField(
                             controller: passController,
                             keyboardType: TextInputType.visiblePassword,
-                            obscureText: true,
+                            obscureText: passToggle,
                             decoration: InputDecoration(
                               isDense: true,
                               hintText: 'Password',
