@@ -29,7 +29,7 @@ class _HistoryCardState extends State<HistoryCard> {
         height: 100,
         decoration: BoxDecoration(
           border: Border.all(
-            color: AppColors.grey70,
+            color: AppColors.grey100,
           ),
           borderRadius: BorderRadius.circular(20),
         ),

@@ -89,48 +89,178 @@ class _HistoryPageState extends State<HistoryPage> {
         ),
         views: [
           Container(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: RoundedSearchBar(),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Today',
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.grey50,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  HistoryCard(
+                      image: AssetImage('assets/images/person2.jpg'),
+                      name: 'Dr. Eleanor Pena',
+                      message: 'Ok, thanks for your time',
+                      time: '10:30'),
+                  HistoryCard(
+                      image: AssetImage('assets/images/person1.jpg'),
+                      name: 'Dr. Ronalds Richards',
+                      message: 'It was great',
+                      time: '09:20'),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Yesterday, March 2 2023',
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.grey50,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  HistoryCard(
+                      image: AssetImage('assets/images/person3.jpg'),
+                      name: 'Dr. Eleanor Pena',
+                      message: 'Ok, thanks for your time',
+                      time: '10:30'),
+                  HistoryCard(
+                      image: AssetImage('assets/images/doctor1.jpg'),
+                      name: 'Dr. Eleanor Pena',
+                      message: 'Ok, thanks for your time',
+                      time: '10:30'),
+                  HistoryCard(
+                      image: AssetImage('assets/images/doctor2.jpg'),
+                      name: 'Dr. Eleanor Pena',
+                      message: 'Ok, thanks for your time',
+                      time: '10:30'),
+                ],
+              ),
+            ),
+          ),
+          Container(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: RoundedSearchBar(),
+                const SizedBox(
+                  height: 100,
                 ),
-                SizedBox(
-                  height: 10,
+                Image.asset('assets/images/sad-face.png'),
+                const SizedBox(
+                  height: 30,
                 ),
                 Align(
-                  alignment: Alignment.centerLeft,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Today',
-                        style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.grey50,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
+                  alignment: Alignment.center,
+                  child: Text(
+                    'You don\'t have an appointment',
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
-                HistoryCard(
-                    image: AssetImage('assets/images/person2.jpg'),
-                    name: 'Dr. Eleanor Pena',
-                    message: 'Ok, thanks for your time',
-                    time: '10:30'),
-                HistoryCard(
-                    image: AssetImage('assets/images/person2.jpg'),
-                    name: 'Dr. Eleanor Pena',
-                    message: 'Ok, thanks for your time',
-                    time: '10:30')
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.26,
+                ),
+                SizedBox(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      context.go('/appointment1');
+                    },
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50))),
+                    child: Text(
+                      'Book Appointment Now',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
-          Container(),
-          Container(),
+          Container(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
+                ),
+                Image.asset('assets/images/sad-face.png'),
+                const SizedBox(
+                  height: 30,
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'You don\'t have an appointment',
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.26,
+                ),
+                SizedBox(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      context.go('/appointment1');
+                    },
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50))),
+                    child: Text(
+                      'Book Appointment Now',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
