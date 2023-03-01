@@ -1,3 +1,4 @@
+import 'package:cancer_chat/app/modules/history/widgets/history_card_widget.dart';
 import 'package:cancer_chat/app/modules/my_appointments/views/my_appointment.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
@@ -115,6 +116,16 @@ class _HistoryPageState extends State<HistoryPage> {
                     ],
                   ),
                 ),
+                HistoryCard(
+                    image: AssetImage('assets/images/person2.jpg'),
+                    name: 'Dr. Eleanor Pena',
+                    message: 'Ok, thanks for your time',
+                    time: '10:30'),
+                HistoryCard(
+                    image: AssetImage('assets/images/person2.jpg'),
+                    name: 'Dr. Eleanor Pena',
+                    message: 'Ok, thanks for your time',
+                    time: '10:30')
               ],
             ),
           ),
