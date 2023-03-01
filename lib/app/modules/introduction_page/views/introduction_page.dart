@@ -81,7 +81,7 @@ class _IntroPageState extends State<IntroPage> {
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
-                              fontSize: 30,
+                              fontSize: 27,
                             )),
                       ],
                     ),
@@ -93,7 +93,7 @@ class _IntroPageState extends State<IntroPage> {
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
-                              fontSize: 30,
+                              fontSize: 27,
                             )),
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.4),
@@ -246,7 +246,7 @@ class _IntroPage2State extends State<IntroPage2> {
                         Text('Chat with',
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
-                              fontSize: 35,
+                              fontSize: 27,
                               color: AppColors.primary,
                             )),
                       ],
@@ -258,11 +258,11 @@ class _IntroPage2State extends State<IntroPage2> {
                         Text('Doctors',
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
-                              fontSize: 35,
+                              fontSize: 27,
                               color: AppColors.primary,
                             )),
                         SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.3),
+                            width: MediaQuery.of(context).size.width * 0.4),
                         Container(
                           height: MediaQuery.of(context).size.height * 0.093,
                           width: MediaQuery.of(context).size.width * 0.18,
@@ -417,7 +417,7 @@ class _IntroPage3State extends State<IntroPage3> {
                         Text('Track your',
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
-                              fontSize: 35,
+                              fontSize: 27,
                               color: AppColors.primary,
                             )),
                       ],
@@ -429,7 +429,7 @@ class _IntroPage3State extends State<IntroPage3> {
                         Text('appointments',
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
-                              fontSize: 35,
+                              fontSize: 27,
                               color: AppColors.primary,
                             )),
                         SizedBox(
@@ -443,7 +443,7 @@ class _IntroPage3State extends State<IntroPage3> {
                         Text('the easy way..',
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.bold,
-                              fontSize: 35,
+                              fontSize: 27,
                               color: AppColors.primary,
                             )),
                       ],
