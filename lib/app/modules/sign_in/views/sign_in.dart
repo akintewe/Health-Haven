@@ -1,4 +1,3 @@
-
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,6 +23,7 @@ class _SignInState extends State<SignIn> {
   final passController = TextEditingController();
   bool passToggle = true;
   bool? isChecked = false;
+  bool isLoading = false;
   void _loginWithFacebook() async {
     setState(() {
       loading = true;
@@ -228,12 +228,18 @@ class _SignInState extends State<SignIn> {
                   borderRadius: BorderRadius.circular(25),
                   child: MaterialButton(
                     onPressed: () {
+                      setState(() {
+                        isLoading = true;
+                      });
                       if (_SignIn.currentState!.validate()) {
                         FirebaseAuth.instance
                             .signInWithEmailAndPassword(
                                 email: emailController.text,
                                 password: passController.text)
                             .then((value) {
+                          setState(() {
+                            isLoading = false;
+                          });
                           context.go('/home-page');
                         }).catchError((error, stackTrace) {
                           print("Error ${error.toString()}");
@@ -252,14 +258,21 @@ class _SignInState extends State<SignIn> {
                     },
                     minWidth: 320,
                     height: 42,
-                    child: const Text(
-                      'Sign in',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    child: isLoading
+                        ? Center(
+                            child: CircularProgressIndicator(
+                              color: AppColors.white,
+                              strokeWidth: 5,
+                            ),
+                          )
+                        : Text(
+                            'Sign in',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                   ),
                 ),
                 const SizedBox(
@@ -410,7 +423,7 @@ class _SignInState extends State<SignIn> {
                         onPressed: () {
                           context.go('/sign-up');
                         },
-                        child: const Text(
+                        child: Text(
                           'Sign Up',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
