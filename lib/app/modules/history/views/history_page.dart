@@ -94,6 +94,27 @@ class _HistoryPageState extends State<HistoryPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: RoundedSearchBar(),
                 ),
+                SizedBox(
+                  height: 10,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Today',
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.grey50,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
