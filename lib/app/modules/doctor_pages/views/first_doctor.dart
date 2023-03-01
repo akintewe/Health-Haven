@@ -346,10 +346,8 @@ class _Doctor1State extends State<Doctor1> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SizedBox(
-                        width: 20,
-                      ),
                       Column(
                         children: [
                           const SizedBox(
