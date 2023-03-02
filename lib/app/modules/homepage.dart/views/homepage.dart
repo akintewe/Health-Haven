@@ -2,6 +2,7 @@ import 'package:cancer_chat/app/modules/Profile/ProfilePage.dart';
 import 'package:cancer_chat/app/modules/Profile/Profile_Settings.dart';
 import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1.dart';
 import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
+import 'package:cancer_chat/app/modules/history/views/history_page.dart';
 import 'package:cancer_chat/app/modules/inapp_tour/in_app_tour_target.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -23,17 +24,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
   int _selectedIndex = 0;
   TextEditingController textEditingController = TextEditingController();
   static const List<Widget> _widgetOptions = <Widget>[
     MainHomePage(),
     MyAppointment(),
-    Doctor1(),
+    HistoryPage(),
     ProfileSettings()
   ];
-  
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +49,6 @@ class _HomePageState extends State<HomePage> {
             text: 'Home',
           ),
           GButton(
-            
             icon: Icons.calendar_month,
             text: 'Appointment',
           ),
@@ -90,7 +88,6 @@ class _MainHomePageState extends State<MainHomePage> {
   final search = GlobalKey();
   final doctorSections = GlobalKey();
   final topDoctors = GlobalKey();
-  
 
   late TutorialCoachMark tutorialCoachMark;
   bool isSaved = false;
@@ -103,7 +100,6 @@ class _MainHomePageState extends State<MainHomePage> {
           search: search,
           doctorSections: doctorSections,
           topDoctors: topDoctors,
-       
         ),
         colorShadow: AppColors.primary,
         paddingFocus: 10,

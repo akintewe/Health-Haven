@@ -5,6 +5,7 @@ import 'package:cancer_chat/app/modules/emptypage.dart';
 import 'package:cancer_chat/app/modules/favouriates/views/favourites_view.dart';
 import 'package:cancer_chat/app/modules/forgot_password/views/forgot_password.dart';
 import 'package:cancer_chat/app/modules/forgot_password/views/input_pin.dart';
+import 'package:cancer_chat/app/modules/history/views/history_page.dart';
 import 'package:cancer_chat/app/modules/homepage.dart/views/homepage.dart';
 import 'package:cancer_chat/app/modules/introduction_page/controller/page_controller.dart';
 import 'package:cancer_chat/app/modules/messaging/views/messaging.dart';
@@ -234,5 +235,11 @@ final GoRouter _router =
     name: Routes.messagingPage,
     pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context, state: state, child: MessagingPage()),
+  ),
+  GoRoute(
+    path: _AppRoutePaths.historyPage,
+    name: Routes.historyPage,
+    pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context, state: state, child: HistoryPage()),
   )
 ]);

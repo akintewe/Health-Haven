@@ -1,4 +1,3 @@
-
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:cancer_chat/core/utils/helpers/app_toast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -26,6 +25,7 @@ class _SignInState extends State<SignIn> {
   final passController = TextEditingController();
   bool passToggle = true;
   bool? isChecked = false;
+  bool isLoading = false;
   void _loginWithFacebook() async {
     setState(() {
       loading = true;
@@ -229,15 +229,21 @@ class _SignInState extends State<SignIn> {
                   color: Colors.blue[700],
                   borderRadius: BorderRadius.circular(25),
                   child: MaterialButton(
-                    onPressed: () async {
 
-                      try{
-                         if (_SignIn.currentState!.validate()) {
+                    onPressed: () {
+                      setState(() {
+                        isLoading = true;
+                      });
+                      if (_SignIn.currentState!.validate()) {
                         FirebaseAuth.instance
                             .signInWithEmailAndPassword(
                                 email: emailController.text,
                                 password: passController.text)
-                            .then((value) async {
+
+                            .then((value) {
+                          setState(() {
+                            isLoading = false;
+                          });
                           context.go('/home-page');
                           await  appToast('Login Successful',
             appToastType: AppToastType.success);
@@ -264,14 +270,21 @@ class _SignInState extends State<SignIn> {
                     },
                     minWidth: 320,
                     height: 42,
-                    child: const Text(
-                      'Sign in',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    child: isLoading
+                        ? Center(
+                            child: CircularProgressIndicator(
+                              color: AppColors.white,
+                              strokeWidth: 5,
+                            ),
+                          )
+                        : Text(
+                            'Sign in',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                   ),
                 ),
                 const SizedBox(
@@ -422,7 +435,7 @@ class _SignInState extends State<SignIn> {
                         onPressed: () {
                           context.go('/sign-up');
                         },
-                        child: const Text(
+                        child: Text(
                           'Sign Up',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,

@@ -28,67 +28,63 @@ class _FeeInfoWidgetState extends State<FeeInfoWidget> {
         isPressed = !isPressed;
         setState(() {});
       },
-      child: Container(
-        height: 90.h,
-        width: MediaQuery.of(context).size.width * 0.9.sp,
-        decoration: BoxDecoration(
-            color: isPressed ? AppColors.primary : Colors.white,
-            border: Border.all(
-              color: AppColors.grey80,
-            ),
-            borderRadius: BorderRadius.circular(20)),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 10.w,
-            ),
-            CircleAvatar(
-              backgroundColor: isPressed ? Colors.white : AppColors.primary100,
-              radius: 30,
-              child: Icon(
-                widget.icon,
-                size: 25.sp,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+          height: 90.h,
+          width: MediaQuery.of(context).size.width * 0.9.sp,
+          decoration: BoxDecoration(
+              color: isPressed ? AppColors.primary : Colors.white,
+              border: Border.all(
+                color: AppColors.grey80,
               ),
-            ),
-            SizedBox(
-              width: 15.w,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.header,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18.sp,
-                    color: isPressed ? Colors.white : Colors.black,
-                  ),
+              borderRadius: BorderRadius.circular(20)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              CircleAvatar(
+                backgroundColor:
+                    isPressed ? Colors.white : AppColors.primary100,
+                radius: 30,
+                child: Icon(
+                  widget.icon,
+                  size: 25.sp,
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  widget.comment,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w600,
-                    color: isPressed ? Colors.white : AppColors.grey50,
-                  ),
-                )
-              ],
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.01,
-            ),
-            Text(
-              widget.price,
-              style: GoogleFonts.roboto(
-                fontWeight: FontWeight.bold,
-                color: isPressed ? Colors.white : AppColors.primary,
-                fontSize: 20.sp,
               ),
-            )
-          ],
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.header,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.sp,
+                      color: isPressed ? Colors.white : Colors.black,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    widget.comment,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w600,
+                      color: isPressed ? Colors.white : AppColors.grey50,
+                    ),
+                  )
+                ],
+              ),
+              Text(
+                widget.price,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.bold,
+                  color: isPressed ? Colors.white : AppColors.primary,
+                  fontSize: 20.sp,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

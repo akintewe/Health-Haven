@@ -37,4 +37,5 @@ abstract class _AppRoutePaths {
   static const String myAppointmentPage = '/myAppointmentPage';
   static const String chatHome = '/chat-home';
   static const String messagingPage = '/messagingPage';
+  static const String historyPage = '/historyPage';
 }

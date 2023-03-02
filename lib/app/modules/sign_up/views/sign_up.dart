@@ -18,7 +18,7 @@ class _SignUpState extends State<SignUp> {
   final passController = TextEditingController();
   bool passToggle = true;
   bool? isChecked = false;
-  
+
   bool isVisible = true;
 
   @override
@@ -132,16 +132,17 @@ class _SignUpState extends State<SignUp> {
                             decoration: InputDecoration(
                               isDense: true,
                               hintText: 'Password',
-                              suffixIcon:  InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    obscureText:
-                                    false;
-                                    passToggle = !passToggle;
-                                  });
-                                },
-                                child: Icon(passToggle ? Icons.visibility_off : 
-                                Icons.visibility_outlined)),
+                              suffixIcon: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      obscureText:
+                                      false;
+                                      passToggle = !passToggle;
+                                    });
+                                  },
+                                  child: Icon(passToggle
+                                      ? Icons.visibility_off
+                                      : Icons.visibility_outlined)),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(100),
                               ),
@@ -201,8 +202,7 @@ class _SignUpState extends State<SignUp> {
                     minWidth: 320,
                     height: 42,
                     child: const Text(
-                      'Sign UP',
-
+                      'Sign up',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
@@ -211,7 +211,6 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ),
-
                 SizedBox(
                   height: 20,
                 ),
@@ -237,7 +236,6 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
                 SizedBox(
-
                   height: 30,
                 ),
                 const Text('or continue with'),

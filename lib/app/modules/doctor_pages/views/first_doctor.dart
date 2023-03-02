@@ -346,10 +346,8 @@ class _Doctor1State extends State<Doctor1> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SizedBox(
-                        width: 20,
-                      ),
                       Column(
                         children: [
                           const SizedBox(
@@ -552,28 +550,29 @@ class _Doctor1State extends State<Doctor1> {
               height: 20,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const SizedBox(
-                  width: 20,
-                ),
-                Text('Reviews',
-                    style: GoogleFonts.roboto(
-                        color: AppColors.grey50,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20)),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.4,
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text('Reviews',
+                      style: GoogleFonts.roboto(
+                          color: AppColors.grey50,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20)),
                 ),
                 GestureDetector(
                   onTap: () {
                     context.go('/reviews');
                   },
-                  child: Text(
-                    'See reviews',
-                    style: GoogleFonts.roboto(
-                        color: AppColors.primary,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      'See reviews',
+                      style: GoogleFonts.roboto(
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    ),
                   ),
                 ),
               ],
@@ -616,7 +615,7 @@ class _Doctor1State extends State<Doctor1> {
                   'Book Appointment',
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                 ),
               ),
