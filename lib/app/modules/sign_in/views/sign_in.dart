@@ -1,5 +1,6 @@
 
 import 'package:cancer_chat/core/theme/colors.dart';
+import 'package:cancer_chat/core/utils/helpers/app_toast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remixicon/remixicon.dart';
 
+import '../../../../values/enums.dart';
 import '../service/firebase_services.dart';
 
 class SignIn extends StatefulWidget {
@@ -227,16 +229,22 @@ class _SignInState extends State<SignIn> {
                   color: Colors.blue[700],
                   borderRadius: BorderRadius.circular(25),
                   child: MaterialButton(
-                    onPressed: () {
-                      if (_SignIn.currentState!.validate()) {
+                    onPressed: () async {
+
+                      try{
+                         if (_SignIn.currentState!.validate()) {
                         FirebaseAuth.instance
                             .signInWithEmailAndPassword(
                                 email: emailController.text,
                                 password: passController.text)
-                            .then((value) {
+                            .then((value) async {
                           context.go('/home-page');
-                        }).catchError((error, stackTrace) {
+                          await  appToast('Login Successful',
+            appToastType: AppToastType.success);
+                        }).catchError((error, stackTrace)  async {
                           print("Error ${error.toString()}");
+            //             await  appToast('Invalid username or password',
+            // appToastType: AppToastType.failed);
                           showDialog(
                               context: context,
                               builder: (context) {
@@ -249,6 +257,10 @@ class _SignInState extends State<SignIn> {
                               });
                         });
                       }
+                      } catch (e) {
+                        print("Error ${e.toString()}");
+                      }
+                     
                     },
                     minWidth: 320,
                     height: 42,
