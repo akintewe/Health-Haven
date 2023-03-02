@@ -118,7 +118,7 @@ class _Date_boxState extends State<Date_box> {
               style: GoogleFonts.roboto(
                   color: isSelected ? AppColors.white : AppColors.primary,
                   fontWeight: FontWeight.bold,
-                  fontSize: 18),
+                  fontSize: 17),
             ),
             SizedBox(
               height: 20,
@@ -128,7 +128,7 @@ class _Date_boxState extends State<Date_box> {
               style: GoogleFonts.roboto(
                 color: isSelected ? AppColors.white : AppColors.primary,
                 fontWeight: FontWeight.bold,
-                fontSize: 35,
+                fontSize: 30,
               ),
             )
           ],

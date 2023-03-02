@@ -615,7 +615,7 @@ class _Doctor1State extends State<Doctor1> {
                   'Book Appointment',
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                 ),
               ),

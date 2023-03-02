@@ -42,7 +42,7 @@ class _MorningEveningState extends State<MorningEvening> {
                 style: GoogleFonts.roboto(
                     fontWeight: FontWeight.w700,
                     color: isSelected ? AppColors.white : AppColors.primary,
-                    fontSize: 18.sp),
+                    fontSize: 17.sp),
               )
             ],
           ),
