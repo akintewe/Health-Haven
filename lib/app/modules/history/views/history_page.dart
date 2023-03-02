@@ -53,7 +53,9 @@ class _HistoryPageState extends State<HistoryPage> {
                   color: AppColors.primary100,
                 ),
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.go('/doctor-1');
+                    },
                     icon: const Icon(
                       Icons.add_rounded,
                       color: AppColors.primary,
