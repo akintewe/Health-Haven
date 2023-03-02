@@ -37,6 +37,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
             color: AppColors.grey90,
           )),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Stack(
             children: [
@@ -90,7 +91,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                   fontSize: 16.sp,
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 10.sp,
               ),
               RichText(
@@ -102,8 +103,8 @@ class _AppointmentCardState extends State<AppointmentCard> {
                           style: GoogleFonts.roboto(
                               color: Colors.green, fontSize: 13.sp)),
                     ],
-                    style:
-                        GoogleFonts.roboto(color: Colors.black, fontSize: 13.sp)),
+                    style: GoogleFonts.roboto(
+                        color: Colors.black, fontSize: 13.sp)),
               ),
               const SizedBox(
                 height: 10,

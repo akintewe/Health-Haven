@@ -2,6 +2,8 @@ import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 
@@ -32,6 +34,26 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+            onPressed: () {
+              context.go('/Profile-Settings');
+            },
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: AppColors.primary,
+            )),
+        title: Text(
+          'Profile',
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 26,
+          ),
+        ),
+      ),
       backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: SafeArea(

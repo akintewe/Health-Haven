@@ -51,11 +51,16 @@ class _ProfileSettingsState extends State<ProfileSettings> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(
-                    child: Icon(
-                      Remix.shield_cross_fill,
-                      color: AppColors.primary,
-                      size: 50,
+                  GestureDetector(
+                    onTap: () {
+                      context.go('/home-page');
+                    },
+                    child: Container(
+                      child: Icon(
+                        Remix.shield_cross_fill,
+                        color: AppColors.primary,
+                        size: 50,
+                      ),
                     ),
                   ),
                   SizedBox(
