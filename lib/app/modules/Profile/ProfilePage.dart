@@ -1,6 +1,9 @@
+import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:remixicon/remixicon.dart';
+import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -33,31 +36,6 @@ class _ProfilePageState extends State<ProfilePage> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(key: _SignIn, children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    child: Image.asset(
-                      'assets/images/app-logo.png',
-                      width: 50,
-                      height: 59,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Profile',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
             SizedBox(
               height: 30,
             ),
@@ -311,6 +289,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       genderController.clear();
                       adressController.clear();
                       fullnameController.clear();
+                    } else {
+                      print('objects not filled');
                     }
                   },
                   minWidth: 320,
