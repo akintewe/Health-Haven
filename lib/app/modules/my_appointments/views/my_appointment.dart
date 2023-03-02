@@ -16,9 +16,6 @@ import 'package:uuid/uuid.dart';
 
 import '../widgets/rounded_searchbar.dart';
 
-
-
-
 class MyAppointment extends StatefulWidget {
   const MyAppointment({super.key});
 
@@ -27,8 +24,7 @@ class MyAppointment extends StatefulWidget {
 }
 
 class _MyAppointmentState extends State<MyAppointment> {
-
-   late final Uuid _uuid;
+  late final Uuid _uuid;
   String? _currentUuid;
   String textEvents = "";
 
@@ -42,7 +38,6 @@ class _MyAppointmentState extends State<MyAppointment> {
     //listenerEvent(onEvent);
   }
 
-   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,16 +184,16 @@ class _MyAppointmentState extends State<MyAppointment> {
                   ),
                   GestureDetector(
                     // onDoubleTap: startOutGoingCall,
-                   onTap: (() async {
-                        // urlLauncher('08016857532',
-                        //     urlLaunchType: UrlLaunchType.call);
-                        final call = Uri.parse('tel://');
-                    if (await canLaunchUrl(call)) {
-                      launchUrl(call);
-                    } else {
-                      throw 'Could not launch $call';
-                    }
-                      }),
+                    onTap: (() async {
+                      // urlLauncher('08016857532',
+                      //     urlLaunchType: UrlLaunchType.call);
+                      final call = Uri.parse('tel://112');
+                      if (await canLaunchUrl(call)) {
+                        launchUrl(call);
+                      } else {
+                        throw 'Could not launch $call';
+                      }
+                    }),
 
                     child: const AppointmentCard(
                       image: 'assets/images/doctor2.jpg',
@@ -278,10 +273,7 @@ class _MyAppointmentState extends State<MyAppointment> {
     );
   }
 
-
-
-
-initCurrentCall() async {
+  initCurrentCall() async {
     //check current call from pushkit if possible
     var calls = await FlutterCallkitIncoming.activeCalls();
     if (calls is List) {

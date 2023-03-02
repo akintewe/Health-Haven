@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:cancer_chat/core/utils/helpers/app_toast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -229,7 +231,6 @@ class _SignInState extends State<SignIn> {
                   color: Colors.blue[700],
                   borderRadius: BorderRadius.circular(25),
                   child: MaterialButton(
-
                     onPressed: () {
                       setState(() {
                         isLoading = true;
@@ -239,18 +240,17 @@ class _SignInState extends State<SignIn> {
                             .signInWithEmailAndPassword(
                                 email: emailController.text,
                                 password: passController.text)
-
-                            .then((value) {
+                            .then((value) async {
                           setState(() {
                             isLoading = false;
                           });
                           context.go('/home-page');
-                          await  appToast('Login Successful',
-            appToastType: AppToastType.success);
-                        }).catchError((error, stackTrace)  async {
+                          await appToast('Login Successful',
+                              appToastType: AppToastType.success);
+                        }).catchError((error, stackTrace) async {
                           print("Error ${error.toString()}");
-            //             await  appToast('Invalid username or password',
-            // appToastType: AppToastType.failed);
+                          //             await  appToast('Invalid username or password',
+                          // appToastType: AppToastType.failed);
                           showDialog(
                               context: context,
                               builder: (context) {
@@ -263,10 +263,10 @@ class _SignInState extends State<SignIn> {
                               });
                         });
                       }
-                      } catch (e) {
+                      (e);
+                      {
                         print("Error ${e.toString()}");
                       }
-                     
                     },
                     minWidth: 320,
                     height: 42,

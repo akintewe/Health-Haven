@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:remixicon/remixicon.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../my_appointments/widgets/rounded_searchbar.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
