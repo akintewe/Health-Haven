@@ -20,7 +20,7 @@
 </queries>
 
    <application
-        android:label="cancer_chat"
+        android:label="Health Haven"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
