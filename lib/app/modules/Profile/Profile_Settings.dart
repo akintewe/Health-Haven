@@ -140,7 +140,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Column(
                   children: [
                     Text(
-                      ("${FirebaseAuth.instance.currentUser!.displayName}"),
+                      ("${FirebaseAuth.instance.currentUser!.displayName!}"),
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),

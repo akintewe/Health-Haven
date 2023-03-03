@@ -5,7 +5,8 @@ import '../../../../core/theme/colors.dart';
 
 class CategoryBox extends StatelessWidget {
   const CategoryBox({
-    super.key, required this.isCurrent,
+    super.key,
+    required this.isCurrent,
   });
   final bool isCurrent;
 
@@ -21,17 +22,14 @@ class CategoryBox extends StatelessWidget {
           color: isCurrent ? AppColors.primary800 : AppColors.white,
           borderRadius: BorderRadius.circular(16.0),
           border: Border.all(
-            color: AppColors.primary800,
-            style: BorderStyle.solid
-          )
-          ),
+              color: AppColors.primary800, style: BorderStyle.solid)),
       child: FittedBox(
-        alignment: Alignment.center,
+          alignment: Alignment.center,
           fit: BoxFit.contain,
           child: Text(
             "All",
             style: GoogleFonts.actor(
-              color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500),
+                color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500),
           )),
     );
   }

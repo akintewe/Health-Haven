@@ -410,7 +410,7 @@ class _MyAppointmentPageState extends State<MyAppointmentPage> {
                   'Message Now  (Start at 10:00AM)',
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 17,
                   ),
                 ),
               ),

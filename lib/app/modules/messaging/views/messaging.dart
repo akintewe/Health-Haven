@@ -285,7 +285,7 @@ class _MessagingPageState extends State<MessagingPage> {
                         Text(
                           'Hello ${FirebaseAuth.instance.currentUser!.displayName!}, I am Dr Mary Steward.\nI will help you solve your disease\ncomplaints.',
                           style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w400, fontSize: 14),
+                              fontWeight: FontWeight.w400, fontSize: 12),
                         ),
                       ],
                     ),
@@ -329,7 +329,7 @@ class _MessagingPageState extends State<MessagingPage> {
                         Text(
                           'First, can you tell me about your\nillness so far..',
                           style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w400, fontSize: 14),
+                              fontWeight: FontWeight.w400, fontSize: 12),
                         ),
                       ],
                     ),
@@ -376,7 +376,7 @@ class _MessagingPageState extends State<MessagingPage> {
                         Text(
                           'This is very important so that i can\nhelp identify your disease and the\nsolution 😁',
                           style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w400, fontSize: 14),
+                              fontWeight: FontWeight.w400, fontSize: 12),
                         ),
                       ],
                     ),
