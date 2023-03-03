@@ -63,7 +63,6 @@ class _SearchPageState extends State<SearchPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                
                 SizedBox(
                   height: 30,
                   width: double.infinity,
@@ -82,13 +81,16 @@ class _SearchPageState extends State<SearchPage> {
                             });
                           },
                           child: CategoryBox(
+                            category: 'All',
                             isCurrent: currentIndex == index,
                           ),
                         );
                       },
                       itemCount: 20),
                 ),
-                const SizedBox(height: 15,),
+                const SizedBox(
+                  height: 15,
+                ),
                 ListView.separated(
                   physics: const ScrollPhysics(),
                   scrollDirection: Axis.vertical,

@@ -88,7 +88,7 @@ class _TopDoctorsState extends State<TopDoctors> {
                             });
                           },
                           child: CategoryBox(
-                            isCurrent: currentIndex == index,
+                            isCurrent: currentIndex == index, category: 'All',
                           ),
                         );
                       },

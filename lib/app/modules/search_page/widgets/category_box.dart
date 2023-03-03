@@ -4,9 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/theme/colors.dart';
 
 class CategoryBox extends StatelessWidget {
+  final String category;
   const CategoryBox({
     super.key,
-    required this.isCurrent,
+    required this.isCurrent, required this.category,
   });
   final bool isCurrent;
 
@@ -27,7 +28,7 @@ class CategoryBox extends StatelessWidget {
           alignment: Alignment.center,
           fit: BoxFit.contain,
           child: Text(
-            "All",
+            category,
             style: GoogleFonts.actor(
                 color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500),
           )),

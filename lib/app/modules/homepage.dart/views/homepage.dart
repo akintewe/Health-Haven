@@ -4,6 +4,7 @@ import 'package:cancer_chat/app/modules/book_appointment/views/book_appointment1
 import 'package:cancer_chat/app/modules/doctor_pages/views/first_doctor.dart';
 import 'package:cancer_chat/app/modules/history/views/history_page.dart';
 import 'package:cancer_chat/app/modules/inapp_tour/in_app_tour_target.dart';
+import 'package:cancer_chat/app/modules/my_appointments/widgets/rounded_searchbar.dart';
 import 'package:cancer_chat/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -219,23 +220,29 @@ class _MainHomePageState extends State<MainHomePage> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SearchBarAnimation(
-              key: search,
-              textEditingController: TextEditingController(),
-              isOriginalAnimation: false,
-              buttonBorderColour: Colors.black45,
-              buttonWidget: const Icon(Icons.search),
-              secondaryButtonWidget: const Icon(Icons.cancel),
-              trailingWidget: const Icon(Icons.sort),
-              onFieldSubmitted: (String value) {
-                debugPrint('onFieldSubmitted value $value');
-              },
-              onPressButton: (hello) {
-                context.push("/searchPage");
-              },
-              onChanged: () {},
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: RoundedSearchBar(
+                key: search,
+              ),
             ),
-            const SizedBox(
+            // SearchBarAnimation(
+            //   key: search,
+            //   textEditingController: TextEditingController(),
+            //   isOriginalAnimation: false,
+            //   buttonBorderColour: Colors.black45,
+            //   buttonWidget: const Icon(Icons.search),
+            //   secondaryButtonWidget: const Icon(Icons.cancel),
+            //   trailingWidget: const Icon(Icons.sort),
+            //   onFieldSubmitted: (String value) {
+            //     debugPrint('onFieldSubmitted value $value');
+            //   },
+            //   onPressButton: (hello) {
+            //     context.push("/searchPage");
+            //   },
+            //   onChanged: () {},
+            // ),
+            SizedBox(
               height: 30,
             ),
             Row(
