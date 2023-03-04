@@ -18,6 +18,7 @@ class _SignUpState extends State<SignUp> {
   final _SignUp = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passController = TextEditingController();
+  final confirmController = TextEditingController();
   bool passToggle = true;
   bool? isChecked = false;
 
@@ -156,6 +157,43 @@ class _SignUpState extends State<SignUp> {
                               return null;
                             }),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          right: 8,
+                          left: 3,
+                        ),
+                        child: TextFormField(
+                            controller: confirmController,
+                            keyboardType: TextInputType.visiblePassword,
+                            obscureText: passToggle,
+                            decoration: InputDecoration(
+                              isDense: true,
+                              hintText: 'Confirm Passowrd',
+                              suffixIcon: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      obscureText:
+                                      false;
+                                      passToggle = !passToggle;
+                                    });
+                                  },
+                                  child: Icon(passToggle
+                                      ? Icons.visibility_off
+                                      : Icons.visibility_outlined)),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                            ),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "!password doesnt match email";
+                              }
+                              return null;
+                            }),
+                      ),
                       Row(
                         children: [
                           Checkbox(
@@ -191,6 +229,9 @@ class _SignUpState extends State<SignUp> {
                                 email: emailController.text,
                                 password: passController.text)
                             .then((value) {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                              content: Text(
+                                  'Your account has been created, proceed to sign in')));
                           print('Created new account');
                           context.go('/sign-in');
                         }).onError((error, stackTrace) {
