@@ -39,6 +39,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
   }
 
   int index = 0;
+  bool usedGoogle = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,7 +141,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 Column(
                   children: [
                     Text(
-                      ("${FirebaseAuth.instance.currentUser!.displayName}"),
+                      usedGoogle
+                          ? ("${FirebaseAuth.instance.currentUser!.displayName}")
+                          : 'User',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
