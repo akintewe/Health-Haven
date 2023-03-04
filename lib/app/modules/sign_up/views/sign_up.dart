@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remixicon/remixicon.dart';
 
+import '../../sign_in/service/firebase_services.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
@@ -282,34 +284,40 @@ class _SignUpState extends State<SignUp> {
                         width: 25,
                       ),
                       Expanded(
-                        child: Container(
-                          width: 160,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                child: Image.asset(
-                                  'assets/icons/Google.png',
-                                  width: 30,
-                                  height: 30,
+                        child: GestureDetector(
+                          onTap: () async {
+                            await FirebaseServices().signInWithGoogle();
+                            context.go('/home-page');
+                          },
+                          child: Container(
+                            width: 160,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  child: Image.asset(
+                                    'assets/icons/Google.png',
+                                    width: 30,
+                                    height: 30,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              const Text(
-                                'Google',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                const SizedBox(
+                                  width: 10,
                                 ),
-                              ),
-                            ],
+                                const Text(
+                                  'Google',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
